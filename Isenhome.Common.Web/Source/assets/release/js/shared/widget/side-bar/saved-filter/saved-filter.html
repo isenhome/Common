@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!shared/widget/side-bar/saved-filter/saved-filter.html", [], function () {
+	return function (a) {
+		var b = '<li class="nav-filter">	<span class="icon-remove-small icon-transparent hide" data-action="filter/delete" data-filter="' + a.name + '" data-id="' + a.id + '"></span>	<a href="#" data-href="' + a.query + "&byfilter=" + a.id + '" data-action="filter" data-id="' + a.id + '" class="search-item"><i class="icon-search icon-blue"></i> ' + a.name + '<sapn class="pull-right">' + a.count + '</sapn></a>	<span class="icon-move-ns icon-blue"></span></li>';
+		return b
+	}
+})

@@ -1,0 +1,25 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/task-reporting/detail/main.html", [], function () {
+	return function (a) {
+		var b,
+		c = "";
+		c += '<colgroup>    <col width="">    <col width="">    <col width="">    <col width="">    <col width="">    <col width=""></colgroup><thead>    <tr>        <th><span data-weave="shared/helper/translation" data-i18n="任务类型"></span></th>        <th data-weave="shared/helper/translation" data-i18n="任务对象"></th>        <th data-weave="shared/helper/translation" data-i18n="任务备注"></th>        <th data-weave="shared/helper/translation" data-i18n="任务时间"></th>        <th data-weave="shared/helper/translation" data-i18n="创建时间"></th>        <th data-weave="shared/helper/translation" data-i18n="Participant"></th>        <th data-weave="shared/helper/translation" data-i18n="Creator"></th>    </tr></thead><tbody>    ';
+		for (var d = 0, e = a.length; e > d; d++) {
+			c += "    ";
+			var f = a[d];
+			c += '    <tr>        <td>            <span class="label" style="background-color: ' + f.category.color + ';">' + f.category.value + "</span>        </td>        <td>            ",
+			"joborder" === f.external_type ? c += '                <a href="/job#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>            " : "client" === f.external_type ? c += '                <a href="/company#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>            " : f.target && f.target.candidate ? (c += "                ", b = f.target.candidate, c += "                ", b.islimited ? c += "                ID: " + b.id + "                " : (c += '                <a href="/candidate#detail!id=' + b.id + '" target="_blank">' + [b.englishName, b.chineseName].join(" ").trim() + "</a>                ", "coldcall" === b.type && (c += '                <span class="label">Cold Call</span>                '), c += "                "), c += "            ") : f.target && (c += "                ", c += f.target.islimited ? "                ID: " + f.target.id + "                " : '                <a href="/candidate#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>                ", c += "            "),
+			c += "        </td>        <td>            ",
+			f.target && f.target.joborder ? c += '            <a href="job#detail!id=' + f.target.joborder.id + '" target="_blank">' + f.target.joborder.jobTitle + " (ID: " + f.target.joborder.id + ")</a>            " : (c += "                ", b ? b && !b.islimited && (c += "                " + (f.content || "") + "                ") : c += "                " + (f.content || "") + "                ", c += "            "),
+			c += "        </td>        <td>            ",
+			c += f.allday ? "            " + this.getDate(f.date) + "            " : "            " + f.date + "            ",
+			c += "        </td>        <td>            " + f.dateAdded + "        </td>        <td>            ";
+			for (var g = 0, h = f.users.length; h > g; g++) {
+				c += "            ";
+				var i = f.users[g];
+				c += '            <div><a href="/user/preview#' + i.id + '" data-action="open/profile">' + i.englishName + "</a></div>            "
+			}
+			c += '        </td>        <td>            <a href="/user/preview#' + f.addedBy.id + '" data-action="open/profile">' + f.addedBy.englishName + "</a>        </td>    </tr>    "
+		}
+		return c += "</tbody>"
+	}
+})

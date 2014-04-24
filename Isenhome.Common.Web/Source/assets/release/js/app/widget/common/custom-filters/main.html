@@ -1,0 +1,27 @@
+define("troopjs-requirejs/template!app/widget/common/custom-filters/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.type,
+		d = a.mapping,
+		e = a.options.length ? JSON.parse(a.options) : [];
+		if (b += '<li class="divider hide"></li><li class="dropdown hide">    <a href="#" data-action="dropdown" data-mapping="' + d + '">' + a.label + '</a>    <div class="dropdown-menu filter-content">        <form action="#" class="form-horizontal">            <div class="control-group">                ', "text" === c || "date" === c || "multiline" === c)
+			b += '                <input type="text" name="' + d + '" ', "date" === c && (b += 'data-weave="shared/widget/common/date-picker/main"'), b += ">                ";
+		else if ("dropdown" === c) {
+			b += '                <select name="' + d + '">                    <option value="" data-weave="shared/helper/translation" data-i18n="Please select"></option>                    ';
+			for (var f = 0, g = e.length; g > f; f++)
+				b += '                    <option value="' + e[f] + '">' + e[f] + "</option>                    ";
+			b += "                </select>                "
+		} else if ("radio" === c) {
+			b += "                ";
+			for (var f = 0, g = e.length; g > f; f++)
+				b += '                <label class="radio inline">                    <input type="radio" name="' + d + '" value="' + e[f] + '" > ' + e[f] + "                </label>                ";
+			b += "                "
+		} else if ("checkbox" === c) {
+			b += "                ";
+			for (var f = 0, g = e.length; g > f; f++)
+				b += '                <label class="checkbox inline">                    <input type="checkbox" name="' + d + '" value="' + e[f] + '" > ' + e[f] + "                </label>                ";
+			b += "                "
+		}
+		return b += '            </div>            <button class="btn" type="submit" data-action="form(\'' + d + '\')" data-weave="shared/helper/translation" data-i18n="Add"></button>        </form>    </div></li>'
+	}
+})

@@ -1,0 +1,13 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/job/main.html", [], function () {
+	return function (a) {
+		for (var b = '<thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="Job"></th>        <th data-weave="shared/helper/translation" data-i18n="Function"></th>        <th data-weave="shared/helper/translation" data-i18n="Company"></th>        <th data-weave="shared/helper/translation" data-i18n="推荐客户"></th>        <th data-weave="shared/helper/translation" data-i18n="客户面试人数"></th>        <th data-weave="shared/helper/translation" data-i18n="Offer Signed"></th>        <th data-weave="shared/helper/translation" data-i18n="进展天数"></th>        <th data-weave="shared/helper/translation" data-i18n="Update Date"></th>        <th data-weave="shared/helper/translation" data-i18n="Priority"></th>        <th data-weave="shared/helper/translation" data-i18n="Main Consultant"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += '    <tr>        <td>            <a href="/job#detail!id=' + e.id + '" target="_blank">' + e.jobTitle + " （ID: " + e.id + '）</a>        </td>        <td>            <span class="label function">' + e.function .name + '</span>        </td>        <td>            <a href="/company#detail!id=' + e.client.id + '" target="_blank">' + e.client.name + "</a>        </td>        <td>            " + e.cvsent_count + "        </td>        <td>            " + e.clientinterview_count + "        </td>        <td>            " + e.offersign_count + "        </td>        <td>" + e.livedays + "</td>        <td>" + e.lastUpdateDate + "</td>        <td>", e.priority && (b += '<span data-weave="shared/helper/translation" data-i18n="' + e.priority + '"></span>'), b += "</td>        <td>            ";
+			for (var f = 0, g = e.users.length; g > f; f++)
+				b += "            ", "Main Consultant" === e.users[f].type && (b += '            <a href="/user/preview#' + e.users[f].user.id + '" data-action="profile/open">' + e.users[f].user.englishName + "</a>            "), b += "            ";
+			b += "        </td>    </tr>    "
+	}
+	return b += "</tbody>"
+}
+})

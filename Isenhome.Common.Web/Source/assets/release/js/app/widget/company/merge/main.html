@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/company/merge/main.html", [], function () {
+	return function (a) {
+		var b = "";
+		return a.context.role.toUpperCase(),
+		b += '<div class="pull-right">    <a href="javascript:history.back();" class="btn">        <i class="icon-arrow-left"></i>    </a></div><h3 class="heading"><span data-weave="shared/helper/translation" data-i18n="Merge duplicate company"></span></h3><div class="search_page">    <div class="search_panel clearfix">        <div class="search_item company-item clearfix widget-spin"></div>    </div></div><div class="alert alert-error">    <p class="text-center">该公司将被合并，所有的数据，包括“Note”，“People”等信息将被转移到以下公司</p></div><form>    <label>请搜索并选择一家公司，接收被合并公司的数据</label>    <div class="input-prepend input-append">        <span class="add-on"><i class="icon-search"></i></span>        <input type="text" class="input-large search-input">        <button class="btn" data-weave="shared/helper/translation" data-i18n="Search" data-action="search/company"></button>    </div></form><div class="search_page company-list widget-spin hide">    <div class="search_panel clearfix"></div>    <button class="btn" data-weave="shared/helper/translation" data-i18n="Merge Company" data-action="merge/company"></button></div>'
+	}
+})

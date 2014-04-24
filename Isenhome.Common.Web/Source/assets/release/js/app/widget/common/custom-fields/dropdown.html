@@ -1,0 +1,14 @@
+define("troopjs-requirejs/template!app/widget/common/custom-fields/dropdown.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group">    <label for="' + a.mapping + '" class="control-label">        ' + a.label + "        ";
+		a.required && (b += '<span class="f_req">*</span>'),
+		b += '    </label>    <div class="controls">        <select name="' + a.mapping + '" id="' + a.mapping + '" class="',
+		a.required && (b += "required"),
+		b += '">            <option value="" data-weave="shared/helper/translation" data-i18n="Please select"></option>            ';
+		for (var c = 0, d = a.options.length; d > c; c++)
+			b += '                <option value="' + a.options[c] + '">' + a.options[c] + "</option>            ";
+		return b += '        </select>        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

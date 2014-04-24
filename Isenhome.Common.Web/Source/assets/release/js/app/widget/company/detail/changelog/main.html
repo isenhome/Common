@@ -1,0 +1,19 @@
+define("troopjs-requirejs/template!app/widget/company/detail/changelog/main.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			var e = a[c],
+			f = e.dateAdded.split(" "),
+			g = f[0],
+			h = f[1],
+			i = e.user,
+			j = i.id,
+			k = i.englishName,
+			l = e.log;
+			b += '<div class="activity-item clearfix">    <div class="pull-left span2 activity-time">        <p>            <span>' + h + "</span>            <span>" + g + '</span>            <a href="/user/preview#' + j + '" data-action="profile/open">' + k + '</a>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="content">                <ul class="unstyled">                    ';
+			for (var m in l)
+				b += "                    ", l.hasOwnProperty(m) && (b += "                    <li>" + this.getField(m) + ": <strike>" + this.getValue(m, l[m][0]) + "</strike> " + this.getValue(m, l[m][1]) + "</li>                    "), b += "                    ";
+			b += "                </ul>            </div>        </div>    </div></div>"
+		}
+		return b
+	}
+})

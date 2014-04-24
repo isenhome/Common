@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/dashboard/task/main.html", [], function () {
+	return function () {
+		var a = '<div class="w-box-header">    <span data-weave="shared/helper/translation" data-i18n="截至今天的任务"></span>: <span class="count"></span>    <div class="pull-right">        <div class="btn-group">            <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">                <i class="icon-cog"></i> <span class="caret"></span>            </a>            <ul class="dropdown-menu">                <li><a href="#" data-action="remove/me" data-weave="shared/helper/translation" data-i18n="Remove from dashboard"></a></li>            </ul>        </div>    </div></div><div class="w-box-content cnt_a widget-spin">    <p class="text-center all-done hide">今天没有未完成的任务!</p></div><div class="w-box-footer text-center">    <a href="#" data-action="load/more" data-weave="shared/helper/translation" data-i18n="Load more"></a></div>';
+		return a
+	}
+})

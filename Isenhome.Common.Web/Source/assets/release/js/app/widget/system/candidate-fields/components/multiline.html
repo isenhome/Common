@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/system/candidate-fields/components/multiline.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group" data-action="component">    <span class="icon-remove" data-action="remove/component"></span>    <label class="control-label">    	<span class="icon-move-ns icon-blue pull-left"></span>        ' + a.label + '        <span class="f_req ';
+		return a.required || (b += "hide"),
+		b += '">*</span>    </label>    <div class="controls">        <textarea cols="30" rows="10" disabled="true"></textarea>        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

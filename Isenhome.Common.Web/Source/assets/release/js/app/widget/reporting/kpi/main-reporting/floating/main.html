@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/floating/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup>    <col width="50">    <col width="">    <col>    <col width="">    <col width="">    <col width="">    <col width="">    <col width="70"></colgroup><thead>    <tr>        <th>邮件</th>        <th data-weave="shared/helper/translation" data-i18n="Candidate"></th>        <th data-weave="shared/helper/translation" data-i18n="Contact"></th>         <th data-weave="shared/helper/translation" data-i18n="Company"></th>        <th data-weave="shared/helper/translation" data-i18n="Note"></th>        <th data-weave="shared/helper/translation" data-i18n="Time"></th>        <th data-weave="shared/helper/translation" data-i18n="User"></th>        <th data-weave="shared/helper/translation" data-i18n="Feedback"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += '    <tr>        <td>            <a href="/mail/center#detail!' + e.email + '" target="_blank"><span class="icon-envelope icon-blue"></span></a>        </td>        <td>            <a href="/candidate#detail!id=' + e.candidate.id + '" target="_blank">' + [e.candidate.englishName, e.candidate.chineseName].join(" ").trim() + '</a>        </td>        <td>            <a href="/candidate#detail!id=' + e.clientContact.id + '" target="_blank">' + [e.clientContact.englishName, e.clientContact.chineseName].join(" ").trim() + '</a>        </td>        <td>            <a href="/client#detail!id=' + e.clientContact.company.name + '" target="_blank">' + e.clientContact.company.name + '</a>        </td>        <td class="note-cell">            <p>                ' + e.note + "            </p>        </td>        <td>            " + e.dateAdded + '        </td>        <td>            <a href="/user/preview#' + e.user.id + '" data-action="user/open">' + e.user.englishName + '</a>        </td>        <td>            <span style="color: ' + e.feedback.color + ';">' + e.feedback.value + "</span>        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

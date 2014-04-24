@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/common/dropdown/main.html", [], function () {
+	return function (a) {
+		for (var b = '<option value="" data-weave="shared/helper/translation" data-i18n="Please select"></option>', c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c];
+			b += '<option value="' + e.code + '">' + e.value + "</option>"
+		}
+		return b
+	}
+})

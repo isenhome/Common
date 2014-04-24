@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/common/job-select/main.html", [], function () {
+	return function (a) {
+		for (var b = '<option value=""></option>', c = 0, d = a.length; d > c; c++)
+			b += "", b += a[c].inshortlist || a[c].intargetcompany ? '<option value="' + a[c].id + '" disabled="disabled" style="color:#ccc;" data-type="' + a[c].client.type + '">' + a[c].jobTitle + " (ID:" + a[c].id + ") of " + a[c].client.name + "</option>" : '<option value="' + a[c].id + '" data-type="' + a[c].client.type + '">' + a[c].jobTitle + " (ID:" + a[c].id + ") of " + a[c].client.name + "</option>", b += "";
+		return b
+	}
+})

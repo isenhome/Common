@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/modal/invoice-alert/item.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++)
+			b += '<li class="row-fluid">    <span class="span4">    	<span data-weave="shared/helper/translation" data-i18n="Invoice Amount"></span>:    </span>    <span class="span8">￥' + a[c].invoiceAmount + "</span></li>";
+		return b
+	}
+})

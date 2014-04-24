@@ -1,0 +1,38 @@
+define("troopjs-requirejs/template!app/widget/job/item/detail.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.users,
+		d = a.contacts,
+		e = "",
+		f = "",
+		g = a.jobStatus,
+		h = this.isList;
+		switch (g) {
+		case "Live":
+			f = "label-warning";
+			break;
+		case "Failed":
+			f = "label-inverse";
+			break;
+		case "Successful":
+			f = "label-red"
+		}
+		switch (a.priority) {
+		case "High":
+			e = "label-red";
+			break;
+		case "Medium":
+			e = 'label-info"'
+		}
+		b += '<div class="search_content full-width">    <div class="search_item_tags pull-right clearfix">        <span class="label ' + f + '" data-weave="shared/helper/translation" data-i18n="' + g + ' Jobs"></span>&nbsp;                ',
+		a.client && a.client.industry.id && (b += '        <span class="label industry">' + a.client.industry.name + "</span>&nbsp;        "),
+		b += "        ",
+		a.function  && a.function .id && (b += '        <span class="label function">' + a.function .name + "</span>        "), b += "        ", a.priority && (b += '        <span class="label ' + e + '" data-weave="shared/helper/translation" data-i18n="' + a.priority + '"></span>        '), b += '    </div>    <div class="pull-left item-title">        <span class="badge badge-info">' + a.currentCount + "/" + a.totalCount + '</span>        <a href="/job#detail!id=' + a.id + '" class="title">' + a.jobTitle + '</a>        <a href="/job#detail!id=' + a.id + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a>        ', a.client && (b += '        of        <a href="company#detail!id=' + a.client.id + '" target="_blank"> ' + a.client.name + "</a>        ", !a.client.type || "client" !== a.client.type && "bding" !== a.client.type || (b += '        (<abbr class="red" data-weave="shared/helper/translation" data-i18n="' + a.client.type + ' company"></abbr>)        '), b += "        ", a.city && (b += "        <span>(" + a.city.name + ")</span>        "), b += "        ", this.showMoreInfo && (b += '        <span>(<a href="##" data-toggle="popover">更多信息</a>)</span>        '), b += "        "), b += "        ", this._islimited || (b += '        <span class="dropdown" data-weave="app/widget/common/attachment-view/main(' + a.attachment_count + ", 'joborder', " + a.id + ')">        </span>        '), b += "        ", this._islimited || (b += '        <a href="/job#add!id=' + a.id + '" target="_blank" class="content-actions" data-weave="shared/helper/translation(\'title\')" data-i18n="Edit">            <i class="icon-edit icon-blue"></i>        </a>        '), b += '    </div>    <div class="sepH_b item_description clearfix">        ';
+			for (var i = 0, j = c.length; j > i; i++)
+				b += '        <span class="muted">' + c[i].type + ': <a href="/user/preview#' + c[i].user.id + '" data-action="profile/open">' + c[i].user.englishName + "</a></span>        ";
+			b += '                <span class="pull-right contacts muted">            <span data-weave="shared/helper/translation" data-i18n="Contacts"></span>:            ';
+			for (var i = 0, j = d.length; j > i; i++)
+				b += "                ", b += d[i].clientContact.islimited ? "                <span>ID " + d[i].clientContact.id + "</span>                " : '                <a href="/candidate#detail!id=' + d[i].clientContact.id + '" target="_blank">' + [d[i].clientContact.englishName, d[i].clientContact.chineseName].join(" ").trim() + "</a>                ", b += "            ";
+			return b += '        </span>    </div>        <div class="sepH_a tags-area hide">        <input type="text" class="tags" value="' + a.tags + '" data-type="tag">    </div>    <ul class="unstyled inline pull-right last-update">        <li>            <span data-weave="shared/helper/translation" data-i18n="CVs Sent"></span>: ' + a.cvsent_count + '        </li>        <li>            <span data-weave="shared/helper/translation" data-i18n="CCM"></span>: ' + a.clientinterview_count + '        </li>        <li>            <span data-weave="shared/helper/translation" data-i18n="Offer Signed"></span>: ' + a.offersign_count + '        </li>        <li>            <span data-toggle="tooltip" title="' + a.dateAdded + '"><span data-weave="shared/helper/translation" data-i18n="Live days"></span>: ' + a.livedays + '</span>        </li>        <li>            <span data-toggle="tooltip" title="' + a.lastUpdateDate + '"><span data-weave="shared/helper/translation" data-i18n="Last update"></span>: ' + a.lastUpdate + '</span>        </li>    </ul>    <ul class="nav nav-pills line_sep actions">        <li>            <a href="#" data-action="note" data-preview="' + h + '">                <i class="icon-comment ', b += a.islimited ? "icon-transparent" : "icon-blue", b += '"></i>                <b class="note-count">' + a.note_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Note"></span>            </a>        </li>        <li>            <a href="javascript: void(0);">                <i class="icon-envelope icon-blue"></i>                <b class="task-count">' + a.email_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Email"></span>            </a>        </li>        <li>            <a href="#" data-action="task" data-preview="' + h + '">                <i class="icon-time ', b += a.islimited ? "icon-transparent" : "icon-blue", b += '"></i>                <b class="task-count">' + a.todo_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Task"></span>            </a>        </li>        <li>            <a href="#" data-action="toggle/tag">                <i class="icon-tag ', b += a.islimited ? "icon-transparent" : "icon-blue", b += '"></i>                <b class="tags-count">' + a.tags.length + '</b>                <span data-weave="shared/helper/translation" data-i18n="Tags"></span>            </a>        </li>    </ul></div>'
+}
+})

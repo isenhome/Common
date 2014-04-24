@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/common/custom-fields/radio.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group">    <label for="' + a.mapping + '" class="control-label">        ' + a.label + "        ";
+		a.required && (b += '<span class="f_req">*</span>'),
+		b += '    </label>    <div class="controls">        ';
+		for (var c = 0, d = a.options.length; d > c; c++)
+			b += '            <label class="radio">                <input type="radio" value="' + a.options[c] + '" name="' + a.mapping + '" class="', a.required && (b += "required"), b += '"> ' + a.options[c] + "            </label>        ";
+		return b += '        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

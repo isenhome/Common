@@ -1,0 +1,53 @@
+define("troopjs-requirejs/template!shared/widget/common/quick-search/suggestion.html", [], function () {
+	return function (a) {
+		var b,
+		c = "",
+		d = a.client,
+		e = a.candidate,
+		f = a.joborder,
+		g = 0;
+		if (c += '<ul class="unstyled">    ', e.length) {
+			for (c += "    ", g = 0, b = e.length; b > g; g++) {
+				c += "    ";
+				var h = e[g];
+				c += '    <li class="suggestion-item ',
+				g === b - 1 && (c += "splitter"),
+				c += '" data-url="/candidate#detail!id=' + h.id + '">        ',
+				g || (c += '        <strong class="kind" data-weave="shared/helper/translation" data-i18n="People"></strong>        '),
+				c += '        <div class="item-wrap">            <div><span class="name">' + [h.englishName, h.chineseName].join(" ").trim() + "</span> (" + h.mobile + ")</div>            ",
+				h.current && (c += '            <div class="muted">                ', h.current.title && (c += "                " + h.current.title + "                 "), c += "                ", h.current.client && (c += "                at                " + h.current.client.name + "                "), c += "            </div>            "),
+				c += "        </div>    </li>    "
+			}
+			c += "    "
+		}
+		if (c += "    ", d.length) {
+			for (c += "    ", g = 0, b = d.length; b > g; g++) {
+				c += "    ";
+				var i = d[g];
+				c += '    <li class="suggestion-item ',
+				g === b - 1 && (c += "splitter"),
+				c += '" data-url="/company#detail!id=' + i.id + '">        ',
+				g || (c += '        <strong class="kind" data-weave="shared/helper/translation" data-i18n="Company"></strong>        '),
+				c += '        <div class="item-wrap">            <div><span class="name">' + i.name + "</span> ",
+				i.city && (c += "(" + i.city.name + ")"),
+				c += "</div>            ",
+				(i.name1 || i.name2) && (c += '            <div class="muted">                ', i.name1 && (c += "                " + i.name1 + "                 "), c += "                ", i.name2 && (c += "                " + i.name2 + "                "), c += "            </div>            "),
+				c += "        </div>    </li>    "
+			}
+			c += "    "
+		}
+		if (c += "    ", f.length) {
+			for (c += "    ", g = 0, b = f.length; b > g; g++) {
+				c += "    ";
+				var j = f[g];
+				c += '    <li class="suggestion-item ',
+				g === b - 1 && (c += "splitter"),
+				c += '" data-url="/job#detail!id=' + j.id + '">        ',
+				g || (c += '        <strong class="kind" data-weave="shared/helper/translation" data-i18n="Job"></strong>        '),
+				c += '        <div class="item-wrap">            <div><span class="name">' + j.jobTitle + '</span></div>            <div>                <span class="muted">' + j.client.name + "</span>            </div>        </div>    </li>    "
+			}
+			c += "    "
+		}
+		return c += "</ul>"
+	}
+})

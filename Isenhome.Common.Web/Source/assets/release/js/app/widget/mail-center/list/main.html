@@ -1,0 +1,37 @@
+define("troopjs-requirejs/template!app/widget/mail-center/list/main.html", [], function () {
+	return function (a) {
+		var b = '<div id="filter-container" class="well well-small" data-weave="app/widget/mail-center/filter/main"></div><div class="well well-small action-bar clearfix">        <div class="span6 btn-actions">        ';
+		b += "outbox" !== this._type && "sending" !== this._type ? '        <button class="btn btn-small btn-read disabled" data-action="mark/mail(1)" data-weave="shared/helper/translation" data-i18n="Mark read"></button>        <button class="btn btn-small btn-unread disabled" data-action="mark/mail(0)" data-weave="shared/helper/translation" data-i18n="Mark unread"></button>        <button class="btn btn-small disabled" data-action="add/to/folder" data-weave="shared/helper/translation" data-i18n="Add to Folder"></button>        <button class="btn btn-small btn-danger btn-detele disabled" data-action="delete/mail" data-weave="shared/helper/translation" data-i18n="Delete"></button>        ' : '        <button class="btn btn-small disabled" data-weave="shared/helper/translation" data-i18n="Resend" data-action="resend"></button>        ',
+		b += '    </div>    <div class="pull-right">        <span data-weave="shared/helper/translation" data-i18n="Display rows"></span>:        <select class="sort input-mini" data-action="paginate" data-weave="shared/widget/list-paginate/main(' + this._listType + ')">            <option value="10">10</option>            <option value="25">25</option>            <option value="50">50</option>        </select>    </div>    </div><!-- pagination --><div class="pagination clearfix hide" data-weave="shared/widget/pagination/main(\'' + this._listType + '\')"></div><table class="table table_vam mbox_table" >    <colgroup>        ',
+		"sending" !== this._type && (b += '        <col width="">        ', "draft" !== this._type && (b += '        <col width="">        '), b += "                "),
+		b += '        <col width="">        <col width="">        <col>        <col width="125">    </colgroup>';
+		var c = a.list,
+		d = 0,
+		e = c.length;
+		if (b += "    <thead>        <tr>            ", "sending" !== this._type && (b += '            <th>                <input type="checkbox" data-action="check/all">            </th>            ', "draft" !== this._type && (b += '            <th><span data-weave="shared/helper/translation" data-i18n="Sender"></span></th>            '), b += "            "), b += '            <th><span data-weave="shared/helper/translation" data-i18n="To"></span></th>            <th><span data-weave="shared/helper/translation" data-i18n="Subject"></span></th>            <th></th>            <th><span data-weave="shared/helper/translation" data-i18n="Date"></span></th>        </tr>    </thead>    <tbody>        ', e) {
+			for (b += "        ", d; e > d; d++) {
+				b += "        ";
+				var f = c[d];
+				b += '        <tr class="',
+				"inbox" !== this._type || f.status || (b += "unread"),
+				b += '" data-action="view/detail" data-id="' + f.id + '" data-folders="' + this.getFolderId(f.folders) + '">            ',
+				"sending" !== this._type && (b += "            <td>                ", ("outbox" !== this._type || "outbox" === this._type && !f.status) && (b += '                <input type="checkbox" data-action="check/one">                '), b += "            </td>             ", "draft" !== this._type && (b += "            <td>                " + this.formatEmail(f._from) + "            </td>            "), b += "            "),
+				b += "            ";
+				var g = f.to.split(","),
+				h = g.length,
+				i = this.formatEmail(g[0]);
+				h > 1 && (i += " ..."),
+				b += "            <td>                ",
+				"outbox" !== this._type || f.status || (b += '<span class="label label-inverse send-fail" data-weave="shared/helper/translation" data-i18n="Send fail"></span>'),
+				b += "                " + i + '            </td>            <td class="subject-cell">                <div class="pull-left folder-name">                ',
+				f.folders && (b += "                    " + this.getFolderName(f.folders)),
+				b += '                </div>                <div class="pull-left subject-name">                    <div class="pull-left">&nbsp;</div>                    ' + f.subject + "                    </div>            </td>            <td>                ",
+				f.attachment && (b += '                <span class="icon-paper-clip"></span>                '),
+				b += "            </td>            <td>                " + (f.dateAdded ? f.dateAdded : "") + "            </td>        </tr>        "
+			}
+			b += "        "
+		} else
+			b += '        <tr>            <td colspan="6">                <p class="text-center">                    未发现邮件!                </p>            </td>        </tr>        ';
+		return b += '    </tbody></table><!-- pagination --><div class="pagination clearfix hide" data-weave="shared/widget/pagination/main(\'' + this._listType + "')\"></div>"
+	}
+})

@@ -1,0 +1,16 @@
+define("troopjs-requirejs/template!app/widget/company/detail/intention-tab/main.html", [], function () {
+	return function (a) {
+		for (var b = '<table class="table table-striped table-bordered">    <colgroup>        <col width="">        <col width="">        <col width="">        <col width="">        <col width="">        <col width="">        <col width="70">    </colgroup>    <thead>        <tr>            <th data-weave="shared/helper/translation" data-i18n="Name"></th>            <th data-weave="shared/helper/translation" data-i18n="Company"></th>            <th data-weave="shared/helper/translation" data-i18n="Title"></th>            <th data-weave="shared/helper/translation" data-i18n="Note"></th>             <th data-weave="shared/helper/translation" data-i18n="Time"></th>            <th data-weave="shared/helper/translation" data-i18n="User"></th>            <th data-weave="shared/helper/translation" data-i18n="Operation"></th>        </tr>    </thead>    <tbody>        ', c = 0, d = a.length; d > c; c++) {
+			b += "        ";
+			var e = a[c];
+			b += "        <tr>            <td>                ",
+			b += e.candidate.islimited ? "                ID: " + e.candidate.id + "                " : '                <a href="/candidate#detail!id=' + e.candidate.id + '" target="_blank">' + [e.candidate.englishName, e.candidate.chineseName].join(" ").trim() + "</a>                ",
+			b += '            </td>            <td><a href="/company#detail!id=' + e.candidate.company.id + '">' + e.candidate.company.name + "</a> ",
+			!e.candidate.company.type || "bding" !== e.candidate.company.type && "client" !== e.candidate.company.type || (b += '(<span class="red" data-weave="shared/helper/translation" data-i18n="' + e.candidate.company.type + ' company"></span>)'),
+			b += "</td>            <td>" + e.candidate.title + "</td>            <td>" + e.note + "</td>            <td>" + e.date + '</td>            <td><a href="/user/preview#' + e.user.id + '" data-action="profile/open">' + e.user.englishName + "</a></td>            <td>                ",
+			this.userId === e.user.id && (b += '                <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/target(' + c + ')"></button>                '),
+			b += "            </td>        </tr>        "
+		}
+		return b += "    </tbody></table>"
+	}
+})

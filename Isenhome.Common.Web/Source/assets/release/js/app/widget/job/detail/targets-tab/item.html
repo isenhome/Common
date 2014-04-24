@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/job/detail/targets-tab/item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a;
+		return b += "",
+		c.is_deleted || (b += '<tr data-id="' + c.client.id + '">    <td><input type="checkbox" data-action="toggle/one"></td>    <td>        <a href="/company#detail!id=' + c.client.id + '" target="_blank" class="client-name">' + c.client.name + '</a>    </td>    <td>        <a href="#" data-type="select" data-pk="' + c.id + '" data-value="' + c.importance + '" class="importance editable-click ', c.importance || (b += "editable-empty"), b += '">            ', b += c.importance ? '            <span data-weave="shared/helper/translation" data-i18n="' + c.importance + '">' + c.importance + "</span>            " : '            <span data-weave="shared/helper/translation" data-i18n="Not selected"></span>            ', b += '        </a>    </td>    <td>        <a href="#" data-type="textarea" data-pk="' + c.id + '" data-value="' + c.note + '" class="target-note editable-click ', c.note || (b += "editable-empty"), b += '">            ', b += c.note ? "            " : '            <span data-weave="shared/helper/translation" data-i18n="Not filled"></span>            ', b += '        </a>    </td>    <td>        <a href="#" data-action="show/active(' + c.client.name + ')">' + c.active_count + '</a>    </td>    <td>        <a href="#" data-action="show/inactive(' + c.client.name + ')">' + c.inactive_count + '</a>    </td>    <td>        <a href="/user/preview#' + c.user.id + '" data-action="profile/open">' + c.user.englishName + "</a>    </td>    <td>        " + c.dateAdded + '    </td>    <td>        <button class="btn btn-small" data-weave="shared/helper/translation" data-action="edit/target(' + c.id + ')" data-i18n="Edit"></button>    </td></tr>'),
+		b
+	}
+})

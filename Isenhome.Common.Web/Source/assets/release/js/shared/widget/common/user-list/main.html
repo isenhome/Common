@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!shared/widget/common/user-list/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = 0,
+		d = a.length;
+		for (b += '<option value=""></option>'; d > c; c += 1)
+			b += '    <option value="' + a[c].id + '">' + a[c].name + "</option>";
+		return b
+	}
+})

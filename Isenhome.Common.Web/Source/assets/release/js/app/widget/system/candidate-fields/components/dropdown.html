@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/system/candidate-fields/components/dropdown.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group" data-action="component">    <span class="icon-remove" data-action="remove/component"></span>    <label class="control-label">        <span class="icon-move-ns icon-blue pull-left"></span>        ' + a.label + '        <span class="f_req ';
+		a.required || (b += "hide"),
+		b += '">*</span>    </label>    <div class="controls">        <select disabled="true">            ';
+		for (var c = 0, d = a.options.length; d > c; c++)
+			b += '                <option value="' + a.options[c] + '">' + a.options[c] + "</option>            ";
+		return b += '        </select>        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

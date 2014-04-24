@@ -1,0 +1,8 @@
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\bin\Debug\Isenhome.Common.Test.exe.config
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\bin\Debug\Isenhome.Common.Test.exe
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\bin\Debug\Isenhome.Common.Test.pdb
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\obj\Debug\Isenhome.Common.Test.csprojResolveAssemblyReference.cache
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\obj\Debug\Isenhome.Common.Test.exe
+c:\users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\obj\Debug\Isenhome.Common.Test.pdb
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\bin\Debug\Isenhome.Common.Core.dll
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Test\bin\Debug\Isenhome.Common.Core.pdb

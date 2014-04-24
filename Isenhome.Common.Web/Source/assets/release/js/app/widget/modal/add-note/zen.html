@@ -1,0 +1,23 @@
+define("troopjs-requirejs/template!app/widget/modal/add-note/zen.html", [], function () {
+	return function (a) {
+		var b = '<div class="actions">    <button class="btn btn-primary" data-action="save" data-weave="shared/helper/translation" data-i18n="Save" form="add-note-zen-form"></button>    <a href="#" class="btn" data-action="close" data-weave="shared/helper/translation" data-i18n="Back"></a></div><form action="#" class="form-horizontal" id="add-note-zen-form">    ';
+		if (a.length) {
+			b += '    <div class="control-group">        <label class="control-label" data-weave="shared/helper/translation" data-i18n="Attachment"></label>        <div class="controls text_line">                ';
+			for (var c = 0, d = a.length; d > c; c++) {
+				b += "                ";
+				var e = a[c];
+				b += "                ",
+				b += e.tag ? '                <span class="label" style="background-color: ' + e.tag.color + ';">' + e.tag.value + "</span>                " : '                <span class="label"  data-weave="shared/helper/translation" data-i18n="Unknown"></span>                ',
+				b += '                <a href="#" class="file-type-icon ' + e.ext.toLowerCase() + ' view" data-action="preview(' + e.uuidname + ", '" + e.ext + "')\">" + e.originname + "</a>                <br>                "
+			}
+			b += "            </ul>        </div>    </div>    "
+		}
+		b += '    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Type"></span>            <span class="f_req">*</span>        </label>        <div class="controls">            <select name="category" class="input-medium required" data-action="note/type">            </select>        </div>    </div>    <div class="control-group control-group-question hide">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Note"></span>            <span class="f_req">*</span>        </label>        <div class="controls text_line controls-question">        </div>    </div>        <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Status"></span>        </label>        <div class="controls">            <select name="status" class="input-medium"></select>        </div>    </div>    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Event Date"></span>        </label>        <div class="controls">            <input name="date" type="text" class="input-small required dateISO" data-weave="shared/widget/common/date-picker/main">            <select name="hour" class="input-mini">                ';
+		for (var c = 0, d = 24; d > c; c++)
+			b += '                <option value="' + c + '">' + c + "</option>                ";
+		b += '            </select>            <select name="minute" class="input-mini">                ';
+		for (var c = 0, d = 60; d > c; c += 5)
+			b += '                <option value="' + c + '">' + c + "</option>                ";
+		return b += "            </select>        </div>    </div></form>"
+	}
+})

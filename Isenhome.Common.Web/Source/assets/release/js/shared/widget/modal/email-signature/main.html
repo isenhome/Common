@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!shared/widget/modal/email-signature/main.html", [], function () {
+	return function () {
+		var a = '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>    <h3 data-weave="shared/helper/translation" data-i18n="Email Signature"></h3></div><div class="modal-body">    <form action="#" class="form-horizontal" id="email-signaure-form">        <textarea name="signature" data-signature="true" data-weave="shared/widget/common/ckeditor/main"></textarea>    </form></div><div class="modal-footer">    <button class="btn action" data-dismiss="modal" data-weave="shared/helper/translation" data-i18n="Cancel"></button>    <button class="btn btn-primary action" data-action="save" data-weave="shared/helper/translation" data-i18n="Save" form="email-signaure-form"></button></div>';
+		return a
+	}
+})

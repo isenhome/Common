@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/email/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup>    <col>    <col>    <col>    <col>    <col></colgroup><thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="Sender"></th>        <th data-weave="shared/helper/translation" data-i18n="To"></th>        <th data-weave="shared/helper/translation" data-i18n="Subject"></th>        <th data-weave="shared/helper/translation" data-i18n="Date"></th>        <th data-weave="shared/helper/translation" data-i18n="Attachment"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += "    <tr>        <td>" + e._from + "</td>        <td>" + e.to + "</td>        <td>" + e.subject + "</td>        <td>" + (e.dateAdded ? e.dateAdded : "") + "</td>        <td>             ",
+			e.attachment && (b += '            <span class="icon-paper-clip"></span>            '),
+			b += "        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

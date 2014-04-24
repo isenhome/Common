@@ -1,0 +1,19 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/attachment-reporting/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.attachments;
+		b += '<div class="row-fluid">    <div class="span12">        <p class="text-right">            <button class="btn" data-weave="shared/helper/translation" data-i18n="Export Reporting" data-action="export/csv"></button>            </p>        <table class="table table-striped table-bordered dTableR invisible">            <thead>                <tr>                    <th data-mapping="id">ID</th>                    <th data-mapping="name" data-weave="shared/helper/translation" data-i18n="User"></th>                    <th data-mapping="attachments" data-weave="shared/helper/translation" data-i18n="All Attachments"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '">' + c[d].value + "</th>                    ";
+		b += '                    <th data-mapping="candidate_unknown" data-weave="shared/helper/translation" data-i18n="Unknown Type Candidates\' Attachments"></th>                    <th data-mapping="clientcompany_unknown" data-weave="shared/helper/translation" data-i18n="Unknown Type Companies\' Attachments"></th>                    <th data-mapping="joborder_unknown" data-weave="shared/helper/translation" data-i18n="Unknown Type Jobs\' Attachments"></th>                </tr>            </thead>            <tbody>            </tbody>            <tfoot>                <tr class="sum">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Summary"></th>                    <th data-mapping="attachments"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		b += '                    <th data-mapping="candidate_unknown"></th>                    <th data-mapping="clientcompany_unknown"></th>                    <th data-mapping="joborder_unknown"></th>                </tr>                <tr class="team">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Team highest" class="highlight"></th>                    <th data-mapping="attachments"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		b += '                    <th data-mapping="candidate_unknown"></th>                    <th data-mapping="clientcompany_unknown"></th>                    <th data-mapping="joborder_unknown"></th>                </tr>                <tr class="company">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Company highest" class="highlight"></th>                    <th data-mapping="attachments"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		return b += '                    <th data-mapping="candidate_unknown"></th>                    <th data-mapping="clientcompany_unknown"></th>                    <th data-mapping="joborder_unknown"></th>                </tr>            </tfoot>        </table>    </div></div>'
+	}
+})

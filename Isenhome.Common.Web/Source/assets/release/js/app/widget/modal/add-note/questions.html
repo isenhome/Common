@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/modal/add-note/questions.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = function () {
+			return parseInt(1e5 * Math.random(), 10)
+		};
+		b += "";
+		for (var d = 0, e = a.length; e > d; d++)
+			b += "", a[d].field && (b += "<div>" + a[d].field + "</div>"), b += '<div class="sepH_b">    <textarea cols="30" rows="1" name="record-' + c() + '" class="span655 required" data-weave="shared/widget/common/autosize/main"></textarea></div>';
+		return b
+	}
+})

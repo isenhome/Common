@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/modal/invalid-invoice/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.reasons;
+		b += '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>    <h3>确认作废</h3></div><div class="modal-body">    <form action="#" class="form-horizontal" id="invalid-invoice-form">        <p>确认作废后, 系统将从报表中删除相关业绩分配, 并且将自动通知项目参与者及财务</p>        <div class="control-group">            <label class="control-label">                <span data-weave="shared/helper/translation" data-i18n="Invalid Reason"></span>                <span class="f_req">*</span>            </label>            <div class="controls">                <select name="reason">                    <option value="">请选择</option>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <option value="' + c[d].code + '">' + c[d].value + "</option>                    ";
+		return b += '                </select>            </div>        </div>    </form></div><div class="modal-footer">    <button class="btn" data-action="cancel" data-weave="shared/helper/translation" data-i18n="Cancel"></button>    <button class="btn btn-primary" data-action="add" data-weave="shared/helper/translation" data-i18n="Confirm" form="invalid-invoice-form"></button></div>'
+	}
+})

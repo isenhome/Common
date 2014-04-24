@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/common/people-list/option.html", [], function () {
+	return function (a) {
+		var b = '<div class="clearfix">    <strong>' + [a.englishName, a.chineseName].join(" ").trim() + '</strong>    <p class="muted">' + a.title + " @ " + a.company.name + "</p></div>";
+		return b
+	}
+})

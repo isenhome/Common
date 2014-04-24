@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/plugins/import-resume/ziplist.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.zip;
+		b += '<li>    <label class="radio">        <input type="radio" name="resume-radio" checked data-action="zip/select">        <span>所有简历压缩包</span>    </label></li>';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '<li>    <label class="radio">        <input type="radio" name="resume-radio" data-action="zip/select(\'' + c[d].filename.replace(".zip", "") + "')\">        <span>" + c[d].filename + '</span>        <p class="hint">' + this.formatDate(c[d].createdate) + "</p>    </label></li>";
+		return b
+	}
+})

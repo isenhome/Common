@@ -1,0 +1,16 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/people/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup>    <col>    <col>    <col>    <col>    <col>    <col></colgroup><thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="People"></th>        <th data-weave="shared/helper/translation" data-i18n="Company"></th>        <th data-weave="shared/helper/translation" data-i18n="Title"></th>        <th data-weave="shared/helper/translation" data-i18n="Date"></th>        <th data-weave="shared/helper/translation" data-i18n="Keyin"></th>        <th data-weave="shared/helper/translation" data-i18n="Owner"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += "    <tr>        <td>            ",
+			b += e.islimited ? "            ID: " + e.id + "            " : '            <a href="/candidate#detail!id=' + e.id + '" target="_blank">' + [e.englishName, e.chineseName].join(" ") + "</a>            ",
+			b += "        </td>        <td>            ",
+			e.company && (b += '            <a href="/company#detail!id=' + e.company.id + '" target="_blank">' + e.company.name + "</a>            "),
+			b += "        </td>        <td>            ",
+			e.title && (b += "            " + e.title + "            "),
+			b += "        </td>        <td>" + e.dateAdded + '</td>        <td>            <a href="/user/preview#' + e.addedBy.id + '" data-action="user/open">' + e.addedBy.englishName + '</a>        </td>        <td>            <a href="/user/preview#' + e.owner.id + '" data-action="user/open">' + e.owner.englishName + "</a>        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

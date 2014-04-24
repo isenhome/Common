@@ -1,0 +1,26 @@
+define("troopjs-requirejs/template!app/widget/task/item.html", [], function () {
+	return function (a) {
+		var b,
+		c = "",
+		d = a.category;
+		c += '<td>    <input data-id="' + a.id + '" type="checkbox" ',
+		a.done && (c += 'checked="checked"'),
+		c += ' data-action="check/one" ',
+		this.userId === a.addedBy.id || this.isParticipant() || (c += 'disabled="disabled"'),
+		c += '></td><td>    <span class="label" style="background-color: ' + d.color + ';">' + d.value + "</span></td><td>    ",
+		"joborder" === a.external_type ? c += '        <a href="/job#detail!id=' + a.target.id + '" target="_blank">' + a.target.name + "</a>    " : "client" === a.external_type ? c += '        <a href="/company#detail!id=' + a.target.id + '" target="_blank">' + a.target.name + "</a>    " : a.target && a.target.candidate ? (c += "        ", b = a.target.candidate, c += "        ", c += b.islimited ? "        ID: " + b.id + "        " : '        <a href="/candidate#detail!id=' + b.id + '" target="_blank">' + [b.englishName, b.chineseName].join(" ").trim() + "</a>        ", c += "    ") : a.target && (c += "        ", c += a.target.islimited ? "        ID: " + a.target.id + "        " : '        <a href="/candidate#detail!id=' + a.target.id + '" target="_blank">' + a.target.name + "</a>        ", c += "    "),
+		c += "</td><td>    ",
+		a.target && a.target.joborder ? c += '    <a href="job#detail!id=' + a.target.joborder.id + '" target="_blank">' + a.target.joborder.jobTitle + " (ID: " + a.target.joborder.id + ")</a>    " : (c += "        ", b ? b && !b.islimited && (c += "        " + (a.content || "") + "        ") : c += "        " + (a.content || "") + "        ", c += "    "),
+		c += "</td><td>    ",
+		c += a.allday ? "    " + this.getDate(a.date) + "    " : "    " + a.date + "    ",
+		c += "</td><td>    ";
+		for (var e = 0, f = a.users.length; f > e; e++) {
+			c += "    ";
+			var g = a.users[e];
+			c += '    <div><a href="/user/preview#' + g.id + '" data-action="open/profile">' + g.englishName + "</a></div>    "
+		}
+		return c += '</td><td>    <a href="/user/preview#' + a.addedBy.id + '" data-action="open/profile">' + a.addedBy.englishName + "</a></td> <td>    ",
+		a.category.is_buildin || this.userId !== a.addedBy.id && !this.isParticipant() || (c += '    <button class="btn btn-mini" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/todo"></button>    '),
+		c += "</td>"
+	}
+})

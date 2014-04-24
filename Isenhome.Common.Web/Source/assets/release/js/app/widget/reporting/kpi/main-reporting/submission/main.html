@@ -1,0 +1,20 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/submission/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this.type;
+		b += '<colgroup>    <col>    <col>    <col>    <col>    <col>    <col></colgroup><thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="Attachment"></th>        <th data-weave="shared/helper/translation" data-i18n="People"></th>        <th data-weave="shared/helper/translation" data-i18n="Job"></th>        <th data-weave="shared/helper/translation" data-i18n="Client"></th>        <th data-weave="shared/helper/translation" data-i18n="Owner"></th>        <th data-weave="shared/helper/translation" data-i18n="Operator"></th>    </tr></thead><tbody>    ';
+		for (var d = 0, e = a.length; e > d; d++) {
+			b += "    ";
+			var f = a[d];
+			b += "    <tr>        <td>            " + f.candidate.attachment_count + "        </td>        <td>            ",
+			b += f.candidate.islimited ? "            ID: " + f.candidate.id + "            " : '            <a href="/candidate#detail!id=' + f.candidate.id + '" target="_blank">' + [f.candidate.englishName, f.candidate.chineseName].join(" ") + "</a>            ",
+			b += '        </td>        <td>            <a href="/job#detail!id=' + f.joborder.id + '" target="_blank">' + f.joborder.jobTitle + '</a>        </td>        <td>            <a href="/company#detail!id=' + f.joborder.client.id + '" target="_blank">' + f.joborder.client.name + '</a>        </td>        <td>            <a href="/user/preview#' + f.candidate.owner.id + '" data-action="user/open">' + f.candidate.owner.englishName + "</a>        </td>        <td>            ";
+			var g = f.detail.filter(function (a) {
+					return a.type.toLowerCase().indexOf(c) > -1
+				});
+			g && g.length && (b += '            <a href="/user/preview#' + g[0].user.id + '" data-action="user/open">' + g[g.length - 1].user.englishName + "</a>            "),
+			b += "        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

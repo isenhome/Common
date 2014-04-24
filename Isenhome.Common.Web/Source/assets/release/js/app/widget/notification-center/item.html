@@ -1,0 +1,42 @@
+define("troopjs-requirejs/template!app/widget/notification-center/item.html", [], function () {
+	return function (a) {
+		function b(a) {
+			return [a.englishName, a.chineseName].join(" ")
+		}
+		var c = "",
+		d = a,
+		e = d.dateAdded.split(" "),
+		f = e[0],
+		g = e[1],
+		h = d.fromuser;
+		d.touser;
+		var i;
+		switch (d.type) {
+		case "Request for Share":
+		case "Offer Signed":
+		case "Candidate Edited":
+			i = "label-pink";
+			break;
+		case "Shared":
+		case "Invoice Received":
+			i = "label-red";
+			break;
+		case "Invoice Added":
+		case "Invoice edited":
+		case "Shortlist":
+			i = "label-purple";
+			break;
+		case "Invoice To be sent":
+			i = "label-lightblue";
+			break;
+		case "Invoice Sent":
+			i = "label-blue";
+			break;
+		case "Job Rejected":
+			i = "label-inverse"
+		}
+		return c += '<div class="activity-item clearfix">    ',
+		"Request for Share" === d.type || "Shared" === d.type ? (c += '    <div class="pull-left span2 activity-time">        <p>            <span>' + g + "</span>            <span>" + f + '</span>        </p>    </div>    <div class="pull-left span10 activity-detail">                <div class="well">            <div class="title">                <span class="label" data-weave="shared/helper/translation" data-i18n="' + d.type + '"></span>                <span class="pull-right">                    ', c += "Shared" === d.type || d.processed ? "                    <span>已共享</span>                    " : '                    <button class="btn btn-primary btn-mini" data-action="confirm/share(' + d.candidate.id + ", " + h.id + ", " + d.id + ')">共享</button>                    ', c += '                </span>            </div>            <div class="content">                <p>                    <a href="/candidate#detail!id=' + d.candidate.id + '" target="_blank">' + b(d.candidate) + '</a>                </p>                <p>                    From: <a href="/user#detail!id=' + h.id + '" data-action="profile/open">' + h.englishName + "</a>                </p>                            </div>        </div>            </div>    ") : "Invoice To be sent" === d.type || "Invoice Added" === d.type || "Invoice Invalid" === d.type || "Offer Signed" === d.type || "Invoice edited" === d.type || "Invoice Sent" === d.type || "Invoice Received" === d.type || "Job Rejected" === d.type || "Shortlist" === d.type ? c += '    <div class="pull-left span2 activity-time">        <p>            <span>' + g + "</span>            <span>" + f + '</span>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="title">                <span class="label ' + i + '" data-weave="shared/helper/translation" data-i18n="' + d.type + '"></span>            </div>            <div class="content">                <p>                    <a href="/job#detail!id=' + d.joborder.id + '" target="_blank">' + d.joborder.jobTitle + " (ID: " + d.joborder.id + ')</a>                 </p>                <p>                    <a href="/candidate#detail!id=' + d.candidate.id + '" data-action="profile/open">' + b(d.candidate) + "</a>                 </p>                            </div>        </div>    </div>    " : "Candidate Edited" === d.type && (c += '    <div class="pull-left span2 activity-time">        <p>            <span>' + g + "</span>            <span>" + f + '</span>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="title">                <span class="label ' + i + '" data-weave="shared/helper/translation" data-i18n="' + d.type + '"></span>            </div>            <div class="content">                <p>                    候选人: <a href="/candidate#detail!id=' + d.candidate.id + '" target="_blank">' + b(d.candidate) + '</a>                 </p>                <p>                    编辑者: <a href="/user/preview#' + d.fromuser.id + '" data-action="profile/open">' + d.fromuser.englishName + "</a>                 </p>                            </div>        </div>    </div>    "),
+		c += "</div>"
+	}
+})

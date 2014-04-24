@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/job/add/attachment.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c];
+			b += "<li>    ",
+			b += e.tag ? '    <span class="label editable editable-click" data-type="select" data-pk="' + e.id + '" style="background-color:' + e.tag.color + ';">' + e.tag.value + "</span>    " : '    <span class="label editable editable-click" data-type="select" data-pk="' + e.id + '" data-weave="shared/helper/translation" data-i18n="Unknown"></span>    ',
+			b += '    <a href="#" data-id="' + e.id + '" class="attachment-item file-type-icon ' + e.ext.toLowerCase() + '" data-action="attachment/preview(\'' + e.uuidname + "')\">" + e.originname + '</a>    <a href="#" data-action="remove/attachment"><span class="icon-remove"></span></a></li>'
+		}
+		return b
+	}
+})

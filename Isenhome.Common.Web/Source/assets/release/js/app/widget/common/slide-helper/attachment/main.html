@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/common/slide-helper/attachment/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.hasCheck;
+		return b += '<aside>    <div class="handle ui-resizable-handle ui-resizable-w" data-action="slide/helper/toggle"></div></aside><div class="clearfix btns">    <span class="count-info hide">重复数据: <strong class="red"></strong></span>    ',
+		c && (b += '    <button class="btn btn-mini" data-action="attachment/helper/find" data-weave="shared/helper/translation" data-i18n="检查系统内已有人才"></button>    '),
+		b += '    <button class="btn btn-mini" data-action="attachment/helper/popup" data-weave="shared/helper/translation" data-i18n="Fullscreen"></button>    <button class="btn btn-mini" data-action="attachment/helper/print" data-weave="shared/helper/translation" data-i18n="Print"></button></div><div class="slide-content">    <iframe src="" frameborder="0" id="attachment-frame" frameBorder="0"></iframe></div><div class="resize-mask"></div><div class="slide-close">    <a href="#" data-action="slide/helper/close" data-weave="shared/helper/translation(\'title\')" data-i18n="Close"><i class="icon-remove"></i></a></div>'
+	}
+})

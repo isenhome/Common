@@ -1,0 +1,11 @@
+define("troopjs-requirejs/template!app/widget/common/share-request/main.html", [], function () {
+	return function (a) {
+		var b = '<p>    <span class="candidate">        <span>重复数据:</span>        ';
+		return b += a.islimited ? "        <span>ID - " + a.candidate.id + "</span>        " : '        <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + a.candidate.englishName + " " + a.candidate.chineseName + "</a>        ",
+		b += '    </span>        <span class="owner">        <span>拥有者:</span> <a href="/user/preview#' + a.owner.id + '" data-action="profile/open">' + a.owner.englishName + '</a>    </span>        <span class="request-share">        ',
+		b += a.islimited ? '        <button class="btn" data-action="auto/share">自动验证共享</button>        ' : '        <span class="shared">已经共享</span>        ',
+		b += "    </span></p>",
+		a.candidate.title && a.candidate.company && (b += '<p class="title-company">    ' + a.candidate.title + ' at <a href="/company#detail!id=' + a.candidate.company.id + '" target="_blank">' + a.candidate.company.name + "</a></p>"),
+		b += '<p>    <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/this(' + a.candidate.id + ')"></button>    <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="将附件上传至此候选人" data-action="merge/attachment"></button></p>'
+	}
+})

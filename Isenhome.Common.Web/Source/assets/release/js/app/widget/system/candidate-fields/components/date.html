@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/system/candidate-fields/components/date.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group" data-action="component">	<span class="icon-remove" data-action="remove/component"></span>    <label class="control-label">    	<span class="icon-move-ns icon-blue pull-left"></span>        ' + a.label + '        <span class="f_req ';
+		return a.required || (b += "hide"),
+		b += '">*</span>    </label>    <div class="controls">        <input type="text" class="input-medium" disabled="true">        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

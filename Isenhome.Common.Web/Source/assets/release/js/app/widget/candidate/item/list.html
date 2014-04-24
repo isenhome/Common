@@ -1,0 +1,59 @@
+define("troopjs-requirejs/template!app/widget/candidate/item/list.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.englishName || "",
+		d = a.chineseName || "",
+		e = [c, d].join(" ").trim(),
+		f = this.hideContact;
+		a.linkedin || "";
+		var g = a.islimited,
+		h = a.status,
+		i = a.mobile || "",
+		j = a.mobile1 || "",
+		k = a.mobile2 || "",
+		l = "icon-blue",
+		m = this.actions;
+		(a.islimited || this._isAdmin) && (l = "icon-transparent"),
+		b += "<td>    ",
+		(!g || this._isAdmin) && (b += '    <input type="checkbox" data-action="list/check">    '),
+		b += "</td><td>    ",
+		g || this._isAdmin || (b += '    <span class="dropdown" data-paste="true" data-weave="app/widget/common/attachment-view/main(' + a.attachment_count + ", 'candidate', " + a.id + ')">    </span>    '),
+		b += '</td><td>    <a href="#" data-action="note" ',
+		(a.islimited || this._isAdmin) && (b += 'class="disabled"'),
+		b += '>        <i class="icon-comment ' + l + '"></i>        <b class="note-count">' + a.note_count + "</b>     </a></td><td>    ",
+		a.islimited || !a.mobile && !a.email || !a.englishName && !a.chineseName || (b += '        <a href="#" class="qrcode-action ', m.qrcode || (b += "hide"), b += '">            <span class="icon-qrcode"></span>        </a>        '),
+		b += "    ",
+		a.islimited ? b += '    <span class="title">ID: ' + a.id + "</span>    " : (b += '    <a href="/candidate#detail!id=' + a.id + '" class="title ', "contact" === a.type && (b += "red"), b += '">        ' + e + '    </a>    <a href="/candidate#detail!id=' + a.id + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a>    '),
+		b += "</td><td>    ",
+		f ? (b += "    ", i && (b += '    <a href="tel:' + i + '">' + i + "</a>    "), b += "    ", j && (b += '    , <a href="tel:' + j + '">' + j + "</a>    "), b += "    ", k && (b += '    , <a href="tel:' + k + '">' + k + "</a>    "), b += "    ") : (b += "    ", (i || j || k) && (b += '    <span data-weave="shared/helper/toggle">        <a href="#" data-weave="shared/helper/translation" data-i18n="View" data-action="helper/toggle/show" class="helper-toggle-show"></a>        <span class="hide" data-toggle="view">            ', i && (b += '            <a href="tel:' + i + '">' + i + "</a>            "), b += "            ", j && (b += '            , <a href="tel:' + j + '">' + j + "</a>            "), b += "            ", k && (b += '            , <a href="tel:' + k + '">' + k + "</a>            "), b += "        </span>    </span>    "), b += "    "),
+		b += "</td><td>    ",
+		a.location && (b += "    " + a.location.name + "    "),
+		b += "</td><td>    ",
+		a.company && (b += '    <a href="/company#detail!id=' + a.company.id + '" class="', a.company && a.company.type && "normal" !== a.company.type && "generated" !== a.company.type && (b += "red"), b += '" target="_blank" title="' + a.company.name + '">' + a.company.name + "</a>    "),
+		b += "</td><td>    " + (a.work_years || 0) + ' <span data-weave="shared/helper/translation" data-i18n="Year(s)"></span></td><td>    ' + (a.current_years || 0) + ' <span data-weave="shared/helper/translation" data-i18n="Year(s)"></span></td><td>    ',
+		a.current && a.current.title && (b += "    " + a.current.title + "    "),
+		b += "</td><td>    ",
+		b += h ? '    <span class="label status" style="background-color: ' + h.color + ';">' + h.value + "</span>    " : '    <span class="label status"></span>    ',
+		b += '</td><td class="update-date">    <span data-toggle="tooltip" title="' + a.lastUpdateDate + '">' + a.lastUpdate + '</span></td><td>    <div class="dropdown">        <a href="javascript: void(0);" class="',
+		b += this.islimited || this._isAdmin ? "disabled" : "dropdown-toggle",
+		b += '" data-toggle="dropdown"><i class="icon-list-alt"></i> <i class="caret"></i></a>        <ul class="dropdown-menu">            ',
+		g || (b += '            <li>                <a href="/candidate#add!id=' + a.id + '" target="_blank" data-weave="shared/helper/translation" data-i18n="Edit People"></a>            </li>            '),
+		b += '            <li class="',
+		m.email || (b += "hide"),
+		b += '">                <a href="#" data-action="email">                    <b class="email-count">' + a.email_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Email"></span>                </a>            </li>            <li class="',
+		m.task || (b += "hide"),
+		b += '">                <a href="#" data-action="task">                    <b>' + a.todo_count + '</b>                     <span data-weave="shared/helper/translation" data-i18n="Task"></span>                </a>            </li>            <li class="',
+		m.intention || (b += "hide"),
+		b += '">                <a href="#" data-action="target">                    <b class="target-count">' + a.targetcompany_count + '</b>                     <span data-weave="shared/helper/translation" data-i18n="Intention"></span>                </a>            </li>            <li class="',
+		m.floating || (b += "hide"),
+		b += '">                <a href="#" data-action="floating">                    <b class="floating-count">' + a.floating_out_count + '</b>                     <span>Floating</span>                </a>            </li>            <li class="',
+		m.shortlist || (b += "hide"),
+		b += '">                <a href="#" data-action="shortlist">                    <b class="shortlist-count">' + a.shortlist_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Job"></span>                </a>            </li>            <li class="',
+		m.folder || (b += "hide"),
+		b += '">                <a href="#" data-action="add/to/folder">                    <b class="folder-count">' + a.folders.length + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Folder"></span>                </a>            </li>        </ul>    </div></td>';
+		for (var n = 0, o = this.table.length; o > n; n++)
+			b += "<td>" + (a[this.table[n].mapping].value || "")
+				 + "</td>";
+			return b
+		}
+	})

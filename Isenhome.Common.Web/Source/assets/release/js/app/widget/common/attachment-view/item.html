@@ -1,0 +1,15 @@
+define("troopjs-requirejs/template!app/widget/common/attachment-view/item.html", [], function () {
+	return function (a) {
+		for (var b = "", c = a.list.length; c--; ) {
+			var d = a.list[c];
+			b += '<li>    <div class="clearfix">        <div class="sepH_a">            <span class="pull-right view">' + d.dateAdded + "</span>            ",
+			b += d.tag ? '            <i class="label editable editable-click" data-type="select" data-pk="' + d.id + '" style="background-color: ' + d.tag.color + ';">' + d.tag.value + "</i>            " : '            <i class="label editable editable-click" data-type="select" data-pk="' + d.id + '" data-weave="shared/helper/translation" data-i18n="Unknown"></i>            ',
+			b += '            <a href="#" class="file-type-icon ' + d.ext.toLowerCase() + ' view" data-action="preview(' + d.uuidname + ", '" + d.ext + "')\">" + d.originname + '</a>        </div>        <div class="sepH_a view">            <span class="pull-right">                <button class="btn btn-mini" data-action="preview(' + d.uuidname + ", '" + d.ext + '\')" data-weave="shared/helper/translation" data-i18n="Preview"></button>                ',
+			a.userId === d.addedBy.id && (b += '                <button class="btn btn-mini btn-delete" data-action="attachment/delete(' + d.uuidname + ')" data-weave="shared/helper/translation" data-i18n="Delete"></button>                '),
+			b += "                ",
+			(a.userId === d.addedBy.id || a.allowDownload) && (b += '                <button class="btn btn-mini" data-action="attachment/download(' + d.uuidname + ')" data-weave="shared/helper/translation" data-i18n="Download"></button>                '),
+			b += "            </span>            <span><em>" + (d.filesize / 1024).toFixed(2) + 'KB</em></span>            <span><span data-weave="shared/helper/translation" data-i18n="Uploader"></span>:<a href="user/preview#' + d.addedBy.id + '" data-action="attachment/profile/open">' + d.addedBy.englishName + "</a></span>        </div>    </div></li>"
+		}
+		return b
+	}
+})

@@ -1,0 +1,33 @@
+define("troopjs-requirejs/template!app/widget/candidate/detail/linkedin-tab/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.data,
+		d = c.positions && c.positions.values ? c.positions.values : [],
+		e = c.skills;
+		if (b += '<div class="linkedin-content clear">    <div class="sepH_b clearfix">        <div class="thumbnail pull-left" style="margin-right: 10px">            <img alt="' + c.formattedName + '" src="' + (c.pictureUrl ? c.pictureUrl : "http://s.c.lnkd.licdn.com/scds/common/u/img/icon/icon_no_photo_100x100.png") + '">        </div>        <div class="pull-left">            <h3>' + c.formattedName + "</h3>            <div>                ", c.location && c.location.name && (b += '                <span class="muted">' + c.location.name + "</span>                "), b += "                ", c.industry && (b += '                | <span class="muted"><span data-weave="shared/helper/translation" data-i18n="Industry"></span>: ' + c.industry + "</span>                "), b += "                ", c.years_of_experience && (b += '                | <span class="muted"><span data-weave="shared/helper/translation" data-i18n="Years of experience"></span>: <strong>' + c.years_of_experience + "年</strong></span>                "), b += "            </div>            <div>                ", c.publicProfileUrl && (b += '                <a href="' + c.publicProfileUrl + '" target="_blank" class="icon-link">                   <span class="icon-linkedin icon-blue"></span>                </a>                '), b += "                ", c.numConnections && (b += '                <span class="muted"><span class="icon-connection icon-blue"></span><strong>' + c.numConnections, c.numConnections >= 500 && (b += "+"), b += "</strong></span>                "), b += "            </div>        </div>    </div>    ", c.summary && (b += '    <h3 data-weave="shared/helper/translation" data-i18n="简介"></h3>    <div class="entity">        ' + c.summary + "    </div>    "), b += "    ", d.length) {
+			b += '        <h3 data-weave="shared/helper/translation" data-i18n="Work Experiences"></h3>    ';
+			for (var f = 0, g = d.length; g > f; f++) {
+				b += "    ";
+				var h = d[f];
+				b += '    <div class="entity sepH_b">        ',
+				h.company && (b += "        <div>            <strong>" + h.company.name + "</strong>        </div>        "),
+				b += '        <span class="muted">' + (h.company.type ? h.company.type + "; " : "") + (h.company.size ? h.company.size + "; " : "") + (h.company.industry ? h.company.industry : "") + '</span>        <div class="muted">' + h.startDate.year + "-" + h.startDate.month + " – " + (h.endDate ? h.endDate.year + "-" + h.endDate.month : "Present") + "</div>        ",
+				h.title && (b += "        <div>" + h.title + "</div>        "),
+				b += "        ",
+				h.summary && (b += "        <div>" + h.summary + "</div>        "),
+				b += "    </div>    "
+			}
+			b += "        "
+		}
+		if (b += "        ", c.specialties && (b += '    <h3 data-weave="shared/helper/translation" data-i18n="Specialties"></h3>    <div class="entity sepH_b">        ' + c.specialties + "    </div>    "), b += "    ", e && e.length) {
+			b += '    <h3 data-weave="shared/helper/translation" data-i18n="工作技能"></h3>    <div class="entity sepH_b">        ';
+			for (var f = 0, g = e.length; g > f; f++) {
+				b += "            ";
+				var i = e[f];
+				b += '        <span class="label tag">' + i + "</span>        "
+			}
+			b += "    </div>    "
+		}
+		return b += "</div>"
+	}
+})

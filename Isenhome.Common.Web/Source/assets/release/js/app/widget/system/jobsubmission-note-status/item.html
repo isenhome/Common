@@ -1,0 +1,11 @@
+define("troopjs-requirejs/template!app/widget/system/jobsubmission-note-status/item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this.randomKey();
+		return b += '<div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="状态类型"></span>    </label>    <div class="controls">        <input type="text" name="en_US-' + c + '" class="input-medium required" value="' + (a.en_US || "") + '" placeholder="English" ',
+		a.en_US && (b += "readonly='readonly'"),
+		b += '>        <input type="text" name="zh_CN-' + c + '" class="input-medium required" value="' + (a.zh_CN || "") + '" placeholder="中文">                <div class="pull-right actions">            ',
+		a.code && (b += '            <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="转移到..." data-action="transfer/status"></button>            '),
+		b += '            <button class="btn btn-small btn-danger" data-weave="shared/helper/translation" data-i18n="删除状态" data-action="delete/status"></button>            <span class="handler"><span class="icon-move-ns icon-blue"></span></span>        </div>            </div></div><div class="control-group formSep">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="标签背景色"></span>    </label>    <div class="controls">        <input type="color" name="color" class="input-mini" value="' + a.color + '">    </div></div>'
+	}
+})

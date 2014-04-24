@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/system/core-config/main.html", [], function () {
+	return function () {
+		var a = '<h3 class="heading">核心参数设置</h3><p class="muted">编辑说明：上下拖拽节点可以排序或调整上下级关系；鼠标右键点击参数可以新增，编辑或删除；修改后请点击“保存”按钮确认。</p><ul class="nav nav-tabs" id="myTab">    <li class="active"><a data-toggle="tab" href="#city-tab" data-weave="shared/helper/translation" data-i18n="City"></a></li>    <li><a data-toggle="tab" href="#fn-tab" data-weave="shared/helper/translation" data-i18n="Function"></a></li>    <li><a data-toggle="tab" href="#industry-tab" data-weave="shared/helper/translation" data-i18n="Industry"></a></li>    <li><a data-toggle="tab" href="#team-tab" data-weave="shared/helper/translation" data-i18n="Team"></a></li></ul><div class="tab-content">    <div class="tab-pane active" id="city-tab" data-weave="app/widget/system/core-config/base/main(\'city\')"></div>    <div class="tab-pane" id="fn-tab"></div>    <div class="tab-pane" id="industry-tab"></div>        <div class="tab-pane" id="team-tab"></div></div>';
+		return a
+	}
+})

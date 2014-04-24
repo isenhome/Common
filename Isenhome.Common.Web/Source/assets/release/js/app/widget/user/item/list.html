@@ -1,0 +1,21 @@
+define("troopjs-requirejs/template!app/widget/user/item/list.html", [], function () {
+	return function (a) {
+		var b = "";
+		a.englishName + " " + a.chineseName;
+		var c = a.status,
+		d = "Admin" === this.role;
+		return b += "<td>    ",
+		b += d ? '    <a href="#detail!id=' + a.id + '" class="title">' + a.englishName + "</a>    " : '    <a href="/user/preview#' + a.id + '" class="title" data-action="profile/open">' + a.englishName + "</a>    ",
+		b += "</td><td>    " + a.chineseName + "</td><td>    " + a.team.name + "</td><td>    " + a.title.name + "</td><td>    ",
+		a.mobile && (b += '    <a href="tel:\\' + a.mobile + '">' + a.mobile + "</a>    "),
+		b += "</td><td>    ",
+		a.officeTel && (b += '    <a href="tel:\\' + a.officeTel + '">' + a.officeTel + "</a>    "),
+		b += "</td><td>    ",
+		a.email && (b += '    <a href="mailto:' + a.email + '">' + a.email + "</a>    "),
+		b += "</td><td>    ",
+		c && (b += '    <span class="label ' + a.status.toLowerCase() + '" data-weave="shared/helper/translation" data-i18n="User ' + c + '">' + c + "</span>    ", "Leave" === c && a.leaveDate && (b += '    <span class="muted">' + a.leaveDate + "</span>    "), b += "    "),
+		b += "</td><td>    ",
+		d && "Leave" === c && (b += '    <a class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Data migrate" href="/user/migrate#id!' + a.id + '"></a>    '),
+		b += "</td>"
+	}
+})

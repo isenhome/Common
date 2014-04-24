@@ -1,0 +1,37 @@
+define("troopjs-requirejs/template!app/widget/candidate/detail/note-tab/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this._category;
+		b += '<div class="btn-group" >    <button class="btn btn-small active" data-action="buttons-toggle"><span class="note-count">' + a.list.length + '</span> <span data-weave="shared/helper/translation" data-i18n="All Notes"></span></button>    ';
+		for (var d in c)
+			b += '    <button class="btn btn-small" data-action="buttons-toggle(' + d + ')"><span class="' + d.replace(" ", "-").toLowerCase() + '-count">' + this._counts[d] + "</span> " + c[d].value + "</button>    ";
+		b += "</div>";
+		for (var e = 0, f = a.list.length; f > e; e++) {
+			b += "";
+			var g = a.list[e],
+			h = g.dateAdded.split(" "),
+			i = h[0],
+			j = h[1],
+			k = g.user,
+			l = k.id,
+			m = k.englishName;
+			b += '<div class="activity-item clearfix" data-type="' + g.category.code + '">    <div class="pull-left span2 activity-time">        <p>            <span>' + j + "</span>            <span>" + i + '</span>            <a href="/user/preview#' + l + '" data-action="profile/open">' + m + '</a>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="title clearfix">                ',
+			g.jobsubmission && (b += '                <span class="label label-orange" data-weave="shared/helper/translation" data-i18n="Job Note"></span>                '),
+			b += '                <span class="label" style="background-color: ' + g.category.color + '">' + g.category.value + "</span>                ",
+			g.status && (b += '                <span class="label" style="background-color: ' + g.status.color + ';" data-name="status">' + g.status.value + "</span>                "),
+			b += "                ",
+			g.jobsubmission && (b += '                <span class="muted" data-weave="shared/helper/translation" data-i18n="From Job"></span>: <a href="/job#detail!id=' + g.jobsubmission.joborder.id + '" target="_blank">' + g.jobsubmission.joborder.jobTitle + "</a>                "),
+			b += "                ",
+			g.date && (b += '                <span class="muted"><span data-weave="shared/helper/translation" data-i18n="Event Date"></span>: ' + g.date + "</span>                "),
+			b += "                ",
+			l === this._userId && (b += '                <button class="btn btn-mini btn-edit" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/note(' + e + ')"></button>                '),
+			b += "                ",
+			this._isAdmin && (b += '                <button class="btn btn-mini btn-danger btn-edit" data-weave="shared/helper/translation" data-i18n="Delete" data-action="delete/note(' + g.id + ')"></button>                '),
+			b += '                                            </div>            <div class="content" data-name="notes">                ';
+			for (var n = 0, o = g.items.length; o > n; n++)
+				b += "                ", g.items[n].field && (b += "                <h4>" + g.items[n].field + "</h4>                "), b += "                <p>                    " + this.convertText(g.items[n].value) + "                </p>                ";
+			b += "            </div>        </div>    </div></div>"
+		}
+		return b
+	}
+})

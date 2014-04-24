@@ -1,0 +1,21 @@
+CKEDITOR.plugins.setLang('variables', 'zh-cn', {
+        label: '变量',
+        panelTitle: '变量',
+        'English Name': '英文名',
+        'Chinese Name': '中文名',
+        'Title': '职位',
+        'Mobile': '手机',
+        'Mobile 1': '座机',
+        'Mobile 2': '其它电话',
+        'City': '城市',
+        'Company': '公司名称',
+        'Address': '地址',
+        'Job Title': '项目名称',
+        'Client': '客户',
+        'Interview Date': '面试时间',
+        'User': '用户',
+        'Candidate': '候选人',
+        'Client Contact': '客户联系人',
+        'Office Tel': '座机',
+        'Job': '项目'
+});

@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/system/valid-new-company/main.html", [], function () {
+	return function () {
+		var a = '<h3 class="heading">公司: 客户审核设置</h3><p>开启后，新增的客户公司，需要管理员审核通过，才能进行后续操作（如添加公司备注，添加客户联系人以及添加项目）</p><form action="#" class="form-horizontal">    <div class="control-group formSep">        <label for="" class="control-label">            <span data-weave="shared/helper/translation" data-i18n="审核新建的客户公司"></span>        </label>        <div class="controls radio">            <label><input name="client_need_verify" class="load-key" value="1" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="Yes"></label>            <label><input name="client_need_verify" class="load-key" value="0" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="No"></label>            <button class="btn btn-primary action" data-action="setting/radio/edit" data-weave="shared/helper/translation" data-i18n="Edit"></button>            <button class="btn btn-primary action hide" data-action="setting/radio/save" data-weave="shared/helper/translation" data-i18n="Save"></button>            <button class="btn action hide" data-action="setting/textbox/cancel" data-weave="shared/helper/translation" data-i18n="Cancel"></button>        </div>    </div></form>';
+		return a
+	}
+})

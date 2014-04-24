@@ -1,0 +1,15 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/interview/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup></colgroup><thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="面试时间"></th>        <th data-weave="shared/helper/translation" data-i18n="面试进展"></th>         <th data-weave="shared/helper/translation" data-i18n="People"></th>        <th data-weave="shared/helper/translation" data-i18n="Job"></th>        <th data-weave="shared/helper/translation" data-i18n="Client Company"></th>        <th data-weave="shared/helper/translation" data-i18n="User"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c],
+			f = e.jobsubmission.candidate,
+			g = e.jobsubmission.joborder,
+			h = e.user;
+			b += "    <tr>        <td>            " + e.date + '        </td>        <td>            <span class="label label-blue" data-weave="shared/helper/translation" data-i18n="' + e.status.replace(":", "") + '"></span>        </td>        <td>            ',
+			b += f.islimited ? "            ID: " + f.id + "            " : '            <a href="/candidate#detail!id=' + f.id + '" target="_blank">' + [f.englishName, f.chineseName].join(" ").trim() + "</a>            ",
+			b += '        </td>        <td>            <a href="/job#detail!id=' + g.id + '" target="_blank">' + g.jobTitle + '</a>        </td>        <td>            <a href="/company#detail!id=' + g.client.id + '" target="_blank">' + g.client.name + '</a>        </td>        <td>            <a href="/user/preview#' + h.id + '" data-action="user/open">' + h.englishName + "</a>        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

@@ -1,0 +1,22 @@
+define("troopjs-requirejs/template!app/widget/job/detail/note-tab/main.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c],
+			f = e.dateAdded.split(" "),
+			g = f[0],
+			h = f[1],
+			i = e.user,
+			j = i.id;
+			b += '<div class="activity-item clearfix">    <div class="pull-left span2 activity-time">        <p>            <span>' + h + "</span>            <span>" + g + '</span>            <a href="/user#' + e.user.id + '" target="_blank">' + e.user.englishName + '</a>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="title">                ',
+			e.category && (b += '                <span class="label" style="background-color: ' + e.category.color + '">' + e.category.value + "</span>                "),
+			b += "                ",
+			j === this._userId && (b += '                <button class="btn btn-mini btn-edit" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/note(' + c + ')"></button>                '),
+			b += '            </div>            <div class="content">                ';
+			for (var k = 0, l = e.items.length; l > k; k++)
+				b += "                ", e.items[k].field && (b += "                <h4>" + e.items[k].field + "</h4>                "), b += "                <p>                    " + this.convertText(e.items[k].value) + "                </p>                ";
+			b += "            </div>        </div>    </div></div>"
+		}
+		return b
+	}
+})

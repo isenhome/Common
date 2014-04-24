@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!shared/widget/support-center/detail/attachment.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c];
+			b += '<li>    <span data-id="' + e.uuidname + '" class="attachment-item file-type-icon ' + e.ext.toLowerCase() + '">' + e.originname + '</span>    <a href="#" data-action="remove/attachment"><span class="icon-remove"></span></a></li>'
+		}
+		return b
+	}
+})

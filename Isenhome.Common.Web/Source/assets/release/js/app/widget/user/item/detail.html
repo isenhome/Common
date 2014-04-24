@@ -1,0 +1,21 @@
+define("troopjs-requirejs/template!app/widget/user/item/detail.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.englishName + " " + a.chineseName,
+		d = a.status,
+		e = "Admin" === this.role;
+		return b += '<div class="search_content full-width">    <div class="search_item_tags pull-right clearfix">        ',
+		d && (b += "        ", e && "Leave" === d && (b += '        <a class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Data migrate" href="/user/migrate#id!' + a.id + '"></a>        '), b += '        <span class="label ' + a.status.toLowerCase() + '" data-weave="shared/helper/translation" data-i18n="User ' + d + '">' + d + "</span>        ", "Leave" === d && a.leaveDate && (b += '        <span class="muted">' + a.leaveDate + "</span>        "), b += "        "),
+		b += '    </div>    <h4 class="pull-left item-title">        ',
+		b += e ? '        <a href="/user#detail!id=' + a.id + '" class="title">' + c + "</a>        " : '        <a href="/user/preview#' + a.id + '" class="title" data-action="profile/open">' + c + "</a>        ",
+		b += '    </h4>    <p class="sepH_b item_description clearfix">    ' + a.title.name + "&nbsp;    at&nbsp;" + a.team.name + '    <span class="pull-right">        ',
+		a.mobile && (b += '        <span><span class="muted" data-weave="shared/helper/translation" data-i18n="Mobile"></span>: <a href="tel:\\' + a.mobile + '">' + a.mobile + "</a></span>        "),
+		b += "        ",
+		a.officeTel && (b += '        <span><span class="muted" data-weave="shared/helper/translation" data-i18n="Office Tel"></span>: <a href="tel:\\' + a.officeTel + '">' + a.officeTel + "</a></span>        "),
+		b += "        ",
+		a.fax && (b += '        <span><span class="muted" data-weave="shared/helper/translation" data-i18n="Fax"></span>: ' + a.fax + "</span>        "),
+		b += "        ",
+		a.email && (b += '        <span><span class="muted" data-weave="shared/helper/translation" data-i18n="Email"></span>: <a href="mailto:' + a.email + '">' + a.email + "</a></span>        "),
+		b += "    </span>    </p></div>"
+	}
+})

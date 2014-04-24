@@ -1,0 +1,23 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/main-reporting/action/main.html", [], function () {
+	return function (a) {
+		var b = "<colgroup>    <col>    <col>    <col>    ";
+		this._isAll && (b += "    <col>    "),
+		b += '    <col width="500">    <col>    <col></colgroup><thead>    <tr>        <th>            <span data-weave="shared/helper/translation" data-i18n="People"></span>/            <span data-weave="shared/helper/translation" data-i18n="Job"></span>        </th>        <th data-weave="shared/helper/translation" data-i18n="Company"></th>        <th data-weave="shared/helper/translation" data-i18n="Title"></th>        ',
+		this._isAll && (b += '        <th data-weave="shared/helper/translation" data-i18n="Category"></th>        '),
+		b += '        <th data-weave="shared/helper/translation" data-i18n="Note"></th>        <th data-weave="shared/helper/translation" data-i18n="Date"></th>        <th data-weave="shared/helper/translation" data-i18n="Owner"></th>    </tr></thead><tbody>    ';
+		for (var c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			if (b += "    <tr>        <td>            ", "candidate" === e.external_type ? (b += "            ", "coldcall" === e.target.type && (b += '            <span class="label">Cold Call</span>            '), b += "            ", b += e.target.islimited ? "            ID: " + e.target.id + "            " : '            <a href="/candidate#detail!id=' + e.target.id + '" target="_blank">' + [e.target.englishName, e.target.chineseName].join(" ").trim() + "</a>            ", b += "            ") : "joborder" === e.external_type && (b += '            <a href="/job#detail!id=' + e.target.id + '" target="_blank">' + e.target.jobTitle + "</a>            "), b += "        </td>        <td>            ", "candidate" === e.external_type && e.target.company ? b += '            <p class="fixed-width"><a href="/company#detail!id=' + e.target.company.id + '" target="_blank" title="' + e.target.company.name + '">' + e.target.company.name + "</a></p>            " : "client" === e.external_type && (b += '            <p class="fixed-width"><a href="/company#detail!id=' + e.target.id + '" target="_blank" title="' + e.target.name + '">' + e.target.name + "</a></p>            "), b += "        </td>        <td>            ", e.target.title && (b += '            <p class="fixed-width">            ' + e.target.title + "        </p>            "), b += "        </td>        ", this._isAll && (b += "        <td>            ", e.category && (b += '            <span class="label" style="background-color: ' + e.category.color + '">' + e.category.value + "</span>            "), b += "        </td>        "), b += '        <td class="note-cell">            ', e.items) {
+				b += "            ";
+				for (var f = 0, g = e.items.length; g > f; f++)
+					b += "            ", e.items[f].field && (b += "            <h4>" + e.items[f].field + "</h4>            "), b += "            <p>                " + this.convertText(e.items[f].value) + "            </p>            ";
+				b += "            "
+			}
+			b += "        </td>        <td>",
+			e.date && (b += "" + e.date),
+			b += '</td>        <td>            <a href="/user/preview#' + e.user.id + '" data-action="user/open">' + e.user.englishName + "</a>        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

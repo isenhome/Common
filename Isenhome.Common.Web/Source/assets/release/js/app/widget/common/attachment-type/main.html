@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/common/attachment-type/main.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c];
+			b += '<option value="' + e.code + '">' + e.value + "</option>"
+		}
+		return b
+	}
+})

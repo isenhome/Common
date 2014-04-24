@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/system/education-background/item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this.randomKey();
+		return b += '<div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="状态类型"></span>    </label>    <div class="controls">        <input type="text" name="en_US-' + c + '" class="input-medium required" value="' + (a.en_US || "") + '" placeholder="English" ',
+		a.en_US && (b += "readonly='readonly'"),
+		b += '>        <input type="text" name="zh_CN-' + c + '" class="input-medium required" value="' + (a.zh_CN || "") + '" placeholder="中文">                <span class="pull-right handler"><span class="icon-move-ns icon-blue"></span></span>                <button class="btn pull-right" data-weave="shared/helper/translation" data-i18n="删除学历类型" data-action="delete/status"></button>            </div></div>'
+	}
+})

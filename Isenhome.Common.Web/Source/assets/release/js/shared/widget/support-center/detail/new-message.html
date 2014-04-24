@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!shared/widget/support-center/detail/new-message.html", [], function () {
+	return function (a) {
+		for (var b = '<li class="hide">    <div class="bubble-main pull-right">        <p class="bubble-content">        	' + (a.content || "&nbsp;") + "        	<br>        	", c = 0, d = a.attachments.length; d > c; c++)
+			b += '            <a href="/rest/user/issue_attachment_download?_id=' + a._id + "&uuidname=" + a.attachments[c].uuidname + '" target="_blank">' + a.attachments[c].originname + "</a>            ";
+		return b += '        </p>    </div>    <span class="tips pull-right" data-weave="shared/helper/translation" data-i18n="Just now"></span></li>'
+	}
+})

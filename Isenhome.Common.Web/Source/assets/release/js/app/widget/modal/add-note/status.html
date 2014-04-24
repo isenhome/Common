@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/modal/add-note/status.html", [], function () {
+	return function (a) {
+		for (var b = '<option value="" data-weave="shared/helper/translation" data-i18n="Please select"></option>', c = 0, d = a.length; d > c; c++)
+			b += '<option value="' + a[c].code + '">' + a[c].value + "</option>";
+		return b
+	}
+})

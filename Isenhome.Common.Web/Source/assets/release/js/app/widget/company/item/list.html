@@ -1,0 +1,46 @@
+define("troopjs-requirejs/template!app/widget/company/item/list.html", [], function () {
+	return function (a) {
+		var b,
+		c,
+		d = "",
+		e = a.verifystatus,
+		f = a.islimited,
+		g = a.type,
+		h = "",
+		i = "icon-blue";
+		switch (this._context.user.role.toUpperCase(), g) {
+		case "bding":
+			b = "label-info";
+			break;
+		case "client":
+			b = "label-red"
+		}
+		switch (e) {
+		case "TobeVerified":
+			c = "To be Verified";
+			break;
+		case "Verified":
+			c = "Client Verified",
+			h = "approved";
+			break;
+		case "VerifyInvalid":
+			c = "Client Verified Invalid",
+			h = "label-inverse"
+		}
+		return f && (i = "icon-transparent"),
+		(new Date).getTime(),
+		d += "<td>    ",
+		"undefined" != typeof this.viewType && (d += '    <input type="checkbox" data-action="list/check">    '),
+		d += "</td><td>    ",
+		f || (d += '    <span class="dropdown" data-weave="app/widget/common/attachment-view/main(' + a.attachment_count + ", 'clientcompany', " + a.id + ')"></span>    '),
+		d += '</td><td>    <a href="/company#detail!id=' + a.id + '" class="title">' + a.name + '</a>    <a href="/company#detail!id=' + a.id + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a></td><td>    <a href="#" data-action="add/remark">        <i class="icon-comment ' + i + '"></i>        <b class="remark-count">' + a.activity_count + "</b>     </a></td><td>    ",
+		a.city && (d += "        " + a.city.name + "    "),
+		d += "</td><td>    ",
+		a.industry && a.industry.id && (d += '    <span class="label industry" title="' + a.industry.name, a.industry1 && (d += ", " + a.industry1.name), a.industry2 && (d += ", " + a.industry2.name), d += '">' + a.industry.name, (a.industry1 || a.industry2) && (d += "..."), d += "</span>    "),
+		d += "</td><td>" + a.people_count + "</td><td>" + a.past_people_count + "</td><td>" + a.candidate_targetcompany_count + '</td><td><span class="label ' + b + '" data-weave="shared/helper/translation" data-i18n="' + g + " company" + '"></span></td><td>    <div class="dropdown">        <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-list-alt"></i> <i class="caret"></i></a>        <ul class="dropdown-menu">            ',
+		f || (d += '            <li>                <a href="/company#add!id=' + a.id + '" target="_blank" data-weave="shared/helper/translation" data-i18n="Edit Company"></a>            </li>            '),
+		d += "            ",
+		"normal" !== g && "generated" !== g && (d += "            <li ", f && (d += 'class="disabled"'), d += '>                <a href="#" data-action="add/contract">                    <b class="contract-count">' + a.contract_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Contract"></span>                </a>            </li>            '),
+		d += '            <li>                <a href="#" data-action="task">                    <b class="task-count">' + a.todo_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Task"></span>                </a>            </li>            <li>                <a href="#" data-action="job">                    <b class="job-count">' + a.job_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Job"></span>                </a>            </li>            <li>                <a href="#" data-action="add/to/folder">                    <b class="folder-count">' + a.folders.length + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Folder"></span>                </a>            </li>        </ul>    </div></td>'
+	}
+})

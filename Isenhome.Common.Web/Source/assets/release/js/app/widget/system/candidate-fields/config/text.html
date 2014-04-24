@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!app/widget/system/candidate-fields/config/text.html", [], function () {
+	return function (a) {
+		var b = '<form>    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Field Title"></span>        </label>        <div class="controls">            <input type="text" class="span10" value="' + a.label + '" name="label">        </div>    </div>    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Required Field"></span>        </label>        <div class="controls">            <label class="radio inline">                <input type="radio" name="required" value="true" ';
+		return a.required && (b += 'checked="true"'),
+		b += '> <span data-weave="shared/helper/translation" data-i18n="Yes"></span>            </label>            <label class="radio inline">                <input type="radio" name="required" value="false" ',
+		a.required || (b += 'checked="true"'),
+		b += '> <span data-weave="shared/helper/translation" data-i18n="No"></span>            </label>        </div>    </div>    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="Description"></span>        </label>        <div class="controls">            <input type="text" name="help" class="span10" value="' + a.help + '">        </div>    </div></form>'
+	}
+})

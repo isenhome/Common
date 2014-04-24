@@ -1,0 +1,8 @@
+define("troopjs-requirejs/template!shared/widget/auth/linkedin/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.data;
+		return b += "",
+		b += a && a.isbinded ? '<div class="pull-right">    <button class="btn" data-action="revoke" data-weave="shared/helper/translation" data-i18n="Cancel Authorize"></button></div><div class="thumbnail pull-left">    <img alt="' + c.formattedName + '" src="' + (c.pictureUrl ? c.pictureUrl : "http://s.c.lnkd.licdn.com/scds/common/u/img/icon/icon_no_photo_50x50.png") + '" width="50" height="50"></div>    <div class="span6">    <p>        <span class="name-title">' + c.formattedName + "</span>    </p>    <p>Gllue招聘管理系统已经绑定了您的LinkedIn账号！</p></div>" : '<span class="pull-left linkedin-logo-large">LINKEDIN</span><a href="/rest/linkedin/oauth?return_url=bind/oauth" class="btn pull-right" data-weave="shared/helper/translation" data-i18n="Authorize"></a>'
+	}
+})

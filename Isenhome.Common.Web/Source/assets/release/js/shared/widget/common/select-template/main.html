@@ -1,0 +1,24 @@
+define("troopjs-requirejs/template!shared/widget/common/select-template/main.html", [], function () {
+	return function (a) {
+		var b = '<option value="" data-weave="shared/helper/translation" data-i18n="Please select"></option>';
+		if (a.user.length) {
+			b += '<optgroup data-weave="shared/helper/translation(\'label\')" data-i18n="Personal Template">';
+			for (var c = 0, d = a.user.length; d > c; c++) {
+				b += "";
+				var e = a.user[c];
+				b += '<option value="' + e.id + '">' + e.name + "</option>"
+			}
+			b += "</optgroup>"
+		}
+		if (b += "", a.system.length) {
+			b += '<optgroup data-weave="shared/helper/translation(\'label\')" data-i18n="System Template">';
+			for (var c = 0, d = a.system.length; d > c; c++) {
+				b += "";
+				var f = a.system[c];
+				b += '<option value="' + f.id + '">' + f.name + "</option>"
+			}
+			b += "</optgroup>"
+		}
+		return b
+	}
+})

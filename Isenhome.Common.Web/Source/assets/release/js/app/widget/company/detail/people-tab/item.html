@@ -1,0 +1,24 @@
+define("troopjs-requirejs/template!app/widget/company/detail/people-tab/item.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.list.length; d > c; c++) {
+			var e = a.list[c],
+			f = [e.englishName, e.chineseName].join(" ").trim(),
+			g = e.mobile || "",
+			h = e.mobile1 || "",
+			i = e.mobile2 || "",
+			j = parseInt(a.context.config.hide_contactinfo);
+			b += '<tr data-tt-id="' + a.parentId + "-" + e.id + '" data-tt-parent-id="' + a.parentId + '">    <td>        ',
+			e.islimited ? b += "        ID: " + e.id + "        " : (b += '        <a href="/candidate#detail!id=' + e.id + '" target="_blank" class="', "contact" === e.type && (b += "red"), b += '">' + f + "</a>        "),
+			b += '    </td>    <td></td>    <td>        <a href="#" ',
+			e.islimited && (b += 'class="disabled"'),
+			b += ' data-action="people/note(' + e.id + ')">            <span class="icon-comment ',
+			b += e.islimited ? "icon-transparent" : "icon-blue",
+			b += '"></span>            <strong>' + e.note_count + "</strong>        </a>    </td>    <td>        ",
+			(g || h || i) && (b += "            ", j ? (b += "            ", g && (b += '            <a href="tel:' + g + '">' + g + "</a>            "), b += "            ", h && (b += '            , <a href="tel:' + h + '">' + h + "</a>            "), b += "            ", i && (b += '            , <a href="tel:' + i + '">' + i + "</a>            "), b += "            ") : (b += '            <span class="helper-toggle">                <a href="#" data-weave="shared/helper/translation" data-i18n="View" data-action="helper/toggle/show" class="helper-toggle-show"></a>                <span class="hide" data-toggle="view">                    ', g && (b += '                    <a href="tel:' + g + '">' + g + "</a>                    "), b += "                    ", h && (b += '                    , <a href="tel:' + h + '">' + h + "</a>                    "), b += "                    ", i && (b += '                    , <a href="tel:' + i + '">' + i + "</a>                    "), b += "                </span>            </span>            "), b += "        "),
+			b += "    </td>    <td>" + e.title + "</td>    <td>        ",
+			b += e.status ? '        <span class="label status" style="background-color: ' + e.status.color + ';">' + e.status.value + "</span>        " : '        <span class="label status"></span>        ',
+			b += '    </td>    <td class="lastupdate"><span data-toggle="tooltip" title="' + e.lastUpdateDate + '">' + e.lastUpdate + "</span></td></tr>"
+		}
+		return b
+	}
+})

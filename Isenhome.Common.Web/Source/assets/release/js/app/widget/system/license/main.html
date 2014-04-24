@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/system/license/main.html", [], function () {
+	return function (a) {
+		var b = '<h3 class="heading" data-weave="shared/helper/translation" data-i18n="License Management"></h3><div class="vcard">    <ul class="full-width">        <li>            <span class="item-key" data-weave="shared/helper/translation" data-i18n="Company"></span>            <div class="vcard-item">' + a.name + '</div>        </li>        <li>            <span class="item-key" data-weave="shared/helper/translation" data-i18n="License Number"></span>            <div class="vcard-item">' + a.userlimit + '</div>        </li>        <li>            <span class="item-key" data-weave="shared/helper/translation" data-i18n="Activated User Number"></span>            <div class="vcard-item">' + a.current_count + '</div>        </li>        <li>            <span class="item-key" data-weave="shared/helper/translation" data-i18n="Contract Start Date"></span>            <div class="vcard-item">' + a.startDate + '</div>        </li>        <li>            <span class="item-key" data-weave="shared/helper/translation" data-i18n="Contract Expire Date"></span>            <div class="vcard-item">' + a.expireDate + "</div>        </li>    </ul></div>";
+		return b
+	}
+})

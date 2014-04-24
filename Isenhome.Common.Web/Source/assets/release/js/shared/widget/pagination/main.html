@@ -1,0 +1,16 @@
+define("troopjs-requirejs/template!shared/widget/pagination/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.current,
+		d = a.pages,
+		e = a.count,
+		f = 0;
+		for (b += '<span class="summary pull-left">    <span data-weave="shared/helper/translation" data-i18n="Total"></span>: ' + this.formatCurrency(e) + ' <span data-weave="shared/helper/translation" data-i18n="results"></span></span><span class="pull-right">    <label class="muted">&nbsp;<span data-weave="shared/helper/translation" data-i18n="Goto"></span>        <input type="text" class="page" data-action="page/go/to">        <span data-weave="shared/helper/translation" data-i18n="Page"></span>    </label></span><ul class="paging pull-right clearfix">    <li ', 1 === c && (b += 'class="disabled"'), b += '>        <a href="#" data-action="page/number(' + (c - 1) + ')" data-weave="shared/helper/translation" data-i18n="Prev"></a>    </li>    ', c - 1 > 1 ? b += '    <li><a href="#" data-action="page/number(1)">1</a></li>    <li class="disabled"><a href="javascript:void(0);">...</a></li>    ' : 1 === c - 1 && (b += '    <li><a href="#" data-action="page/number(1)">1</a></li>    '), b += "    ", f; 3 > f; f++)
+			b += "    ", d >= c + f && (b += "    <li ", c == c + f && (b += 'class="disabled"'), b += '>        <a href="#" data-action="page/number(' + (c + f) + ')">' + (c + f) + "</a>    </li>    "), b += "    ";
+		return b += "    ",
+		d - c > 3 ? b += '    <li class="disabled"><a href="javascript:void(0);">...</a></li>    <li><a href="#" data-action="page/number(' + d + ')">' + d + "</a></li>    " : 3 === d - c && (b += '    <li><a href="#" data-action="page/number(' + d + ')">' + d + "</a></li>    "),
+		b += "    <li ",
+		c === d && (b += 'class="disabled"'),
+		b += '>        <a href="#" data-action="page/number(' + (c + 1) + ')" data-weave="shared/helper/translation" data-i18n="Next"></a>    </li></ul>'
+	}
+})

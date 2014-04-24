@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/chart/main.html", [], function () {
+	return function () {
+		var a = '<link rel="stylesheet" href="/assets/libs/nvd3/0.0.1a/nv.d3.css"><form action="#" class="form-inline"></form>    <select name="chart" data-action="change/view(\'chart\')">        <option value="">选择图表类型</option>        <option value="lineWithFocusChart">线与焦点图</option>        <option value="lineChart">线图</option>        <option value="multiBarChart">柱状图</option>        <option value="stackedAreaChart">堆积面积图</option>        <option value="cumulativeLineChart">累积折线图</option>    </select>    <select name="slice" class="input-medium" data-action="change/view(\'time_slice\')">        <option value="">选择时间划分方式</option>        <option value="month">月</option>        <option value="week">周</option>        <option value="day">日</option>    </select></div><div class="chart">    <svg style="height: 800px;"></svg></div>';
+		return a
+	}
+})

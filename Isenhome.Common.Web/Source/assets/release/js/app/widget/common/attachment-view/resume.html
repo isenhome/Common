@@ -1,0 +1,13 @@
+define("troopjs-requirejs/template!app/widget/common/attachment-view/resume.html", [], function () {
+	return function () {
+		var a = "",
+		b = {
+			candidate : "candidate",
+			clientcompany : "company",
+			joborder : "job"
+		};
+		return a += '<form action="#" class="form-horizontal">	<select name="tag" class="input-medium" data-type="' + b[this._type] + '" data-weave="app/widget/common/attachment-type/main"></select>    <span class="upload-file"></span>    ',
+		this._paste && (a += '    <span>        <button class="btn" data-weave="shared/helper/translation" data-i18n="Paste Resume" data-action="show/paste/modal"></button>    </span>    '),
+		a += '</form><ul class="nav nav-stack attachment-list hide"></ul>'
+	}
+})

@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/job/add/client-contact.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++)
+			b += '<div class="controls controls-contact">    <p>        <input type="text" name="contact" class="input-xlarge" data-weave="app/widget/common/people-list/main" data-url="/rest/candidate/list?type=contact&user_id=' + a[c].userId + '&ordering=englishName" value="' + (a[c].id || "") + '">        <span class="hint" data-weave="shared/helper/translation" data-i18n="Only show shared contacts"></span>        <a href="#" class="remove" data-action="remove/contact"><span class="icon-remove"></span></a>    </p>        <p class="contact-info hide"></p></div>';
+		return b
+	}
+})

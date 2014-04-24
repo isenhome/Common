@@ -1,0 +1,21 @@
+define("troopjs-requirejs/template!shared/widget/support-center/detail/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.items,
+		d = a.email;
+		b += '<p class="clearfix">    <a href="javascript:history.back();" class="btn pull-right">        <i class="icon-arrow-left"></i>    </a></p><div class="chat_box">    <div class="chat_content">        <div class="chat_heading clearfix">            ' + a.title + " - " + this.showStatus(a.status) + '        </div>                <div class="msg_window">            <ul class="unstyled bubble-wrap">                ';
+		for (var e = 0, f = c.length; f > e; e++) {
+			b += "                ";
+			var g = c[e];
+			b += '                <li>                    <div class="bubble-main ',
+			b += g.email === d ? "pull-right" : "pull-left",
+			b += '">                        <p class="bubble-content">                            ' + (g.content.replace("", "<br>").replace("", "<br>") || "&nbsp;") + "                            <br>                            ";
+			for (var h = 0, i = g.attachments.length; i > h; h++)
+				b += '                            <a href="/rest/user/issue_attachment_download?_id=' + a._id + "&uuidname=" + g.attachments[h].uuidname + '" target="_blank">' + g.attachments[h].originname + "</a>                            ";
+			b += '                        </p>                    </div>                    <span class="tips ',
+			b += g.email === d ? "pull-right" : "pull-left",
+			b += '">' + g.date + "</span>                </li>                "
+		}
+		return b += '                           </ul>        </div>                <div class="chat_editor_box clearfix">            <textarea name="content" data-action="content" data-weave="shared/widget/common/autosize/main"></textarea>            <div class="clearfix">                <ul class="unstyled attachment-list"></ul>                <form action="#" class="form-horizontal" type="post" enctype="multipart/form-data">                    <fieldset>                        <span class="upload-file"></span>                        <button class="btn btn-primary btn-send disabled pull-right" data-action="send" data-weave="shared/helper/translation" data-i18n="Send"></button>                    </fieldset>                </form>            </div>        </div>    </div></div>'
+	}
+})

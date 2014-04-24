@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/floating/item.html", [], function () {
+	return function (a) {
+		var b = '<td>    <input type="checkbox" data-action="check/one" data-id="' + a.id + '" ';
+		return a.done && (b += 'checked="checked"'),
+		b += '></td><td>    <a href="/mail/center#outbox/' + a.email + '" target="_blank"><span class="icon-envelope icon-blue"></span></a></td><td>    <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + [a.candidate.englishName, a.candidate.chineseName].join(" ").trim() + '</a></td><td>    <a href="/candidate#detail!id=' + a.clientContact.id + '" target="_blank">' + [a.clientContact.englishName, a.clientContact.chineseName].join(" ").trim() + '</a></td><td>    <a href="/company#detail!id=' + a.clientContact.company.id + '" target="_blank">' + a.clientContact.company.name + '</a></td><td>    <a href="#" data-type="textarea" data-pk="' + a.id + '" data-value="' + a.note + '" class="note"></a></td><td>    ' + a.dateAdded + '</td><td>    <a href="/user/preview#' + a.user.id + '" data-action="open/profile">' + a.user.englishName + '</a></td><td>    <a href="#" data-type="select" data-pk="' + a.id + '" class="feedback" style="color: ' + a.feedback.color + ';" data-placement="left">' + a.feedback.code + "</a></td>"
+	}
+})

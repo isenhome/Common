@@ -1,0 +1,22 @@
+define("troopjs-requirejs/template!app/widget/candidate/add/linkedin-candidate.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.length,
+		d = 10,
+		e = 0;
+		for (b += '<div class="controls text_line muted">    请选择一个正确的候选人:</div>'; c > e && d > e; ) {
+			b += "";
+			var f = a[e];
+			if ("private" !== f.id) {
+				if (b += '<div class="controls text_line clearfix">    <div class="thumbnail pull-left">        <img title="' + f.formattedName + '" src="' + (f.pictureUrl ? f.pictureUrl : "http://s.c.lnkd.licdn.com/scds/common/u/img/icon/icon_no_photo_50x50.png") + '" height="50" width="50">    </div>    <div class="pull-left muted">        <a href="#" data-action="pick/candidate(' + e + ", '" + (f.publicProfileUrl ? f.publicProfileUrl : "") + "')\">" + f.formattedName + "</a>        <span>" + f.location.name + "</span>        <br>        ", f.positions._total) {
+					b += "        ";
+					var g = f.positions.values[0];
+					b += "        <span>" + g.title + " at " + g.company.name + "</span><br>        "
+				}
+				b += '        <button class="btn btn-mini" data-action="pick/candidate(' + e + ", '" + (f.publicProfileUrl ? f.publicProfileUrl : "") + "')\">选择</button>    </div></div>"
+			}
+			e++
+		}
+		return b
+	}
+})

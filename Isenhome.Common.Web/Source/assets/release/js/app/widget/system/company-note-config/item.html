@@ -1,0 +1,14 @@
+define("troopjs-requirejs/template!app/widget/system/company-note-config/item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this.randomKey();
+		if (b += '<div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="备注类型"></span>    </label>    <div class="controls">        <input type="text" name="en_US-' + c + '" class="input-medium required" value="' + (a.en_US || "") + '" placeholder="English" ', a.en_US && (b += "readonly='readonly'"), b += '>        <input type="text" name="zh_CN-' + c + '" class="input-medium required" value="' + (a.zh_CN || "") + '" placeholder="中文">                <div class="pull-right actions">            ', a.code && (b += '            <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="转移到..." data-action="transfer/category"></button>            '), b += '            <button class="btn btn-small btn-danger" data-weave="shared/helper/translation" data-i18n="Delete category" data-action="delete/category"></button>            <span class="handler"><span class="icon-move-ns icon-blue"></span></span>        </div>            </div></div><div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="标签背景色"></span>    </label>    <div class="controls">        <input type="color" name="color" class="input-mini" value="' + a.color + '">    </div></div><div class="control-group formSep">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="Question"></span>    </label>    ', a.ext) {
+			b += "    ";
+			for (var d = JSON.parse(a.ext), e = 0, f = d.length; f > e; e++)
+				b += '    <div class="controls">        <input type="text" class="input-xxlarge" value="' + d[e].field + '" name="question">        <button class="btn btn-danger btn-small pull-right btn-delete" data-weave="shared/helper/translation" data-i18n="Delete Question" data-action="delete/question"></button>    </div>    ';
+			b += "    "
+		} else
+			b += '    <div class="controls">        <input type="text" class="input-xxlarge " name="question">        <button class="btn btn-danger btn-small pull-right btn-delete" data-weave="shared/helper/translation" data-i18n="Delete Question" data-action="delete/question"></button>    </div>    ';
+		return b += '    <div class="controls text_line">        <a href="#" data-weave="shared/helper/translation" data-i18n="新增问题" data-action="add/question"></a>    </div></div>'
+	}
+})

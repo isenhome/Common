@@ -1,0 +1,9 @@
+define("troopjs-requirejs/template!shared/widget/common/add-share/share.html", [], function () {
+	return function (a) {
+		var b = '<div class="controls add-share">    <select name="share_with" class="input-small" data-action="share/with.change" ';
+		return a && (b += 'disabled="disabled"'),
+		b += '>        <option value="people" data-weave="shared/helper/translation" data-i18n="share with people">People</option>        <option value="team" data-weave="shared/helper/translation" data-i18n="share with team">Team</option>        <option value="everyone" data-weave="shared/helper/translation" data-i18n="share with everyone">Everyone</option>    </select>    <div class="share-to">    </div>        ',
+		a || (b += '    <a href="#" class="remove" data-action="share/remove">    	<span class="icon-remove"></span>    </a>    '),
+		b += "</div>"
+	}
+})

@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/modal/add-attachments/items.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.items;
+		b += "",
+		a.title && (b += "<label><strong>" + a.title + "</strong></label>"),
+		b += "";
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '<label class="checkbox">    ', b += c[d].tag ? '    <span class="label" style="background-color: ' + c[d].tag.color + ';">' + c[d].tag.value + "</span>    " : '    <span class="label" data-weave="shared/helper/translation" data-i18n="Unknown"></span>    ', b += '    <input type="checkbox" value="' + c[d].id + '" data-action="attachment" data-ext="' + c[d].ext.toLowerCase() + '">     <span class="file-type-icon ' + c[d].ext.toLowerCase() + '">' + c[d].originname + '</span>    <a href="/rest/file/preview/' + c[d].uuidname + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a></label>';
+		return b
+	}
+})

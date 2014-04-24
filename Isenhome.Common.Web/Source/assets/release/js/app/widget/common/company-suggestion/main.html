@@ -1,0 +1,21 @@
+define("troopjs-requirejs/template!app/widget/common/company-suggestion/main.html", [], function () {
+	return function (a) {
+		var b,
+		c = "",
+		d = a.ctype,
+		e = a.count !== b ? a.count : a.people_count;
+		return c += '<p class="clearfix">    <span class="',
+		"normal" !== a.type && "generated" !== a.type && (c += "red"),
+		c += '">        ' + a.name + '    </span>    <span class="pull-right">        ',
+		d && (c += '        <span class="red">' + d + "</span>&nbsp;        "),
+		c += '        <span class="muted">' + e + " 人才</span>        ",
+		a.city && (c += '        <span class="muted">' + a.city.name + "</span>        "),
+		c += "        ",
+		a.industry && a.industry.id && (c += '        <span class="label industry" title="' + a.industry.name, a.industry1 && (c += ", " + a.industry1.name), a.industry2 && (c += ", " + a.industry2.name), c += '">' + a.industry.name, (a.industry1 || a.industry2) && (c += "..."), c += "</span>        "),
+		c += "    </span></p>",
+		a.name1 && (c += '<p class="muted">' + a.name1 + "</p>"),
+		c += "",
+		a.name2 && (c += '<p class="muted">' + a.name2 + "</p>"),
+		c
+	}
+})

@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/modal/paste-resume/main.html", [], function () {
+	return function () {
+		var a = '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>    <h3 data-weave="shared/helper/translation" data-i18n="Paste Resume"></h3></div><div class="modal-body shrink">    <form action="#" class="form-horizontal" id="paste-resume-form">            <div class="control-group">            <label class="control-label">                <span data-weave="shared/helper/translation" data-i18n="File Name"></span>                <span class="f_req">*</span>            </label>            <div class="controls">                <input type="text" name="name" class="required span5" data-weave="shared/helper/translation(\'value\')" data-i18n="Paste Resume">            </div>        </div>                <textarea name="paste-resume-content" data-weave="shared/widget/common/ckeditor/main"></textarea>    </form></div><div class="modal-footer">    <button class="btn btn-primary" data-action="save" data-weave="shared/helper/translation" data-i18n="Save" form="paste-resume-form"></button></div>';
+		return a
+	}
+})

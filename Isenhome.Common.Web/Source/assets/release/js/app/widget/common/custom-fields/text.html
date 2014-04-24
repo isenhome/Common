@@ -1,0 +1,11 @@
+define("troopjs-requirejs/template!app/widget/common/custom-fields/text.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group">    <label for="' + a.mapping + '" class="control-label">        ' + a.label + "        ";
+		return a.required && (b += '<span class="f_req">*</span>'),
+		b += '    </label>    <div class="controls">        <input name="' + a.mapping + '" id="' + a.mapping + '" type="text" class="input-medium ',
+		a.required && (b += "required"),
+		b += '">        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

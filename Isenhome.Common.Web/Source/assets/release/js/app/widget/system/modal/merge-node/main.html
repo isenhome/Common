@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/system/modal/merge-node/main.html", [], function () {
+	return function () {
+		var a = '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>    <h3 data-weave="shared/helper/translation" data-i18n="转移数据"></h3></div><div class="modal-body modal-body-fixed" id="merge-node-form">	<form>		<div class="control-group">			<label class="control-label">				将 <b class="name"></b> 转移到:			</label>			<div class="controls">				<div class="comtree span3" data-name="to" data-weave="shared/widget/common/comtree/main"></div>			</div>		</div>	</form>	</div><div class="modal-footer">	<input type="hidden" name="from">    <button class="btn btn-danger" data-action="transfer" data-weave="shared/helper/translation" data-i18n="转移" form="merge-node-form"></button></div>';
+		return a
+	}
+})

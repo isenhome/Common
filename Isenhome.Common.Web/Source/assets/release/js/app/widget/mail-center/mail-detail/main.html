@@ -1,0 +1,21 @@
+define("troopjs-requirejs/template!app/widget/mail-center/mail-detail/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.attachment,
+		d = c.length;
+		b += '<div class="sepH_b clearfix">    <div class="btn-group pull-right">        <button class="btn" data-action="detail/back" data-weave="shared/helper/translation" data-i18n="Back"></button>        <button class="btn" data-action="mail/reply" data-weave="shared/helper/translation" data-i18n="Reply"></button>        <button class="btn" data-action="mail/replyall" data-weave="shared/helper/translation" data-i18n="Reply All"></button>        <button class="btn" data-action="mail/forward" data-weave="shared/helper/translation" data-i18n="Forward"></button>    </div></div><div class="doc_view">    <div class="doc_view_header">        <dl class="dl-horizontal">            <dt data-weave="shared/helper/translation" data-i18n="Subject">Subject</dt>            <dd>' + a.subject + '</dd>            <dt data-weave="shared/helper/translation" data-i18n="Sender">Sender</dt>            ',
+		b += a.candidate ? '            <dd><a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + [a.candidate.englishName, a.candidate.chineseName].join(" ") + "</a></dd>            " : "            <dd><span>" + this.formatEmail(a._from) + "</span></dd>            ",
+		b += "            ",
+		a.to && (b += '            <dt data-weave="shared/helper/translation" data-i18n="To"></dt>            <dd><span>' + this.formatEmail(a.to) + "</span></dd>            "),
+		b += "            ",
+		a.cc && (b += '            <dt data-weave="shared/helper/translation" data-i18n="Cc"></dt>            <dd><span>' + this.formatEmail(a.cc) + "</span></dd>            "),
+		b += '            <dt data-weave="shared/helper/translation" data-i18n="Date">Date</dt>            <dd>' + a.date + '</dd>            <dt><i class="icon-paper-clip"></i></dt>            <dd>                <label class="sepH_a ',
+		"outbox" !== a.mbox && (b += "checkbox"),
+		b += '">                    ',
+		"outbox" !== a.mbox && (b += '                    <input type="checkbox" value="content" data-action="resume/type">                    '),
+		b += '                    <span data-weave="shared/helper/translation" data-i18n="Email content"></span>                </label>                ';
+		for (var e = 0; d > e; e++)
+			b += '                <label class="sepH_a ', "outbox" !== a.mbox && (b += "checkbox"), b += '">                    ', "outbox" !== a.mbox && (b += '                    <input type="checkbox" value="' + encodeURIComponent(c[e].id) + '" data-action="resume/type">                    '), b += '                    <a href="/rest/mail/download/' + this._id + "?id=" + encodeURIComponent(c[e].id) + '" target="_blank" class="file-type-icon ' + c[e].ext.toLowerCase() + '">' + c[e].name + "</a>                </label>                ";
+		return b += '                <button class="btn btn-small btn-import hide" data-weave="shared/helper/translation" data-i18n="Import to system" data-action="import/candidate"></button>            </dd>        </dl>    </div>    <div class="doc_view_content">        <iframe src="" frameborder="0" width="100%"></iframe>    </div>    <div class="doc_view_footer clearfix">        <div class="btn-group pull-right">            <button class="btn" data-action="detail/back" data-weave="shared/helper/translation" data-i18n="Back"></button>            <button class="btn" data-action="mail/reply" data-weave="shared/helper/translation" data-i18n="Reply"></button>            <button class="btn" data-action="mail/replyall" data-weave="shared/helper/translation" data-i18n="Reply All"></button>            <button class="btn" data-action="mail/forward" data-weave="shared/helper/translation" data-i18n="Forward"></button>        </div>    </div></div><div class="mail-reply-content hide">    </div>'
+	}
+})

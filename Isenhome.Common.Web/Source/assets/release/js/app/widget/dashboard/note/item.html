@@ -1,0 +1,34 @@
+define("troopjs-requirejs/template!app/widget/dashboard/note/item.html", [], function () {
+	return function (a) {
+		function b(a) {
+			return a ? a.replace(/()|()/g, "<br>") : ""
+		}
+		var c = "";
+		c += "";
+		for (var d = 0, e = a.length; e > d; d++) {
+			c += "";
+			var f = a[d],
+			g = f.dateAdded.split(" "),
+			h = g[0],
+			i = g[1],
+			j = f.user,
+			k = j.id,
+			l = j.englishName;
+			c += '<div class="activity-item clearfix">    <div class="pull-left span2 activity-time">        <p>            <span>' + i + "</span>            <span>" + h + '</span>            <a href="/user/preview#' + k + '" data-action="profile/open">' + l + '</a>        </p>    </div>    <div class="pull-left span10 activity-detail">        <div class="well">            <div class="title clearfix">                <div>                    ',
+			f.jobsubmission && (c += '                    <span class="label label-orange" data-weave="shared/helper/translation" data-i18n="Job Note"></span>                    '),
+			c += '                    <span class="label" style="background-color: ' + f.category.color + '">' + f.category.value + "</span>                    ",
+			f.status && (c += '                    <span class="label" style="background-color: ' + f.status.color + ';">' + f.status.value + "</span>                    "),
+			c += "                                        ",
+			"candidate" === f.external_type ? (c += "                    ", "coldcall" === f.target.type && (c += '<span class="label">Cold call</span>'), c += '                    <a href="/candidate#detail!id=' + f.target.id + '" target="_blank">' + [f.target.englishName, f.target.chineseName].join(" ").trim() + "</a>                    ") : "client" === f.external_type ? c += '                    <a href="/company#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>                    " : "joborder" === f.external_type && (c += '                    <a href="/job#detail!id=' + f.target.id + '" target="_blank">' + f.target.jobTitle + "</a>                    "),
+			c += '                </div>                <div class="activity-item-hide">                    ',
+			"candidate" === f.external_type && f.target.company && (c += "                    " + f.target.title + ' <span class="muted">at</span> <a href="/company#detail!id=' + f.target.company.id + '" target="_blank">' + f.target.company.name + "</a>                    "),
+			c += "                    ",
+			f.jobsubmission && (c += '                    <span class="muted" data-weave="shared/helper/translation" data-i18n="来自项目"></span>: <a href="/job#detail!id=' + f.jobsubmission.joborder.id + '" target="_blank">' + f.jobsubmission.joborder.jobTitle + "</a>                    "),
+			c += '                </div>            </div>            <div class="content" data-name="notes">            ';
+			for (var m = 0, n = f.items.length; n > m; m++)
+				c += "                ", f.items[m].field && (c += "                <h4>" + f.items[m].field + "</h4>                "), c += "                <p>                    " + b(f.items[m].value) + "                </p>            ";
+			c += "            </div>        </div>    </div></div>"
+		}
+		return c
+	}
+})

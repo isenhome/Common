@@ -1,0 +1,41 @@
+define("troopjs-requirejs/template!app/widget/common/notification/main.html", [], function () {
+	return function (a) {
+		function b(a) {
+			return [a.englishName, a.chineseName].join(" ")
+		}
+		var c,
+		d = "",
+		e = a.type;
+		switch (e) {
+		case "Request for Share":
+		case "Offer Signed":
+		case "Candidate Edited":
+			c = "label-pink";
+			break;
+		case "Shared":
+		case "Invoice Received":
+			c = "label-red";
+			break;
+		case "Invoice Added":
+		case "Invoice edited":
+		case "Shortlist":
+			c = "label-purple";
+			break;
+		case "Invoice To be sent":
+			c = "label-lightblue";
+			break;
+		case "Invoice Sent":
+			c = "label-blue";
+			break;
+		case "Job Rejected":
+			c = "label-inverse"
+		}
+		return d += '<p class="sepH_a">    ',
+		d += "Reminder" !== e ? '    <span class="label ' + c + '" data-weave="shared/helper/translation" data-i18n="' + e + '">' + e + "</span>    " : '    <input type="checkbox" value="' + a.id + '">    <span class="label" style="background-color: ' + a.category.color + ';">' + a.category.value + "</span>    ",
+		d += "    ",
+		a.start && (d += '    <span class="pull-right">        ' + a.start + "    </span>    "),
+		d += "</p>",
+		"Request for Share" === e ? d += '<p>    候选人: <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + b(a.candidate) + '</a> </p><p>    请求者: <a href="/uer/preview#' + a.fromuser.id + '" data-action="profile/open">' + a.fromuser.englishName + "</a> </p>" : "Shared" === e ? d += '<p>    候选人: <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + b(a.candidate) + '</a> </p><p>    拥有者: <a href="/uer/preview#' + a.touser.id + '" data-action="profile/open">' + a.touser.englishName + "</a> </p>" : "Reminder" === e ? (d += "    ", a.target && a.target.joborder && (d += '    <p>        <a href="job#detail!id=' + a.target.joborder.id + '">' + a.target.joborder.jobTitle + " (ID: " + a.target.joborder.id + ")</a>    </p>    "), d += "    ", a.target && a.target.candidate && (d += "    <p>        ", candidate = a.target.candidate, d += '        <a href="/candidate#detail!id=' + candidate.id + '" target="_blank">' + [candidate.englishName, candidate.chineseName].join(" ") + "</a>    </p>    "), d += "    ", a.target && a.target.name && (d += '    <p>        <a href="/candidate#detail!id=' + a.target.id + '" target="_blank">' + a.target.name + "</a>    </p>    "), d += "    ", a.content && (d += "    <p>        " + a.content + "    </p>    "), d += "") : "Offer Signed" === e || "Invoice Added" === e || "Invoice edited" === e || "Invoice To be sent" === e || "Invoice Sent" === e || "Invoice Received" === e || "Job Rejected" === e || "Shortlist" === e ? d += '<p>    <a href="/job#detail!id=' + a.joborder.id + '" target="_blank">' + a.joborder.jobTitle + " (ID: " + a.joborder.id + ')</a> </p><p>    <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + b(a.candidate) + "</a> </p>" : "Candidate Edited" === e && (d += '<p>    候选人: <a href="/candidate#detail!id=' + a.candidate.id + '" target="_blank">' + b(a.candidate) + '</a> </p><p>    编辑者: <a href="/user/preview#' + a.fromuser.id + '" data-action="profile/open">' + a.fromuser.englishName + "</a> </p>"),
+		d
+	}
+})

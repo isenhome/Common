@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!app/widget/modal/add-shortlist/job-options.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++)
+			b += "", b += a[c].inshortlist || a[c].intargetcompany ? '<option value="' + a[c].id + '" disabled="disabled" style="color:#ccc;">' + a[c].jobTitle + " (ID:" + a[c].id + ") of <strong>" + a[c].client.name + "</strong></option>" : '<option value="' + a[c].id + '">' + a[c].jobTitle + " (ID:" + a[c].id + ") of <strong>" + a[c].client.name + "</strong></option>", b += "";
+		return b
+	}
+})

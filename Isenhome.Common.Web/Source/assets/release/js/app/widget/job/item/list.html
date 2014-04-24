@@ -1,0 +1,41 @@
+define("troopjs-requirejs/template!app/widget/job/item/list.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.users,
+		d = "",
+		e = a.jobStatus,
+		f = "icon-blue",
+		g = "";
+		switch (e) {
+		case "Live":
+			d = "label-warning";
+			break;
+		case "Failed":
+			d = "label-inverse";
+			break;
+		case "Successful":
+			d = "label-red"
+		}
+		switch (this.islimited && (f = "icon-transparent"), a.priority) {
+		case "High":
+			g = "label-red";
+			break;
+		case "Medium":
+			g = 'label-info"'
+		}
+		b += "<td>    ",
+		this._islimited || (b += '    <span class="dropdown" data-weave="app/widget/common/attachment-view/main(' + a.attachment_count + ", 'joborder', " + a.id + ')">    </span>    '),
+		b += '</td><td>    <a href="/job#detail!id=' + a.id + '" class="title">' + a.jobTitle + '</a>    <a href="/job#detail!id=' + a.id + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a></td><td>    <a href="#" data-action="note" ',
+		this.islimited && (b += 'class="disabled"'),
+		b += '>        <i class="icon-comment ' + f + '"></i>        <b class="note-count">' + a.note_count + '</b>    </a></td><td>    <a href="company#detail!id=' + a.client.id + '" target="_blank"> ' + a.client.name + "</a>    ",
+		!a.client.type || "client" !== a.client.type && "bding" !== a.client.type || (b += '    (<span class="red" data-weave="shared/helper/translation" data-i18n="' + a.client.type + ' company"></span>)    '),
+		b += "</td><td>    ";
+		for (var h = 0, i = c.length; i > h; h++)
+			b += "    ", "Main Consultant" === c[h].type && (b += '    <a href="/user/preview#' + c[h].user.id + '" data-action="profile/open">' + c[h].user.englishName + "</a>    "), b += "    ";
+		return b += "</td><td>    " + a.cvsent_count + "</td><td>    " + a.clientinterview_count + "</td><td>    " + a.offersign_count + '</td><td>    <span data-toggle="tooltip" title="' + a.dateAdded + '">' + a.livedays + '</span></td><td>    <span data-toggle="tooltip" title="' + a.lastUpdateDate + '">' + a.lastUpdate + '</span></td><td>    <span class="label ' + d + '" data-weave="shared/helper/translation" data-i18n="' + e + ' Jobs"></span></td><td>    ',
+		a.priority && (b += '    <span class="label ' + g + '" data-weave="shared/helper/translation" data-i18n="' + a.priority + '"></span>    '),
+		b += '</td><td>    <div class="dropdown">        <a href="javascript: void(0);" class="',
+		b += this.islimited ? "disabled" : "dropdown-toggle",
+		b += '" data-toggle="dropdown"><i class="icon-list-alt"></i> <i class="caret"></i></a>        <ul class="dropdown-menu">            <li>                <a href="#" data-action="task">                    <b class="task-count">' + a.todo_count + '</b>                    <span data-weave="shared/helper/translation" data-i18n="Task"></span>                </a>            </li>        </ul>    </div></td>'
+	}
+})

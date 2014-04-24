@@ -1,0 +1,16 @@
+define("troopjs-requirejs/template!app/widget/plugins/import-resume/attachment.html", [], function () {
+	return function (a) {
+		function b(a) {
+			return a.replace(/(.*\/)*/, "")
+		}
+		var c = "",
+		d = 0,
+		e = a.length;
+		for (c += '<span class="dropdown">    <button class="btn btn-mini" data-action="show/attachments">        <i class="icon-paper-clip"></i> <span class="count">' + e + '</span>    </button>    <div class="dropdown-menu dropdown-resume">        <ul class="nav nav-stack attachment-list">            ', d; e > d; d++) {
+			c += "            ";
+			var f = a[d];
+			c += '            <li>                <div class="clearfix">                    <div class="sepH_a">                        <span class="pull-right">' + f.filetime + '</span>                        <span data-action="resume/preview(' + f.filename + ')">' + b(f.filename) + '</span>                    </div>                    <div class="sepH_a clearfix">                        <span class="pull-right">                            <button class="btn btn-mini" data-action="resume/preview(' + f.filename + ')" data-i18n="Preview" data-weave="shared/helper/translation"></button>                        </span>                    </div>                </div>            </li>            '
+		}
+		return c += "        </ul>    </div></span>"
+	}
+})

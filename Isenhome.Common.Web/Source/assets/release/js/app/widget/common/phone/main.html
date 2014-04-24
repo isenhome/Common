@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/common/phone/main.html", [], function () {
+	return function () {
+		var a = '<label for="" class="control-label">    <span data-weave="shared/helper/translation" data-i18n="Phone"></span>    <span class="f_req">*</span></label><div class="controls mobile">    <select name="phones" class="phones input-small" data-action="phone.change">        <option value="mobile" data-weave="shared/helper/translation" data-i18n="Mobile"></option>        <option value="officeTel" data-weave="shared/helper/translation" data-i18n="Office Tel"></option>        <option value="fax" data-weave="shared/helper/translation" data-i18n="Fax"></option>    </select>    <input type="text" class="input-medium" name="mobile"/>    <span class="ext">Ext:&nbsp;<input type="text" class="input-mini"/></span>    <span class="hint" data-weave="shared/helper/translation" data-i18n="phone hint"></span>    </div><div class="controls duplicate-info hide"></div><div class="controls text_line">    <a id="addphone" href="#" data-action="phone/add">Add another</a></div>';
+		return a
+	}
+})

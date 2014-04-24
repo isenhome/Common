@@ -1,0 +1,14 @@
+define("troopjs-requirejs/template!app/widget/modal/merge-company/company.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c];
+			b += '<div class="search_item">    <div>        <input type="radio" name="company" value="' + e.id + '">        <a href="/company#detail!id=' + e.id + '" target="_blank">' + e.name + '</a> <span class="muted"><span data-weave="shared/helper/translation" data-i18n="People"></span>: ' + e.people_count + "</span>    </div>    ",
+			e.name1 && (b += "    <div>" + e.name1 + "</div>    "),
+			b += "    ",
+			e.name2 && (b += "    <div>" + e.name2 + "</div>    "),
+			b += "</div>"
+		}
+		return b
+	}
+})

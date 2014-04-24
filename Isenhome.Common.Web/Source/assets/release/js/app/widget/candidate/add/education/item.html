@@ -1,0 +1,16 @@
+define("troopjs-requirejs/template!app/widget/candidate/add/education/item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = "",
+		d = "",
+		e = "";
+		a && (c = a.school || "", d = a.major || "", e = a.degree || ""),
+		b += '<div class="control-group">    <label class="control-label" data-weave="shared/helper/translation" data-i18n="Time"></label>    <div class="controls">        <div class="pull-left">            <input type="text" class="input-mini digits" name="started-year-' + this.index + '" data-weave="shared/helper/translation(\'placeholder\')" data-i18n="Year" maxlength="4" minlength="4">&nbsp;            <select class="input-mini" name="started-month-' + this.index + '" data-action="month">                <option value="" data-weave="shared/helper/translation" data-i18n="Month"></option>                ';
+		for (var f = 1, g = 12; g >= f; f++)
+			b += '                <option value="' + f + '">' + f + "</option>                ";
+		b += '            </select>&nbsp;&dash;&nbsp;        </div>        <div class="pull-left">            <input type="text" class="input-mini ended-position digits" name="ended-year-' + this.index + '" data-weave="shared/helper/translation(\'placeholder\')" data-i18n="Year" maxlength="4" minlength="4">&nbsp;            <select class="input-mini ended-position" name="ended-month-' + this.index + '" data-action="month">                <option value="" data-weave="shared/helper/translation" data-i18n="Month"></option>                ';
+		for (var f = 1, g = 12; g >= f; f++)
+			b += '                <option value="' + f + '">' + f + "</option>                ";
+		return b += '            </select>            <label class="checkbox inline current-position hide">                <span data-weave="shared/helper/translation" data-i18n="Present"></span>                </label>            <label class="checkbox inline">                <input type="checkbox" name="current-' + this.index + '" data-action="current/school" class="check-one-current"> <span data-weave="shared/helper/translation" data-i18n="In reading"></span>            </label>        </div>                </div></div><div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="School"></span>    </label>    <div class="controls">        <input type="text" name="school-' + this.index + '" value="' + c + '" class="input-xxlarge">    </div></div><div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="Field of Study"></span>    </label>    <div class="controls">        <input type="text" name="major-' + this.index + '" value="' + d + '" class="input-xxlarge">    </div></div><div class="control-group">    <label class="control-label">        <span data-weave="shared/helper/translation" data-i18n="Degree"></span>    </label>    <div class="controls">        <select name="degree-' + this.index + "\" data-weave=\"app/widget/common/dropdown/main('education_background', '" + e + '\')"></select>    </div></div><div class="control-group">    <label class="control-label">    </label>    <div class="controls">        <a href="#" class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Delete" data-action="remove/education"></a>    </div></div>'
+	}
+})

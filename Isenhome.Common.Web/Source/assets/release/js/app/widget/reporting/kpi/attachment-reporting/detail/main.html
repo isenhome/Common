@@ -1,0 +1,14 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/attachment-reporting/detail/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup>    <col width="">    <col width="">    <col width="">    <col width="">    <col width="">    <col width="">    <col width=""></colgroup><thead>    <tr>        <th><span data-weave="shared/helper/translation" data-i18n="People"></span>/<span data-weave="shared/helper/translation" data-i18n="Job"></span></th>        <th data-weave="shared/helper/translation" data-i18n="Company"></th>        <th data-weave="shared/helper/translation" data-i18n="Attachment Type"></th>        <th data-weave="shared/helper/translation" data-i18n="Attachment Name"></th>        <th data-weave="shared/helper/translation" data-i18n="File Size"></th>        <th data-weave="shared/helper/translation" data-i18n="Upload Date"></th>        <th data-weave="shared/helper/translation" data-i18n="Upload User"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += "    <tr>        <td>            ",
+			"candidate" === e.type ? b += '            <a href="/candidate#detail!id=' + e.target.id + '" target="_blank">' + [e.target.englishName, e.target.chineseName].join(" ").trim() + "</a>            " : "joborder" === e.type && (b += '            <a href="/company#detail!id=' + e.target.id + '" target="_blank">' + e.target.jobTitle + "</a>            "),
+			b += "        </td>        <td>            ",
+			"candidate" === e.type ? (b += "            ", e.target.company && (b += '            <a href="/company#detail!id=' + e.target.company.id + '" target="_blank">' + e.target.company.name + "</a>            "), b += "            ") : "joborder" === e.type ? b += '            <a href="/company#detail!id=' + e.target.client.id + '" target="_blank">' + e.target.client.name + "</a>            " : "clientcompany" === e.type && (b += '            <a href="/company#detail!id=' + e.target.id + '" target="_blank">' + e.target.name + "</a>            "),
+			b += '        </td>        <td><span class="label" style="background-color: ' + e.tag.color + '">' + (e.tag.value || "未知") + "</span></td>        <td>" + e.originname + "</td>        <td>" + (e.filesize / 1024).toFixed(2) + "KB</td>        <td>" + e.dateAdded + '</td>        <td><a href="/user/preview#' + e.addedBy.id + '" data-action="user/open">' + e.addedBy.englishName + "</a></td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

@@ -1,0 +1,1278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36355007-469B-4821-8F53-9B5F295AB517}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Isenhome.Common.Web</RootNamespace>
+    <AssemblyName>Isenhome.Common.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Data\DataAreaRegistration.cs" />
+    <Compile Include="Areas\rest\Controllers\dataController.cs" />
+    <Compile Include="Areas\rest\restAreaRegistration.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="Source\assets\libs\antiscroll\antiscroll.min.js" />
+    <Content Include="Source\assets\libs\bootstrap-editable\1.4.5\bootstrap-editable.min.js" />
+    <Content Include="Source\assets\libs\bootstrap\2.3.1.2\bootstrap.min.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\ckeditor.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\contents.css" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\lang\zh-cn.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\autogrow\plugin.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\dragresize\plugin.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\icons.png" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\uploadImage\lang\zh-cn.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\uploadImage\plugin.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\variables\lang\zh-cn.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\plugins\variables\plugin.js" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\skins\moono\editor_gecko.css" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\skins\moono\icons.png" />
+    <Content Include="Source\assets\libs\ckeditor\4.3.2\styles.js" />
+    <Content Include="Source\assets\libs\flot\0.8.1\jquery.flot.min.js" />
+    <Content Include="Source\assets\libs\flot\0.8.1\jquery.flot.resize.min.js" />
+    <Content Include="Source\assets\libs\flot\0.8.1\jquery.flot.time.min.js" />
+    <Content Include="Source\assets\libs\fullcalendar\1.6.4\fullcalendar.min.js" />
+    <Content Include="Source\assets\libs\hilitor\hilitor.min.js" />
+    <Content Include="Source\assets\libs\i18n\1.7.1\i18next.amd.min.js" />
+    <Content Include="Source\assets\libs\jquery.autosize\1.18.2\jquery.autosize.min.js" />
+    <Content Include="Source\assets\libs\jquery.cookie\1.3\jquery.cookie.min.js" />
+    <Content Include="Source\assets\libs\jquery.datatables\1.9.4-1\jquery.dataTables.min.js" />
+    <Content Include="Source\assets\libs\jquery.datatables\extras\ColReorder-1.1.0.js" />
+    <Content Include="Source\assets\libs\jquery.datatables\extras\ColVis-1.1.0.js" />
+    <Content Include="Source\assets\libs\jquery.tree\0.17-1\tree.jquery.min.js" />
+    <Content Include="Source\assets\libs\jquery.ui\1.8.20.2\i18n\jquery.ui.datepicker-zh-CN.min.js" />
+    <Content Include="Source\assets\libs\jquery.ui\1.8.20.2\jquery-ui.min.js" />
+    <Content Include="Source\assets\libs\jquery.validate\1.11.1\additional-methods.min.js" />
+    <Content Include="Source\assets\libs\jquery.validate\1.11.1\jquery.validate.min.js" />
+    <Content Include="Source\assets\libs\jquery\1.7.2\jquery.min.js" />
+    <Content Include="Source\assets\libs\jquery\FixedHeader.min.js" />
+    <Content Include="Source\assets\libs\jquery\jquery-ui-timepicker-addon.js" />
+    <Content Include="Source\assets\libs\jquery\jquery.actual.min.js" />
+    <Content Include="Source\assets\libs\jquery\jquery.form.js" />
+    <Content Include="Source\assets\libs\jquery\sticky.min.js" />
+    <Content Include="Source\assets\libs\ladda\0.8.0\ladda.min.js" />
+    <Content Include="Source\assets\libs\ladda\0.8.0\spin.min.js" />
+    <Content Include="Source\assets\libs\nvd3\0.0.1a\d3.v2.js" />
+    <Content Include="Source\assets\libs\nvd3\0.0.1a\nv.d3.css" />
+    <Content Include="Source\assets\libs\nvd3\0.0.1a\nv.d3.min.js" />
+    <Content Include="Source\assets\libs\redactor\9.1.8\redactor.min.js" />
+    <Content Include="Source\assets\libs\requirejs\2.1.8\require.min.js" />
+    <Content Include="Source\assets\libs\requirejs\2.1.9\require.min.js" />
+    <Content Include="Source\assets\libs\select2\3.4.2\select2.min.js" />
+    <Content Include="Source\assets\libs\select2\3.4.2\select2_locale_zh-CN.js" />
+    <Content Include="Source\assets\libs\tag-it\2.0.4\tag-it.min.js" />
+    <Content Include="Source\assets\libs\treetable\3.0.2\jquery.treetable.min.js" />
+    <Content Include="Source\assets\libs\troopjs\1.0.9-16\troopjs-bundle.js" />
+    <Content Include="Source\assets\libs\typeahead\0.9.3\typeahead.min.js" />
+    <Content Include="Source\assets\libs\videojs\4.2.2\video.min.js" />
+    <Content Include="Source\assets\release\css\main.css" />
+    <Content Include="Source\assets\release\images\ajax-loader-circle.gif" />
+    <Content Include="Source\assets\release\images\ajax_loader.gif" />
+    <Content Include="Source\assets\release\images\file-extension\16x16\file_extension_doc.png" />
+    <Content Include="Source\assets\release\images\gllue_icon.png" />
+    <Content Include="Source\assets\release\images\gllue_logo.png" />
+    <Content Include="Source\assets\release\images\glyphicons-halflings.png" />
+    <Content Include="Source\assets\release\images\linkedin.png" />
+    <Content Include="Source\assets\release\images\main_bg.gif" />
+    <Content Include="Source\assets\release\images\select2-spinner.gif" />
+    <Content Include="Source\assets\release\images\select2.png" />
+    <Content Include="Source\assets\release\images\sort_asc.png" />
+    <Content Include="Source\assets\release\images\sort_both.png" />
+    <Content Include="Source\assets\release\js\app.html.js" />
+    <Content Include="Source\assets\release\js\app\widget\calendar\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\calendar\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\attachments.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\education\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\education\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\education\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\education\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\experience\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\experience\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\experience\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\experience\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\linkedin-candidate.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\add\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\changelog\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\changelog\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\email-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\email-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\email-tab\row.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\email-tab\row.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\floating-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\floating-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\linkedin-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\linkedin-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\note-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\note-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\shortlist-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\shortlist-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\target-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\target-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\task-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\detail\task-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\item\detail.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\item\list.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\item\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\work-experience\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\candidate\work-experience\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-consultant\consultant.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-consultant\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-consultant\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-contract\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-contract\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\add-contract\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-type\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-type\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-view\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-view\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-view\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-view\resume.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\attachment-view\resume.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\autocomplete\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\birthday\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\birthday\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\company-suggestion\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\company-suggestion\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\checkbox.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\date.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\dropdown.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\multiline.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\radio.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-fields\text.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\custom-filters\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\dropdown\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\dropdown\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\email-suggestion\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\fee-structure\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\fee-structure\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\fee-structure\structure.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\inputmask\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\job-select\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\job-select\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\nationality\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\nationality\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\notification\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\notification\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\people-list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\people-list\option.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\phone\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\phone\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\phone\phone.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\select2\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\share-request\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\share-request\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\attachment\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\attachment\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\note\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\slide-helper\note\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\common\source\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\common\source\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\add\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\add\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\changelog\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\changelog\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\contract-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\contract-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\intention-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\intention-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\jobs-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\jobs-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\note-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\note-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\past-people-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\past-people-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\people-tab\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\people-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\people-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\task-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\detail\task-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\existing\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\existing\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\item\detail.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\item\list.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\item\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\company\merge\company.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\merge\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\company\merge\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\note\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\note\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\note\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\revenue\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\revenue\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\task\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\task\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\task\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\tutorial\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\tutorial\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\dashboard\widget\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\document\detail\detail.html" />
+    <Content Include="Source\assets\release\js\app\widget\document\detail\list.html" />
+    <Content Include="Source\assets\release\js\app\widget\document\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\document\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\document\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\document\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\document\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\document\preview\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\document\preview\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\extension\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\extension\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\floating\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\floating\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\floating\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\floating\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\floating\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\floating\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\invoice\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\invoice\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\invoice\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\invoice\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\attachment.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\client-contact.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\contacts.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\contacts.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\add\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\email-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\email-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\email-tab\row.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\email-tab\row.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\live-job\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\live-job\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\note-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\note-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\targets-tab\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\targets-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\targets-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\task-tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\detail\task-tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\item\detail.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\item\list.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\item\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\job\item\more-info.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\job\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\compose\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\compose\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\mail-detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\mail-detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\reply\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\reply\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\sidebar\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\mail-center\sidebar\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\activity-alert\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\activity-alert\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-attachments\items.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-attachments\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-attachments\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating-attachments\items.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating-attachments\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating-attachments\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-floating\receiver.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\questions.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\status.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\zen.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-note\zen.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-shortlist\job-options.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-shortlist\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-shortlist\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-target-company\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-target-company\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-task\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\add-task\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\allocation-revenue\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\allocation-revenue\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\arrange-interview\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\arrange-interview\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\auto-share\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\auto-share\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\contract\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\contract\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\data-migration\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\data-migration\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\email-confirm\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\email-confirm\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invalid-invoice\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invalid-invoice\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-alert\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-alert\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-alert\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-client\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-client\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-finance\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\invoice-finance\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\kpi-column-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\kpi-column-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\login-alert\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\login-alert\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\mass-edit\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\mass-edit\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\merge-company\company.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\merge-company\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\merge-company\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\offer-signed\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\offer-signed\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\onboard\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\onboard\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\paste-resume\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\paste-resume\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\payment-received\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\payment-received\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\reset-invoice\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\reset-invoice\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\send-email\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\send-email\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\setting-email\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\setting-email\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\share-revenue\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\share-revenue\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\share-revenue\user.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\target-company\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\target-company\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\tree-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\tree-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\upload-document\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\upload-document\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\modal\video\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\modal\video\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\notification-center\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-excel\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-excel\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\attachment.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\modal\batch-add.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\modal\batch-add.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\modal\upload.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\modal\upload.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\table-action.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\table-action.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\ziplist.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\import-resume\ziplist.js" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\modal\batch-add.html" />
+    <Content Include="Source\assets\release\js\app\widget\plugins\modal\batch-add.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\attachment-reporting\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\attachment-reporting\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\attachment-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\attachment-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\chart\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\chart\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\client-reporting\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\client-reporting\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\client-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\client-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\job-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\job-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\action\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\action\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\email\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\email\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\floating\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\floating\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\interview\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\interview\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\job\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\job\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\people\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\people\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\shortlist\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\shortlist\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\submission\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main-reporting\submission\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\note-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\note-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\task-reporting\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\task-reporting\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\task-reporting\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\kpi\task-reporting\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\detailTable.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\detailTable.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\reporting\revenue\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\anti-copy\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\anti-copy\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\invoice-email\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\invoice-email\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\ip-privacy\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\ip-privacy\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\login-log\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\login-log\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\login-log\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\login-log\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\user-activity\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\user-activity\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\user-activity\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\security-center\user-activity\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\shortlist\detail-item.html" />
+    <Content Include="Source\assets\release\js\app\widget\shortlist\history.html" />
+    <Content Include="Source\assets\release\js\app\widget\shortlist\history.js" />
+    <Content Include="Source\assets\release\js\app\widget\shortlist\list-item.html" />
+    <Content Include="Source\assets\release\js\app\widget\shortlist\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\tab\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\tab\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\tab\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\attachment-type\tab\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\base\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\base\options-config.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\base\options-item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\base\question.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\checkbox.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\date.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\dropdown.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\multiline.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\radio.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\components\text.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\checkbox.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\date.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\dropdown.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\multiline.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\radio.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\config\text.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-fields\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-required-fields\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\candidate-required-fields\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-fields\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-fields\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-info\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-info\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-note-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-note-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-note-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\company-note-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\core-config\base\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\core-config\base\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\core-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\core-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\document-permission\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\document-permission\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\education-background\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\education-background\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\education-background\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\education-background\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\email-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\email-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\email-template-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\email-template-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\email\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\email\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\job-note-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\job-note-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\job-note-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\job-note-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\joborder-fields\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\joborder-fields\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-status\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-status\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-status\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\jobsubmission-note-status\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\license\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\license\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\modal\merge-node\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\modal\merge-node\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\modal\reorder-email-template\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\modal\reorder-email-template\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-note-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-note-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-note-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-note-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-status-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-status-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-status-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\people-status-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\revenue-invalid-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\revenue-invalid-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\revenue-invalid-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\revenue-invalid-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\route.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\task-category-config\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\task-category-config\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\task-category-config\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\task-category-config\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\system\valid-new-company\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\system\valid-new-company\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\task\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\task\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\task\item.html" />
+    <Content Include="Source\assets\release\js\app\widget\task\item.js" />
+    <Content Include="Source\assets\release\js\app\widget\task\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\task\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\add\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\add\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\detail\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\detail\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\filter\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\filter\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\item\detail.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\item\list.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\item\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\list\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\list\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\migrate\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\migrate\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\my-profile\main.js" />
+    <Content Include="Source\assets\release\js\app\widget\user\preview\main.html" />
+    <Content Include="Source\assets\release\js\app\widget\user\preview\main.js" />
+    <Content Include="Source\assets\release\js\bak.app.min.js" />
+    <Content Include="Source\assets\release\js\bak.shared.min.js" />
+    <Content Include="Source\assets\release\js\config.js" />
+    <Content Include="Source\assets\release\js\jquery.1.7.2.amd.js" />
+    <Content Include="Source\assets\release\js\main.js" />
+    <Content Include="Source\assets\release\js\shared.html.js" />
+    <Content Include="Source\assets\release\js\shared\helper\ajax.js" />
+    <Content Include="Source\assets\release\js\shared\helper\blurb.js" />
+    <Content Include="Source\assets\release\js\shared\helper\toggle.js" />
+    <Content Include="Source\assets\release\js\shared\helper\translation.js" />
+    <Content Include="Source\assets\release\js\shared\helper\utils.js" />
+    <Content Include="Source\assets\release\js\shared\helper\validate.js" />
+    <Content Include="Source\assets\release\js\shared\services\comet.js" />
+    <Content Include="Source\assets\release\js\shared\services\error-handling.js" />
+    <Content Include="Source\assets\release\js\shared\services\load-context.js" />
+    <Content Include="Source\assets\release\js\shared\services\route.js" />
+    <Content Include="Source\assets\release\js\shared\widget\application.js" />
+    <Content Include="Source\assets\release\js\shared\widget\auth\linkedin\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\auth\linkedin\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\auth\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\auth\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\base\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\add-share\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\add-share\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\add-share\share.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\autosize\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\ckeditor\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\comtree\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\comtree\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\date-picker\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\quick-search\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\quick-search\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\quick-search\suggestion.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\select-template\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\select-template\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\slide-helper\base.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\tagit\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\upload\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\upload\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\common\user-list\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\common\user-list\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\feedback\quick-post\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\feedback\quick-post\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\filter\base.js" />
+    <Content Include="Source\assets\release\js\shared\widget\filter\query.js" />
+    <Content Include="Source\assets\release\js\shared\widget\header\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\header\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\list-ordering\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\list-paginate\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\list\base.js" />
+    <Content Include="Source\assets\release\js\shared\widget\login\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\login\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\add-to-folder\edit-folder.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\add-to-folder\edit-folder.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\add-to-folder\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\add-to-folder\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\authenticator\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\authenticator\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\base.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\email-signature\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\email-signature\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\feedback-quick-post\attachment.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\feedback-quick-post\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\modal\feedback-quick-post\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\page-route\add.html" />
+    <Content Include="Source\assets\release\js\shared\widget\page-route\detail.html" />
+    <Content Include="Source\assets\release\js\shared\widget\page-route\list.html" />
+    <Content Include="Source\assets\release\js\shared\widget\page-route\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\page-route\merge.html" />
+    <Content Include="Source\assets\release\js\shared\widget\pagination\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\pagination\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\root\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\admin\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\admin\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\saved-filter\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\saved-filter\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\side-bar\saved-filter\saved-filter.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\detail\attachment.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\detail\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\detail\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\detail\new-message.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\filter\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\filter\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\item\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\item\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\list\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\support-center\list\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\system\password\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\system\password\main.js" />
+    <Content Include="Source\assets\release\js\shared\widget\system\preference\main.html" />
+    <Content Include="Source\assets\release\js\shared\widget\system\preference\main.js" />
+    <Content Include="Source\assets\release\js\troopjs-requirejs\template.js" />
+    <Content Include="Source\favicon.ico" />
+    <Content Include="Source\logo.png" />
+    <Content Include="Source\metronic.bootstrap\charts.html" />
+    <Content Include="Source\metronic.bootstrap\email1.html" />
+    <Content Include="Source\metronic.bootstrap\email2.html" />
+    <Content Include="Source\metronic.bootstrap\email3.html" />
+    <Content Include="Source\metronic.bootstrap\email4.html" />
+    <Content Include="Source\metronic.bootstrap\email5.html" />
+    <Content Include="Source\metronic.bootstrap\email6.html" />
+    <Content Include="Source\metronic.bootstrap\extra_404_option1.html" />
+    <Content Include="Source\metronic.bootstrap\extra_404_option2.html" />
+    <Content Include="Source\metronic.bootstrap\extra_404_option3.html" />
+    <Content Include="Source\metronic.bootstrap\extra_500_option1.html" />
+    <Content Include="Source\metronic.bootstrap\extra_500_option2.html" />
+    <Content Include="Source\metronic.bootstrap\extra_faq.html" />
+    <Content Include="Source\metronic.bootstrap\extra_image_manager.html" />
+    <Content Include="Source\metronic.bootstrap\extra_invoice.html" />
+    <Content Include="Source\metronic.bootstrap\extra_lock.html" />
+    <Content Include="Source\metronic.bootstrap\extra_pricing_table.html" />
+    <Content Include="Source\metronic.bootstrap\extra_profile.html" />
+    <Content Include="Source\metronic.bootstrap\extra_search.html" />
+    <Content Include="Source\metronic.bootstrap\form_component.html" />
+    <Content Include="Source\metronic.bootstrap\form_dropzone.html" />
+    <Content Include="Source\metronic.bootstrap\form_fileupload.html" />
+    <Content Include="Source\metronic.bootstrap\form_layout.html" />
+    <Content Include="Source\metronic.bootstrap\form_samples.html" />
+    <Content Include="Source\metronic.bootstrap\form_validation.html" />
+    <Content Include="Source\metronic.bootstrap\form_wizard.html" />
+    <Content Include="Source\metronic.bootstrap\inbox.html" />
+    <Content Include="Source\metronic.bootstrap\inbox_inbox.html" />
+    <Content Include="Source\metronic.bootstrap\index.html" />
+    <Content Include="Source\metronic.bootstrap\layout_ajax.html" />
+    <Content Include="Source\metronic.bootstrap\layout_ajax_content_2.html" />
+    <Content Include="Source\metronic.bootstrap\layout_ajax_content_3.html" />
+    <Content Include="Source\metronic.bootstrap\layout_blank_page.html" />
+    <Content Include="Source\metronic.bootstrap\layout_boxed_not_responsive.html" />
+    <Content Include="Source\metronic.bootstrap\layout_boxed_page.html" />
+    <Content Include="Source\metronic.bootstrap\layout_email.html" />
+    <Content Include="Source\metronic.bootstrap\layout_horizontal_menu1.html" />
+    <Content Include="Source\metronic.bootstrap\layout_horizontal_menu2.html" />
+    <Content Include="Source\metronic.bootstrap\layout_horizontal_sidebar_menu.html" />
+    <Content Include="Source\metronic.bootstrap\layout_promo.html" />
+    <Content Include="Source\metronic.bootstrap\layout_sidebar_closed.html" />
+    <Content Include="Source\metronic.bootstrap\login.html" />
+    <Content Include="Source\metronic.bootstrap\login_soft.html" />
+    <Content Include="Source\metronic.bootstrap\maps_google.html" />
+    <Content Include="Source\metronic.bootstrap\maps_vector.html" />
+    <Content Include="Source\metronic.bootstrap\media\css\about-us.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\animate.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\blog.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\blue.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-fileupload.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-modal.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-responsive.min.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-responsive1.min.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-tag.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-toggle-buttons.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-tree.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap-wysihtml5.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\bootstrap.min.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\brown.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\chosen.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\clockface.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\colorpicker.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\coming-soon.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\datepicker.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\daterangepicker.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\datetimepicker.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\default.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\dropzone.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\DT_bootstrap.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\email.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\error.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\font-awesome.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\font-awesome.min.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\fullcalendar.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\glyphicons.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\grey.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\halflings.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\inbox.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\invoice.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.easy-pie-chart.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.fancybox.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.fileupload-ui.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.gritter.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.nestable.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.tagsinput.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jquery.ui.slider.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\jqvmap.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\light.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\lock.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\login-soft.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\login.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\multi-select-metro.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\news.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\pricing-tables.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\print.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\profile.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\promo.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\purple.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\search.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\select2_metro.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\style-metro.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\style-non-responsive.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\style-responsive.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\style.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\timeline.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\timepicker.css" />
+    <Content Include="Source\metronic.bootstrap\media\css\uniform.default.css" />
+    <Content Include="Source\metronic.bootstrap\media\image\1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\10.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\11.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\2.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\3.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\4.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\5.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\6.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\7.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\8.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\9.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\alpha.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\amazon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\animated-overlay.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\avatar.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\avatar1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\avatar1_small.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\avatar2.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\avatar3.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\behance.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg-input-focus.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg-input.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg-opacity.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg-white-lock.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg\1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg\2.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg\3.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\bg\4.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\blank.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\blogger.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\bstree-halflings.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\chosen-sprite.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\datatable-row-openclose.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\deviantart.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\dribbble.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\dropbox.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\earth.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\evernote.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\facebook.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\fancybox_loading.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\fancybox_overlay.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\fancybox_sprite.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\favicon.ico" />
+    <Content Include="Source\metronic.bootstrap\media\image\fontawesome-webfont.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\forrst.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\github.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-halflings-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-halflings.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-regular.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-white.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphiconshalflings-regular.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons_halflings-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons_halflings-white.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons_halflings.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons_halflings.svg" />
+    <Content Include="Source\metronic.bootstrap\media\image\googleplus.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\gritter-light.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\gritter.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\hor-menu-search-close-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\hor-menu-search-close.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\hor-menu-search.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\hue.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\icon-color-close.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\icon-color.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\icon-img-down.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\icon-img-up.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ie-spacer.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\image1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\image2.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\image3.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\image4.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\image5.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\img1.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\img1_2.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\img2.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\img3.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\img4.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\inbox-nav-arrow-blue.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\instagram.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\iphone.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\item_img.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\item_img1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\jolicloud.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\KwPYo.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\last-fm.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\linkedin.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\loading.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\logo-big.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\logo.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\logo_azteca.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\logo_conquer.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\logo_metronic.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\menu-toggler.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\overlay-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo1.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo2.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo3.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo4.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo5.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\photo6.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\picasa.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\pintrest.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-collapse-icon-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-collapse-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-config-icon-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-config-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-expand-icon-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-expand-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-reload-icon-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-reload-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-remove-icon-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\portlet-remove-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_02.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_03.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_04.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_05.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_06.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_07.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_08.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_09.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_10.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_11.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_12.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_13.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_14.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_15.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_16.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\preview_17.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\profile-img.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\profile.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\progressbar.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\remove-icon-small.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\rss.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\saturation.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\search-icon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\select2-spinner.gif" />
+    <Content Include="Source\metronic.bootstrap\media\image\select2.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\select2x2.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sidebar-menu-arrow.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sidebar-search-close.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sidebar-toggler.jpg" />
+    <Content Include="Source\metronic.bootstrap\media\image\skype.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\social_facebook.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\social_googleplus.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\social_linkedin.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\social_rss.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\social_twitter.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sort_asc.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sort_asc_disabled.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sort_both.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sort_desc.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sort_desc_disabled.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\spotify.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\sprite.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\spritemap%402x.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\spritemap.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\stumbleupon.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\switch.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\syncfusion-icons-white.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\syncfusion-icons.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\tumblr.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\twitter.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_222222_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_228ef1_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_888888_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\ui-icons_ffffff_256x240.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\vimeo.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\vk.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\walmart.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\wordpress.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\xing.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\yahoo.png" />
+    <Content Include="Source\metronic.bootstrap\media\image\youtube.png" />
+    <Content Include="Source\metronic.bootstrap\media\js\additional-methods.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\app.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-colorpicker.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-datepicker.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-datetimepicker.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-fileupload.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-modal.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-modalmanager.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-rtl.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-tag.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-timepicker.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-tree.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap-wysihtml5.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\bootstrap.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\breakpoints.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\breakpoints.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\calendar.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\canvas-to-blob.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\charts.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\chosen.jquery.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ckeditor.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\clockface.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\coming-soon.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\contact-us.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\date.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\daterangepicker.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\dropzone.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\DT_bootstrap.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\excanvas.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\excanvas.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\form-components.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\form-fileupload.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\form-samples.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\form-validation.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\form-wizard.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\fullcalendar.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\gallery.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\gmaps.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\inbox.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\index.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery-1.10.1.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery-1.8.3.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.backstretch.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.blockui.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.bootpag.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.cookie.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.countdown.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.dataTables.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.dataTables.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.easy-pie-chart.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.fancybox.pack.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.fileupload-fp.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.fileupload-ui.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.fileupload.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.flot.crosshair.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.flot.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.flot.pie.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.flot.resize.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.flot.stack.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.gritter.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.iframe-transport.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.input-ip-address-control-1.0.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.inputmask.bundle.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.knob.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.multi-select.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.nestable.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.pulsate.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.slimscroll.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.sparkline.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.tagsinput.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.toggle.buttons.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.ui.widget.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.uniform.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.validate.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.europe.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.germany.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.russia.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.sampledata.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.usa.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.vmap.world.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\jquery.xdr-transport.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\load-image.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\lock.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\login-soft.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\login.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\maps-google.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\maps-vector.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\portlet-draggable.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\respond.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\respond.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\search.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\select2.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\table-advanced.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\table-editable.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\table-managed.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\tmpl.min.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-general.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-jqueryui.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-modals.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-nestable.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-sliders.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\ui-tree.js" />
+    <Content Include="Source\metronic.bootstrap\media\js\wysihtml5-0.3.0.js" />
+    <Content Include="Source\metronic.bootstrap\page_about.html" />
+    <Content Include="Source\metronic.bootstrap\page_blog.html" />
+    <Content Include="Source\metronic.bootstrap\page_blog_item.html" />
+    <Content Include="Source\metronic.bootstrap\page_calendar.html" />
+    <Content Include="Source\metronic.bootstrap\page_coming_soon.html" />
+    <Content Include="Source\metronic.bootstrap\page_contact.html" />
+    <Content Include="Source\metronic.bootstrap\page_news.html" />
+    <Content Include="Source\metronic.bootstrap\page_news_item.html" />
+    <Content Include="Source\metronic.bootstrap\page_timeline.html" />
+    <Content Include="Source\metronic.bootstrap\portlet_draggable.html" />
+    <Content Include="Source\metronic.bootstrap\portlet_general.html" />
+    <Content Include="Source\metronic.bootstrap\source.txt" />
+    <Content Include="Source\metronic.bootstrap\table_advanced.html" />
+    <Content Include="Source\metronic.bootstrap\table_basic.html" />
+    <Content Include="Source\metronic.bootstrap\table_editable.html" />
+    <Content Include="Source\metronic.bootstrap\table_managed.html" />
+    <Content Include="Source\metronic.bootstrap\table_responsive.html" />
+    <Content Include="Source\metronic.bootstrap\ui_buttons.html" />
+    <Content Include="Source\metronic.bootstrap\ui_general.html" />
+    <Content Include="Source\metronic.bootstrap\ui_jqueryui.html" />
+    <Content Include="Source\metronic.bootstrap\ui_modals.html" />
+    <Content Include="Source\metronic.bootstrap\ui_nestable.html" />
+    <Content Include="Source\metronic.bootstrap\ui_sliders.html" />
+    <Content Include="Source\metronic.bootstrap\ui_tabs_accordions.html" />
+    <Content Include="Source\metronic.bootstrap\ui_tiles.html" />
+    <Content Include="Source\metronic.bootstrap\ui_tree.html" />
+    <Content Include="Source\metronic.bootstrap\ui_typography.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Data\Controllers\" />
+    <Folder Include="Areas\Data\Models\" />
+    <Folder Include="Areas\Data\Views\Shared\" />
+    <Folder Include="Areas\rest\Models\" />
+    <Folder Include="Areas\rest\Views\Shared\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="locales\en\translation.json" />
+    <Content Include="locales\zh_CN\translation.json" />
+    <Content Include="Source\metronic.bootstrap\media\image\css" />
+    <Content Include="Source\metronic.bootstrap\media\image\fontawesome-webfont.eot" />
+    <Content Include="Source\metronic.bootstrap\media\image\fontawesome-webfont.ttf" />
+    <Content Include="Source\metronic.bootstrap\media\image\fontawesome-webfont.woff" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-regular.eot" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-regular.ttf" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphicons-regular.woff" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphiconshalflings-regular.eot" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphiconshalflings-regular.ttf" />
+    <Content Include="Source\metronic.bootstrap\media\image\glyphiconshalflings-regular.woff" />
+    <Content Include="Source\metronic.bootstrap\media\image\js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Page\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Data\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\rest\Views\Web.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:32509/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

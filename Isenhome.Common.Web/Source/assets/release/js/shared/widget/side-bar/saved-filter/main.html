@@ -1,0 +1,18 @@
+define("troopjs-requirejs/template!shared/widget/side-bar/saved-filter/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.savedFilters;
+		if (b += "", "document" !== this._type) {
+			if (b += '<ul class="nav nav-list saved-filter" data-name="favorite-filter">    <li class="nav-header" id="saved-searchs">        <a href="#" data-action="nav/header">            <b class="icon-expandable"></b>            <span data-weave="shared/helper/translation" data-i18n="Saved Searches"></span>        </a>    </li>    ', c) {
+				b += "    ";
+				for (var d = 0, e = c.length; e > d; d++)
+					b += '    <li class="nav-filter">        <span class="icon-remove-small icon-transparent" data-action="filter/delete" data-filter="' + c[d].name + '" data-id="' + c[d].id + '"></span>        <a  href="#" data-href="' + c[d].query + "&byfilter=" + c[d].id + '" data-action="filter" data-id="' + c[d].id + '" class="search-item"><i class="icon-search icon-blue"></i> ' + c[d].name + '<sapn class="pull-right">' + c[d].count + '</sapn></a>        <span class="icon-move-ns icon-blue"></span>    </li>    ';
+				b += "    "
+			}
+			b += "</ul>"
+		}
+		return b += "",
+		("candidate" === this._type || "client" === this._type || "document" === this._type) && (b += '<ul class="nav nav-list folder-list" data-action="folder/list" data-name="folder-list">    <li class="nav-header">        <a href="#" data-action="nav/header">            <b class="icon-expandable"></b>            <span data-weave="shared/helper/translation" data-i18n="Folder"></span>            <span class="edit hide" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/folder"></span>        </a>    </li>    <li class="folder-tree">    </li></ul>'),
+		b
+	}
+})

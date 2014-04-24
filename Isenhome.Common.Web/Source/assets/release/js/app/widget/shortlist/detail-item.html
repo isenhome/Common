@@ -1,0 +1,40 @@
+define("troopjs-requirejs/template!app/widget/shortlist/detail-item.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.candidate;
+		a.detail;
+		var d = a.joborder,
+		e = d.client;
+		d.clientContact;
+		var f,
+		g = parseInt(this._context.config.hide_contactinfo);
+		switch (a.currentStatus) {
+		case "Rejected":
+			f = 0;
+			break;
+		case "Shortlist":
+			f = 1;
+			break;
+		case "CVSent":
+			f = 2;
+			break;
+		case "ClientInterview":
+			f = 3;
+			break;
+		case "OfferSign":
+			f = 4;
+			break;
+		case "Onboard":
+			f = 6;
+			break;
+		default:
+			f = 10
+		}
+		var h = [c.englishName, c.chineseName].join(" ");
+		return b += '<div class="span4 well well-small">    ',
+		a.candidate.islimited ? (b += "    <h4>ID: " + c.id + "</a></h4>    ", c.title && (b += '    <p class="searchable text">' + c.title + "</p>    "), b += "    ", c.company && (b += '    <p class="text">        <a href="/company#detail!id=' + c.company.id + '" class="searchable" target="_blank">' + c.company.name + "</a>    </p>    "), b += "    ") : (b += '    <div class="clearfix sepH_b">        <h4 class="pull-left">            ', "coldcall" === c.type && (b += '            <span class="label" data-weave="shared/helper/translation" data-i18n="Cold Call"></span>            '), b += '            <a href="/candidate#detail!id=' + c.id + '" class="searchable candidate-name ', "contact" === c.type && (b += "red"), b += '" target="_blank">' + h + '</a>        </h4>        <span class="pull-left">            <span class="dropdown" data-weave="app/widget/common/attachment-view/main(' + c.attachment_count + ", 'candidate', " + c.id + ')"></span>                        <a href="/candidate#add!id=' + c.id + '" target="_blank" class="content-actions" data-i18n="Edit" data-weave="shared/helper/translation(\'title\')"><span class="icon-edit icon-blue"></span></a>        </span>        ', this._islimited || (b += '        <input class="pull-right" name="candidates" type="checkbox" value="' + c.id + '" data-sid="' + a.id + '" data-action="shortlist/check">        '), b += "    </div>        ", c.title && (b += '    <p class="searchable text">' + c.title + "</p>    "), b += "    ", c.company && (b += '    <p class="text">        <a href="/company#detail!id=' + c.company.id + '" class="searchable ', c.company && c.company.type && "normal" !== c.company.type && "generated" !== c.company.type && (b += "red"), b += '" target="_blank">' + c.company.name + "</a>        ", c.experience_count && (b += '        <span class="dropdown dropdown-experience">            <a href="#" data-toggle="dropdown">                (' + c.experience_count + '<span data-weave="shared/helper/translation" data-i18n="Work Experiences"></span>)            </a>            <span class="dropdown-menu widget-spin">            </span>        </span>        '), b += "    </p>    "), b += "    ", c.mobile && (b += '    <p class="searchable text">        电话:        ', g ? (b += "        ", c.mobile && (b += '        <a href="tel:' + c.mobile + '">' + c.mobile + "</a>        "), b += "        ") : (b += '        <span data-weave="shared/helper/toggle">            <a href="#" data-weave="shared/helper/translation" data-i18n="View" data-action="helper/toggle/show" class="helper-toggle-show"></a>            <span class="hide" data-toggle="view">                ', c.mobile && (b += '                <a href="tel:' + c.mobile + '">' + c.mobile + "</a>                "), b += "            </span>        </span>        "), b += '        <span data-weave="shared/helper/translation" data-i18n="Owner"></span>: <a href="/user/preview#' + c.owner.id + '" data-action="profile/open">' + c.owner.englishName + "</a>    </p>    "), b += "    "),
+		b += '</div><div class="span7">    <dl class="dl-horizontal dl-shortlist" id="' + a.id + '">            </dl></div>',
+		this._islimited || (b += '<div class="span1">    <div class="dropdown">        <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown">            <i class="icon-list-alt"></i>            <span class="caret"></span>        </a>        <ul class="dropdown-menu">            <li ', (1 > f || f >= 4) && (b += 'class="disabled"'), b += '>                <a href="#" data-action="send/cv(' + a.id + ')" data-weave="shared/helper/translation" data-i18n="Send CV to Client"></a>            </li>            <li ', (2 > f || f >= 4) && (b += 'class="disabled"'), b += ' >                <a href="#" data-action="arrange/interview(' + a.id + ", '" + h + '\')" data-weave="shared/helper/translation" data-i18n="Arrange Client Interview"></a>            </li>            <li ', (3 > f || f >= 4) && (b += 'class="disabled"'), b += ' >                <a href="#" data-action="offer/signed(' + a.id + ", '" + h + '\')" data-weave="shared/helper/translation" data-i18n="Offer Signed"></a>            </li>            <li ', 4 > f && (b += 'class="disabled"'), b += ' >                <a href="#" data-action="allocation/revenue(' + c.id + ')" data-weave="shared/helper/translation" data-i18n="Revenue Allocation"></a>            </li>            <li ', (4 > f || 6 === f) && (b += 'class="disabled"'), b += '>                <a href="#" data-action="onboard(' + a.id + ", '" + h + '\')" data-weave="shared/helper/translation" data-i18n="Onboard"></a>            </li>            <li class="divider"></li>            <li class="always">                <a href="#" data-action="comment/add" data-weave="shared/helper/translation" data-i18n="Add notes"></a>            </li>            <li class="always">                <a href="#" data-action="send/email(\'' + h + "', '" + c.email + "', " + e.id + ", " + c.id + ", " + d.id + ')" data-weave="shared/helper/translation" data-i18n="Email"></a>            </li>            ', 1 === f && (b += '            <li class="divider"></li>            <li>                <a href="#" data-action="remove/from/job" data-weave="shared/helper/translation" data-i18n="Remove from job"></a>            </li>            '), b += "        </ul>    </div> </div>"),
+		b
+	}
+})

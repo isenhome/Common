@@ -1,0 +1,10 @@
+define("troopjs-requirejs/template!app/widget/modal/add-floating-attachments/items.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.items;
+		b += "<label><strong>" + a.title + "</strong></label>";
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '<label class="checkbox">    ', b += c[d].tag ? '    <span class="label" style="background-color: ' + c[d].tag.color + ';">' + c[d].tag.value + "</span>    " : '    <span class="label" data-weave="shared/helper/translation" data-i18n="Unknown"></span>    ', b += '    <input type="checkbox" data-external="' + c[d].external_id + '" value="' + c[d].id + '" data-ext="' + c[d].ext.toLowerCase() + '" data-action="attachment">    <span class="file-type-icon ' + c[d].ext.toLowerCase() + '">' + c[d].originname + '</span>    <a href="/rest/file/preview/' + c[d].uuidname + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a></label>';
+		return b
+	}
+})

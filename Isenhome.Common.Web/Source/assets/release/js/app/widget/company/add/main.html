@@ -1,0 +1,51 @@
+define("troopjs-requirejs/template!app/widget/company/add/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this.editMode;
+		if (c)
+			var d = {
+				name1 : a.name1 || "",
+				name2 : a.name2 || ""
+			},
+		e = a.bd ? a.bd.id : "",
+		f = a.industry ? a.industry.id : "",
+		g = a.industry1 ? a.industry1.id : "",
+		h = a.industry2 ? a.industry2.id : "",
+		i = a.city ? a.city.id : "",
+		j = a.city1 ? a.city1.id : "",
+		k = a.city2 ? a.city2.id : "",
+		l = {
+			ext1 : a.ext1.value ? a.ext1.value : "",
+			ext2 : a.ext2.value ? a.ext2.value : "",
+			ext3 : a.ext3.value ? a.ext3.value : "",
+			ext4 : a.ext4.value ? a.ext4.value : "",
+			ext5 : a.ext5.value ? a.ext5.value : "",
+			ext6 : a.ext6.value ? a.ext6.value : ""
+		};
+		b += '<div class="span12">    ',
+		b += c ? '    <h3 class="heading" data-weave="shared/helper/translation" data-i18n="Edit Company"></h3>    ' : '    <h3 class="heading" data-weave="shared/helper/translation" data-i18n="New Company"></h3>    ',
+		b += '    <p class="muted">        ',
+		a.client_need_verify && (b += "        系统已开启审核功能。新增客户公司后，需要管理员审核通过，才能进行后续操作（如添加公司备注，添加客户联系人以及添加项目）        "),
+		b += '    </p>    <form action="#" id="addCandidateForm" class="form-horizontal">        <fieldset>            <div class="control-group">                <label for="name" class="control-label">                    ' + this.extraFields.name + '                    <span class="f_req">*</span>                </label>                <div class="controls">                    <input type="text" id="name" name="name" data-action="check/company" autocomplete="off" value="' + (c ? a.name : "") + '">                </div>            </div>            ';
+		for (var m = 0, n = this.companNames.length; n > m; m++)
+			b += "            ", this.extraFields[this.companNames[m]] && (b += '            <div class="control-group">                <label for="' + this.companNames[m] + '" class="control-label">                    ' + this.extraFields[this.companNames[m]] + '                </label>                <div class="controls">                    <input type="text" id="' + this.companNames[m] + '" name="' + this.companNames[m] + '" data-action="check/company" autocomplete="off" value="' + (c ? d[this.companNames[m]] : "") + '">                </div>            </div>            '), b += "            ";
+		b += '            <div class="control-group">                <div class="controls text_line control-existing hide clearfix" data-weave="app/widget/company/existing/main"></div>            </div>            ';
+		for (var m = 0, n = this.extFields.length; n > m; m++)
+			b += "            ", this.extraFields[this.extFields[m]] && (b += '            <div class="control-group">                <label for="' + this.extFields[m] + '" class="control-label">                    ' + this.extraFields[this.extFields[m]] + '                </label>                <div class="controls">                    <input type="text" id="' + this.extFields[m] + '" name="' + this.extFields[m] + '" class="input-large" value="' + (c ? l[this.extFields[m]] : "") + '">                </div>            </div>            '), b += "            ";
+		return b += '            <div class="control-group">                <label for="" class="control-label">                    <span data-weave="shared/helper/translation" data-i18n="Industry"></span>                    <span class="f_req">*</span>                </label>                <div class="controls clearfix">                    <div class="comtree span3" data-name="industry" data-url="/rest/data/industry" data-weave="shared/widget/common/comtree/main(' + (c ? f : "") + ')"></div>                </div>                <div class="controls clearfix ',
+		(!c || c && "number" != typeof g) && (b += "hide"),
+		b += '">                    <div class="comtree span3" data-name="industry1" data-url="/rest/data/industry" data-weave="shared/widget/common/comtree/main(' + (c ? g : "") + ')"></div>                    <a href="#" class="remove" data-action="remove/field"><span class="icon-remove"></span></a>                </div>                <div class="controls clearfix ',
+		(!c || c && "number" != typeof h) && (b += "hide"),
+		b += '">                    <div class="comtree span3" data-name="industry2" data-url="/rest/data/industry" data-weave="shared/widget/common/comtree/main(' + (c ? h : "") + ')"></div>                    <a href="#" class="remove" data-action="remove/field"><span class="icon-remove"></span></a>                </div>                <div class="controls text_line">                    <a href="#" data-action="add/industry" data-weave="shared/helper/translation" data-i18n="Add"></a>                </div>            </div>            <div class="control-group">                <label class="control-label">                    <span data-weave="shared/helper/translation" data-i18n="City"></span>                    <span class="f_req">*</span>                </label>                <div class="controls clearfix">                    <div class="comtree span3" data-name="city" data-url="/rest/data/city" data-weave="shared/widget/common/comtree/main(' + (c ? i : "") + ')"></div>                </div>                <div class="controls clearfix ',
+		(!c || c && !j) && (b += "hide"),
+		b += '">                    <div class="comtree span3" data-name="city1" data-url="/rest/data/city" data-weave="shared/widget/common/comtree/main(' + (c ? j : "") + ')"></div>                    <a href="#" class="remove" data-action="remove/field"><span class="icon-remove"></span></a>                </div>                <div class="controls clearfix ',
+		(!c || c && !k) && (b += "hide"),
+		b += '">                    <div class="comtree span3" data-name="city2" data-url="/rest/data/city" data-weave="shared/widget/common/comtree/main(' + (c ? k : "") + ')"></div>                    <a href="#" class="remove" data-action="remove/field"><span class="icon-remove"></span></a>                </div>                <div class="controls controls-add text_line">                    <a href="#" data-action="add/city" data-weave="shared/helper/translation" data-i18n="Add"></a>                </div>            </div>            ',
+		c || (b += '            <div class="control-group formSep">                <label class="control-label">                    <span data-weave="shared/helper/translation" data-i18n="Add to Folder"></span>                </label>                <div class="controls">                    <div class="comtree span4" data-name="folder" data-url="/rest/folder/list?type=client" data-weave="shared/widget/common/comtree/main"></div>                </div>            </div>            '),
+		b += '            <div class="control-group">                <label class="control-label">                    <span data-weave="shared/helper/translation" data-i18n="Company Type"></span>                    <span class="f_req">*</span>                </label>                <div class="controls">                    <label class="radio inline">                        <input type="radio" name="type" data-action="type" value="generated"> <span data-weave="shared/helper/translation" data-i18n="generated company"></span>                    </label>                    <label class="radio inline">                        <input type="radio" name="type" data-action="type" value="normal" ',
+		c || (b += 'checked="checked"'),
+		b += '> <span data-weave="shared/helper/translation" data-i18n="normal company"></span>                    </label>                    <label class="radio inline">                        <input type="radio" name="type" data-action="type" value="bding"> <span data-weave="shared/helper/translation" data-i18n="BDing Client Companies"></span>                    </label>                    <label class="radio inline">                        <input type="radio" name="type" data-action="type" value="client"> <span data-weave="shared/helper/translation" data-i18n="Approved Client Companies"></span>                    </label>                </div>            </div>                           <div class="contract-group hide">                <div class="control-group control-contract"></div>            </div>            <div class="user-group hide">                <div class="control-group">                    <label for="bd" class="control-label" data-weave="shared/helper/translation" data-i18n="BD"></label>                    <div class="controls">                        <select data-placeholder="Choose a user..." name="bd" id="bd" class="input-medium" data-weave="shared/widget/common/user-list/main(' + (c ? e : "") + ')">                        </select>                    </div>                </div>                                <div class="control-group formSep control-share"></div>            </div>                            ',
+		c && (b += '            <div class="control-group formSep">                <label class="control-label" data-weave="shared/helper/translation" data-i18n="Keyin By">                </label>                <div class="controls text_line">                    <a href="/user/preview#' + a.addedBy.id + '" target="_blank">' + a.addedBy.englishName + '</a>                    <span class="hint">                        ' + a.dateAdded + "                    </span>                </div>            </div>            "),
+		b += '            <div class="control-group">                <div class="controls">                    <button class="btn btn-primary" type="submit" data-action="add" data-weave="shared/helper/translation" data-i18n="Save"></button>                </div>            </div>        </fieldset>    </form></div>'
+	}
+})

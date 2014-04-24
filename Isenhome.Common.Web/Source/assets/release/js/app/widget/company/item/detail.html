@@ -1,0 +1,65 @@
+define("troopjs-requirejs/template!app/widget/company/item/detail.html", [], function () {
+	return function (a) {
+		var b,
+		c,
+		d = "",
+		e = a.verifystatus,
+		f = a.islimited,
+		g = a.type,
+		h = "",
+		i = "icon-blue",
+		j = this._context.user.role.toUpperCase(),
+		k = "ADMIN" === j,
+		l = this.isList;
+		switch (g) {
+		case "bding":
+			b = "label-info";
+			break;
+		case "client":
+			b = "label-red"
+		}
+		switch (e) {
+		case "TobeVerified":
+			c = "To be Verified";
+			break;
+		case "Verified":
+			c = "Client Verified",
+			h = "approved";
+			break;
+		case "VerifyInvalid":
+			c = "Client Verified Invalid",
+			h = "label-inverse"
+		}
+		f && (i = "icon-transparent");
+		var m = (new Date).getTime();
+		d += '<div class="search_content full-width">    <div class="search_item_tags pull-right clearfix">        ',
+		k && (d += "        ", "normal" !== a.type && "generated" !== a.type && (d += '        <div class="btn-group">            ', this.needVerify && (d += '            <button class="btn btn-small dropdown-toggle" data-action="dropdown" data-weave="shared/helper/translation" data-i18n="Valid"></button>            '), d += '            <ul class="dropdown-menu">                <li>                    <label class="radio">                        <input type="radio" name="approve-radio_' + m + '" value="TobeVerified">                        <span data-weave="shared/helper/translation" data-i18n="To be Verified"></span>                    </label>                </li>                <li>                    <label class="radio">                        <input type="radio" name="approve-radio_' + m + '" value="Verified">                        <span data-weave="shared/helper/translation" data-i18n="Client Verified"></span>                    </label>                </li>                <li>                    <label class="radio">                        <input type="radio" name="approve-radio_' + m + '" value="VerifyInvalid">                        <span data-weave="shared/helper/translation" data-i18n="Client Verified Invalid"></span>                    </label>                </li>                <li class="divider"></li>                <li>                    <button class="btn" data-i18n="Save" data-action="approve/action" data-weave="shared/helper/translation"></button>                </li>            </ul>        </div>        '), d += "        "),
+		d += "        ",
+		this.needVerify && e && (d += '        <span class="label ' + h + '" data-weave="shared/helper/translation" data-i18n="' + c + '"></span>&nbsp;        '),
+		d += '        <span class="label ' + b + '" data-weave="shared/helper/translation" data-i18n="' + g + " company" + '"></span>&nbsp;        ',
+		a.industry && a.industry.id && (d += '        <span class="label industry" title="' + a.industry.name, a.industry1 && (d += ", " + a.industry1.name), a.industry2 && (d += ", " + a.industry2.name), d += '">' + a.industry.name, (a.industry1 || a.industry2) && (d += "..."), d += "</span>        "),
+		d += '    </div>    <div class="pull-left item-title">        ',
+		"undefined" != typeof this.viewType && (d += '        <input type="checkbox" data-action="list/check">        '),
+		d += '        <a href="/company#detail!id=' + a.id + '" class="title">' + a.name + '</a>        <a href="/company#detail!id=' + a.id + '" target="_blank" title="Open in new tab"><span class="icon-new-window icon-blue"></span></a>        ',
+		a.city && (d += "        <span>(" + a.city.name + ")</span>        "),
+		d += '        <span class="muted">(<span data-weave="shared/helper/translation" data-i18n="On Job"></span>: ' + a.people_count + ')</span>        <span class="muted">(<span data-weave="shared/helper/translation" data-i18n="User Leave"></span>: ' + a.past_people_count + ')</span>        <span class="muted">(<span data-weave="shared/helper/translation" data-i18n="Intention"></span>: ' + a.candidate_targetcompany_count + ")</span>        ",
+		f || (d += '        <span class="dropdown" data-weave="app/widget/common/attachment-view/main(' + a.attachment_count + ", 'clientcompany', " + a.id + ')"></span>        '),
+		d += "        ",
+		f || (d += '        <a href="/company#add!id=' + a.id + '" target="_blank" class="content-actions" data-weave="shared/helper/translation(\'title\')" data-i18n="Edit">            <i class="icon-edit icon-blue"></i>        </a>        '),
+		d += '    </div>    <div class="sepH_b item_description muted">        ',
+		a.name1 && (d += "        <span>" + a.name1 + "</span>        "),
+		d += "        ",
+		a.name2 && (d += "        <span>" + a.name2 + "</span>        "),
+		d += '    </div>    <div class="sepH_b item_description">        ';
+		for (var n = 1; 6 >= n; n++) {
+			var o = "ext" + n;
+			a[o].field && a[o].value && (d += "        <span>            " + a[o].field + ':             <span class="muted">' + this.parseValue(a[o].value) + "</span>        </span>        "),
+			d += "                "
+		}
+		return d += '    </div>    <ul class="inline pull-right line_sep muted">        ',
+		a.bd && (d += '        <li>            <span>BD: <a href="/user/preview#' + a.bd.id + '" data-action="profile/open">' + a.bd.englishName + "</a></span>        </li>        "),
+		d += '    </ul>    <ul class="nav nav-pills line_sep actions">        <li>            <a href="#" data-action="note" data-preview="' + l + '">                <i class="icon-comment icon-blue"></i>                <b class="note-count">' + a.activity_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Note"></span>            </a>        </li>        ',
+		"normal" !== g && "generated" !== g && (d += "        <li ", f && (d += 'class="disabled"'), d += '>            <a href="#" data-action="add/contract">                <i class="icon-flag ' + i + '"></i>                <b class="contract-count">' + a.contract_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Contract"></span>            </a>        </li>        '),
+		d += '        <li>            <a href="#" data-action="task" data-preview="' + l + '">                <i class="icon-time icon-blue"></i>                <b class="task-count">' + a.todo_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Task"></span>            </a>        </li>        <li>            <a href="#" data-action="job" data-preview="' + l + '">                <i class="icon-share icon-blue"></i>                <b class="job-count">' + a.job_count + '</b>                <span data-weave="shared/helper/translation" data-i18n="Job"></span>            </a>        </li>        <li>            <a href="#" data-action="add/to/folder">                <i class="icon-folder-open icon-blue"></i>                <b class="folder-count">' + a.folders.length + '</b>                <span data-weave="shared/helper/translation" data-i18n="Folder"></span>                <span class="muted">' + this.getFolderName(a.folders) + "</span>            </a>        </li>    </ul></div>"
+	}
+})

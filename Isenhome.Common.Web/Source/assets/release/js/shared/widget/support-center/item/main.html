@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!shared/widget/support-center/item/main.html", [], function () {
+	return function (a) {
+		var b = "<td></td><td>" + this.showType(a.type) + '</td><td><a href="/support-center#detail!id=' + a._id + '">' + a.title + "</a></td><td>" + this.formatDate(a.date) + "</td><td>" + this.showStatus(a.status) + "</td>";
+		return b
+	}
+})

@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/candidate/detail/target-tab/main.html", [], function () {
+	return function (a) {
+		for (var b = '<table class="table table-striped table-bordered">    <colgroup>        <col width="">        <col width="">        <col width="">        <col width="">        <col width="70">    </colgroup>    <thead>        <tr>            <th data-weave="shared/helper/translation" data-i18n="Target Company"></th>            <th data-weave="shared/helper/translation" data-i18n="Note"></th>                 <th data-weave="shared/helper/translation" data-i18n="Time"></th>            <th data-weave="shared/helper/translation" data-i18n="User"></th>            <th data-weave="shared/helper/translation" data-i18n="Operation"></th>        </tr>    </thead>    <tbody>        ', c = 0, d = a.length; d > c; c++) {
+			b += "        ";
+			var e = a[c];
+			b += '        <tr>            <td><a href="/company#detail!id=' + e.client.id + '" target="_blank">' + e.client.name + "</a></td>            <td>" + e.note + "</td>            <td>" + e.date + '</td>            <td><a href="/user/preview#' + e.user.id + '" data-action="profile/open">' + e.user.englishName + "</a></td>            <td>                ",
+			this.userId === e.user.id && (b += '                <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Edit" data-action="edit/target(' + c + ')"></button>                '),
+			b += "            </td>        </tr>        "
+		}
+		return b += "    </tbody></table>"
+	}
+})

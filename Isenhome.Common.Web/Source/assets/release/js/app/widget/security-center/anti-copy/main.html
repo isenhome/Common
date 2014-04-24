@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/security-center/anti-copy/main.html", [], function () {
+	return function () {
+		var a = '<h3 class="heading" data-weave="shared/helper/translation" data-i18n="数据防复制"></h3><form action="#" class="form-horizontal">    <p>开启后，候选人及客户联系人列表中的手机需要点击“查看”才能显示。</p>    <div class="control-group">        <label class="control-label">            <span data-weave="shared/helper/translation" data-i18n="是否开启"></span>        </label>        <div class="controls radio">            <label><input name="hide_contactinfo" class="load-key" value="1" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="No"></label>            <label><input name="hide_contactinfo" class="load-key" value="0" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="Yes"></label>            <button class="btn btn-primary action" data-action="setting/radio/edit" data-weave="shared/helper/translation" data-i18n="Edit"></button>            <button class="btn btn-primary action hide" data-action="setting/radio/save" data-weave="shared/helper/translation" data-i18n="Save"></button>            <button class="btn action hide" data-action="setting/textbox/cancel" data-weave="shared/helper/translation" data-i18n="Cancel"></button>        </div>    </div></form>';
+		return a
+	}
+})

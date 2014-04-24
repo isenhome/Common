@@ -1,0 +1,12 @@
+define("troopjs-requirejs/template!app/widget/company/detail/people-tab/main.html", [], function () {
+	return function (a) {
+		function b(a) {
+			for (var d = 0, e = a.length; e > d; d++)
+				c += '            <tr data-tt-id="' + a[d].id + '" data-tt-branch="true" ', a[d].parent_id && (c += 'data-tt-parent-id="' + a[d].parent_id + '"'), c += '>                <td><span class="label function">' + a[d].name + "</span></td>                <td>" + a[d].count + "</td>                <td></td>                <td></td>                <td></td>                <td></td>                <td></td>            </tr>", a[d].children.length && b(a[d].children)
+		}
+		var c = '<p class="text-right">    <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Collapse all" data-action="collapse/all"></button>    <button class="btn btn-small" data-weave="shared/helper/translation" data-i18n="Expand all" data-action="expand/all"></button></p>';
+		return c += '<div class="search_panel clearfix">    <table class="table">        <thead>            <tr>                <th data-weave="shared/helper/translation" data-i18n="organizationChart"></th>                <th data-weave="shared/helper/translation" data-i18n="Count"></th>                <th data-weave="shared/helper/translation" data-i18n="Note"></th>                <th data-weave="shared/helper/translation" data-i18n="Phone"></th>                <th data-weave="shared/helper/translation" data-i18n="Title"></th>                <th data-weave="shared/helper/translation" data-i18n="Status"></th>                <th data-weave="shared/helper/translation" data-i18n="Last Contact"></th>            </tr>        </thead>        <tbody>            ',
+		b(a),
+		c += "        </tbody>    </table></div>"
+	}
+})

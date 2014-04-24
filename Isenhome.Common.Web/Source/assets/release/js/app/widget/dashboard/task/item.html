@@ -1,0 +1,26 @@
+define("troopjs-requirejs/template!app/widget/dashboard/task/item.html", [], function () {
+	return function (a) {
+		function b(a) {
+			var b = new Date(a.split(" ")[0]);
+			return b.getFullYear() + "-" + (parseInt(b.getMonth(), 10) + 1) + "-" + b.getDate()
+		}
+		var c = "";
+		c += "";
+		for (var d = 0, e = a.length; e > d; d++) {
+			c += "";
+			var f = a[d];
+			c += "";
+			var g;
+			c += '<div class="w-box-container w-box-note-item">    <input data-id="' + f.id + '" type="checkbox" ',
+			f.done && (c += 'checked="checked"'),
+			c += ' data-action="check/one">    <p>        <span class="label" style="background-color: ' + f.category.color + ';">' + f.category.value + "</span>        ",
+			"joborder" === f.external_type ? c += '        <a href="/job#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>        " : "client" === f.external_type ? c += '        <a href="/company#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>        " : f.target && f.target.candidate ? (c += "        ", g = f.target.candidate, c += '        <a href="/candidate#detail!id=' + g.id + '" target="_blank">' + [g.englishName, g.chineseName].join(" ").trim() + "</a>        ") : f.target && (c += '        <a href="/candidate#detail!id=' + f.target.id + '" target="_blank">' + f.target.name + "</a>        "),
+			c += '        <span class="muted pull-right">            ',
+			c += f.allday ? "            " + b(f.date) + "            " : "            " + f.date + "            ",
+			c += "        </span>    </p>    ",
+			f.content && (c += "    <p>        " + f.content + "    </p>    "),
+			c += "</div>"
+		}
+		return c
+	}
+})

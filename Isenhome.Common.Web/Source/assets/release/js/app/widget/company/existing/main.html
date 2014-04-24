@@ -1,0 +1,30 @@
+define("troopjs-requirejs/template!app/widget/company/existing/main.html", [], function () {
+	return function (a) {
+		var b = '<p class="text-error"><span data-weave="shared/helper/translation" data-i18n="已存在的名称相似公司"></span></p><div class="well well-small">    ',
+		c = 0,
+		d = a.length,
+		e = 15;
+		for (b += "    "; e > c && d > c; ) {
+			b += "    ";
+			var f = a[c];
+			b += '    <div class="clearfix">        <p>            <span><a href="/company#detail!id=' + f.id + '" target="_blank" class="',
+			f.type && "normal" !== f.type && "generated" !== f.type && (b += "red"),
+			b += '">' + f.name + "</a></span>&nbsp;&nbsp;&nbsp;&nbsp;            ",
+			f.type && "normal" !== f.type && "generated" !== f.type && (b += '            <span class="red" data-i18n="' + f.type + ' company" data-weave="shared/helper/translation"></span>            '),
+			b += "&nbsp;&nbsp;            ",
+			f.bd && (b += '            <span class="muted">BD: <a href="/user/preview#' + f.bd.id + '" data-action="profile/open">' + f.bd.englishName + "</a></span>            &nbsp;&nbsp;            "),
+			b += '            <span class="muted">' + f.people_count + "人才</span>&nbsp;&nbsp;            ",
+			f.city && f.city.name && (b += '            <span class="muted">' + f.city.name + "</span>&nbsp;&nbsp;            "),
+			b += "            ",
+			f.industry && f.industry.id && (b += '            <span class="label industry" title="' + f.industry.name, f.industry1 && (b += ", " + f.industry1.name), f.industry2 && (b += ", " + f.industry2.name), b += '">' + f.industry.name, (f.industry1 || f.industry2) && (b += "..."), b += "</span>            &nbsp;&nbsp;            "),
+			b += '                                    <span class="muted">添加者:</span> <a href="user/preview#' + f.addedBy.id + '" data-action="profile/open">' + f.addedBy.englishName + '</a>&nbsp;&nbsp;            <span class="muted">(' + f.dateAdded + ")</span>&nbsp;&nbsp;        </p>        ",
+			f.name1 && (b += '        <span class="muted">' + f.name1 + "</span>&nbsp;&nbsp;&nbsp;&nbsp;        "),
+			b += "        ",
+			f.name2 && (b += '        <span class="muted">' + f.name2 + "</span>        "),
+			b += "    </div>     ",
+			c++,
+			b += "    "
+		}
+		return b += "</div>"
+	}
+})

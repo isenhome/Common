@@ -1,0 +1,19 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/note-reporting/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.notes;
+		b += '<div class="row-fluid">    <div class="span12">        <p class="text-right">            <button class="btn" data-weave="shared/helper/translation" data-i18n="Export Reporting" data-action="export/csv"></button>            </p>        <table class="table table-striped table-bordered dTableR invisible">            <thead>                <tr>                    <th data-mapping="id">ID</th>                    <th data-mapping="name" data-weave="shared/helper/translation" data-i18n="User"></th>                    <th data-mapping="notes" data-weave="shared/helper/translation" data-i18n="All Notes"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '">' + c[d].value + "</th>                    ";
+		b += '                </tr>            </thead>            <tbody>            </tbody>            <tfoot>                <tr class="sum">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Summary"></th>                    <th data-mapping="notes"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		b += '                </tr>                <tr class="team">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Team highest" class="highlight"></th>                    <th data-mapping="notes"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		b += '                </tr>                <tr class="company">                    <th></th>                    <th data-weave="shared/helper/translation" data-i18n="Company highest" class="highlight"></th>                    <th data-mapping="notes"></th>                    ';
+		for (var d = 0, e = c.length; e > d; d++)
+			b += '                    <th data-mapping="' + c[d].code + '"></th>                    ';
+		return b += "                </tr>            </tfoot>        </table>    </div></div>"
+	}
+})

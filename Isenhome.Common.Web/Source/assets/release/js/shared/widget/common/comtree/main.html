@@ -1,0 +1,7 @@
+define("troopjs-requirejs/template!shared/widget/common/comtree/main.html", [], function () {
+	return function (a) {
+		var b = '<input type="hidden" ';
+		return a && (b += 'name="' + a + '"'),
+		b += '><a href="#" class="comtree-title" data-action="toggle/drop"><span data-weave="shared/helper/translation" data-i18n="Please select"></span><b></b></a><div class="comtree-drop">    <div class="comtree-drop-inner">        <div class="search">            <input type="text" data-action="comtree/search" autocomplate="false">            </div>                <div class="comtree-tree"></div>    </div></div>'
+	}
+})

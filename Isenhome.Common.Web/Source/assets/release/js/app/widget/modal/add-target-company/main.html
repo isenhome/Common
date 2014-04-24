@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/modal/add-target-company/main.html", [], function () {
+	return function () {
+		var a = '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>    <h3 data-weave="shared/helper/translation" data-i18n="Target Company"></h3></div><div class="modal-body">    <form action="#" class="form-horizontal" id="target-company-form">        <div class="control-group">            <label class="control-label">                <span data-weave="shared/helper/translation" data-i18n="Company"></span>                <span class="f_req">*</span>            </label>            <div class="controls">                <input type="text" name="target" class="span4 required">            </div>        </div>    </form></div><div class="modal-footer">    <button class="btn btn-danger pull-left hide" data-dismiss="modal" data-action="delete" data-weave="shared/helper/translation" data-i18n="Delete"></button>    <button class="btn btn-primary" data-action="save" data-weave="shared/helper/translation" data-i18n="Save" form="target-company-form"></button></div>';
+		return a
+	}
+})

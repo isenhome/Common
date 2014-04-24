@@ -1,0 +1,5 @@
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Core\bin\Debug\Isenhome.Common.Core.dll
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Core\bin\Debug\Isenhome.Common.Core.pdb
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Core\obj\Debug\Isenhome.Common.Core.dll
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Core\obj\Debug\Isenhome.Common.Core.pdb
+C:\Users\逸新\documents\visual studio 2013\Projects\Isenhome.Common\Isenhome.Common.Core\obj\Debug\Isenhome.Common.Core.csprojResolveAssemblyReference.cache

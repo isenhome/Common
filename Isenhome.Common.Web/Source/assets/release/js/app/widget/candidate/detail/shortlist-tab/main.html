@@ -1,0 +1,27 @@
+define("troopjs-requirejs/template!app/widget/candidate/detail/shortlist-tab/main.html", [], function () {
+	return function (a) {
+		for (var b = "", c = 0, d = a.length; d > c; c++) {
+			b += "";
+			var e = a[c],
+			f = e.lastUpdateDate.split(" ");
+			f[0],
+			f[1];
+			var g = "",
+			h = e.joborder.jobStatus;
+			switch (h) {
+			case "Live":
+				g = "label-warning";
+				break;
+			case "Failed":
+				g = "label-inverse";
+				break;
+			case "Successful":
+				g = "label-red"
+			}
+			b += '<div class="activity-item clearfix">    <div class="activity-detail">        <div class="well">            <div class="title">                <span class="label ' + g + '" data-weave="shared/helper/translation" data-i18n="' + h + ' Jobs"></span>&nbsp;                <a href="/job#detail!id=' + e.joborder.id + '" target="_blank">' + e.joborder.jobTitle + " (ID: " + e.joborder.id + ')</a> of <a href="/company#detail!id=' + e.joborder.client.id + '" target="_blank">' + e.joborder.client.name + "</a>                ",
+			!e.joborder.client.type || "client" !== e.joborder.client.type && "bding" !== e.joborder.client.type || (b += '                (<span class="red" data-weave="shared/helper/translation" data-i18n="' + e.joborder.client.type + ' company"></span>)                '),
+			b += '            </div>            <div class="content">                <dl class="dl-horizontal dl-shortlist"></dl>            </div>        </div>    </div></div>'
+		}
+		return b
+	}
+})

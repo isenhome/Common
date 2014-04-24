@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/system/document-permission/main.html", [], function () {
+	return function () {
+		var a = '<h3 class="heading">文档: 权限设置</h3><form action="#" class="form-horizontal">    <div class="control-group formSep">        <label class="control-label"><span data-weave="shared/helper/translation" data-i18n="下载权限"></span></label>        <div class="controls">            <label class="radio inline"><input name="attachment_allow_download" class="load-key" value="1" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="所有用户"></label>            <label class="radio inline"><input name="attachment_allow_download" class="load-key" value="0" type="radio" disabled="disabled" /><span data-weave="shared/helper/translation" data-i18n="仅上传者"></label>            <button class="btn btn-primary action" data-action="setting/radio/edit" data-weave="shared/helper/translation" data-i18n="Edit"></button>            <button class="btn btn-primary action hide" data-action="setting/radio/save" data-weave="shared/helper/translation" data-i18n="Save"></button>            <button class="btn action hide" data-action="setting/textbox/cancel" data-weave="shared/helper/translation" data-i18n="Cancel"></button>        </div>    </div></form>';
+		return a
+	}
+})

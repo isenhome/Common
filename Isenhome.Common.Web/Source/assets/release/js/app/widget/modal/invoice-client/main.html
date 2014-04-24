@@ -1,0 +1,6 @@
+define("troopjs-requirejs/template!app/widget/modal/invoice-client/main.html", [], function () {
+	return function () {
+		var a = '<div class="modal-header">    <button type="button" class="close" data-dismiss="modal">×</button>     <h3 data-weave="shared/helper/translation" data-i18n="Invoice sent"></h3></div><div class="modal-body">    <p>        这笔发票已经寄出了?    </p>    <form action="#" class="form-horizontal" id="invoice-client-form">                <div class="control-group">            <label for="" class="control-label">                <span data-weave="shared/helper/translation" data-i18n="Sent Date"></span>                <span class="f_req">*</span>            </label>            <div class="controls">                <input type="text" class="input-medium" name="sentDate" data-weave="shared/widget/common/date-picker/main">            </div>        </div>    </form>    </div><div class="modal-footer">    <button class="btn" data-dismiss="modal" data-weave="shared/helper/translation" data-i18n="Cancel"></button>    <button class="btn btn-primary" data-action="yes" data-weave="shared/helper/translation" data-i18n="Confirm" form="invoice-client-form"></button></div>  ';
+		return a
+	}
+})

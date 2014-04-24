@@ -1,0 +1,55 @@
+define("troopjs-requirejs/template!app/widget/shortlist/history.html", [], function () {
+	return function (a) {
+		for (var b = "", c = a.length; c--; ) {
+			b += "";
+			var d = a[c],
+			e = d.type,
+			f = "";
+			if (e.indexOf("Email Confirm") > -1 || e.indexOf("Send Email") > -1)
+				f = "label-lightblue";
+			else
+				switch (e) {
+				case "ClientInterview":
+					f = "label-blue";
+					break;
+				case "Note":
+					f = "label-orange";
+					break;
+				case "Shortlist":
+					f = "label-purple";
+					break;
+				case "CVSent":
+					f = "label-blue";
+					break;
+				case "OfferSign":
+					f = "label-pink";
+					break;
+				case "Onboard":
+					f = "label-red";
+					break;
+				case "Invoice":
+					f = "label-red"
+				}
+			if (b += "<dt>" + (d.targetDate || d.dateAdded) + "</dt><dd>    <div>        ", "Email" === e)
+				b += '        <span class="icon-envelope icon-blue"></span>        <a href="/mail/center#detail!' + d.id + '" target="_blank">[<b>' + d.subject + '</b>]</a>        <a href="/user/preview#' + d.user.id + '" data-action="profile/open">' + d.user.englishName + "</a>        ";
+			else {
+				if (b += "        ", "Invoice" === e ? b += '        <span class="label label-red">            <span data-weave="shared/helper/translation" data-i18n="Revenue Allocation"></span>:            <span data-weave="shared/helper/translation" data-i18n="Currency symbol"></span> ' + this.formatCurrency(d.invoiceAmount) + "        </span>        " : "ClientInterview" === e ? (b += '        <span class="label ' + f + '" data-weave="shared/helper/translation" data-i18n="' + "Client Interview %d Round".replace("%d", d.round) + '"></span>        ', d.active ? (b += "        ", this.isInUsers(this.userId) && (b += '        <button class="btn btn-mini hide send-confirm" data-action="send/confirm" data-weave="shared/helper/translation" data-i18n="Send email confirm"></button>        '), b += "        ") : b += '        <span class="label label-inverse" data-weave="shared/helper/translation" data-i18n="Backout"></span>        ', b += "        ", this.view || d.user.id !== this.userId || (b += '        <button class="btn btn-mini hide edit-interview" data-action="edit/interview(\'' + JSON.stringify(d).replace(/"/g, "$") + '\')" data-weave="shared/helper/translation" data-i18n="Edit"></button>        '), b += "        ") : "Note" === e ? (b += '        <span class="label ' + f + '" data-weave="shared/helper/translation" data-i18n="Note"></span>        ', d.category && (b += '        <span class="label" style="background-color: ' + d.category.color + ';">' + d.category.value + "</span>        "), b += "        ", d.status && (b += '        <span class="label" style="background-color: ' + d.status.color + ';">' + d.status.value + "</span>        "), b += "        ") : b += '        <span class="label ' + f + '" data-weave="shared/helper/translation" data-i18n="' + e + '"></span>        ', b += "        ", "OfferSign" !== e || this.view || (b += "        ", d.active || (b += '        <span class="label label-inverse" data-weave="shared/helper/translation" data-i18n="Backout"></span>        '), b += "        ", this.view || d.user.id !== this.userId || (b += '        <button class="btn btn-mini" data-weave="shared/helper/translation" data-i18n="Edit" data-action="offer/edit"></button>        '), b += "               "), b += "        ", "Onboard" !== e || this.view || (b += "        ", d.user.id === this.userId && (b += '        <button class="btn btn-mini" data-weave="shared/helper/translation" data-i18n="Edit" data-action="onboard/edit"></button>        '), b += "        "), b += "        ", "Invoice" === e && (b += "        ", d.active ? (b += '            <span class="label ', "To be sent" == d.status ? b += "label-lightblue" : "Received" == d.status ? b += "label-red" : "Sent" == d.status && (b += "label-blue"), b += '" data-weave="shared/helper/translation" data-i18n="' + d.status + '"></span>                        ', this.view || (b += "                ", d.user.id === this.userId && (b += '                <button class="btn btn-mini" data-action="invoice/edit(' + d.id + ')" data-weave="shared/helper/translation" data-i18n="Edit Revenue Allocation"></button>                '), b += "                            ", "Invoice Added" == d.status ? (b += "                ", this.isInUsers(this.userId) && (b += '                <button class="btn btn-mini" data-action="send/to/finance(' + d.id + ')" data-weave="shared/helper/translation" data-i18n="Send Invoice"></button>                '), b += "                ") : (b += "                ", d.user.id === this.userId && (b += '                <button class="btn btn-mini" data-action="edit/to/finance(' + d.id + ')" data-weave="shared/helper/translation" data-i18n="Edit Invoice"></button>                '), b += "                "), b += "                            "), b += "        ") : b += '            <span class="label label-inverse" data-weave="shared/helper/translation" data-i18n="Backout"></span>        ', b += "         "), b += "        ", "Note" === e) {
+					b += "        ";
+					var g = d.category;
+					b += '        <span class="label" style="background-color: ' + this.getCommentLblClr(g) + ';">' + this.getCommentVal(g) + "</span>        ",
+					this.view || d.user.id != this.userId || (b += '        <button class="btn btn-mini" data-weave="shared/helper/translation" data-i18n="Edit" data-action="comment/edit"></button>        '),
+					b += "        "
+				}
+				b += '        <a href="/user/preview#' + d.user.id + '" data-action="profile/open">' + d.user.englishName + "</a>        "
+			}
+			if (b += "    </div>    ", "Note" === e && d.items) {
+				b += '    <div class="activity-detail">        ';
+				for (var h = 0, i = d.items.length; i > h; h++)
+					b += "        ", d.items[h].field && (b += "        <h4>" + d.items[h].field + "</h4>        "), b += "        <p>            " + this.convertText(d.items[h].value) + "        </p>        ";
+				b += "    </div>    "
+			}
+			b += "</dd>"
+		}
+		return b
+	}
+})

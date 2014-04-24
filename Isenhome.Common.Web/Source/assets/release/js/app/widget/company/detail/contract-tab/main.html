@@ -1,0 +1,19 @@
+define("troopjs-requirejs/template!app/widget/company/detail/contract-tab/main.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = this._context.role.toUpperCase(),
+		d = "ADMIN" === c,
+		e = 0,
+		f = a.length;
+		for (b += "", e; f > e; e++) {
+			b += "";
+			var g = a[e];
+			b += '<div class="span6">    <table class="table table-bordered">        <colgroup>            <col width="35%">            <col width="65%">        </colgroup>        <thead>            <tr>                <td colspan="2">                    ' + g.contractName + "                    ",
+			this.islimited || d || (b += '                    <button class="btn btn-primary btn-mini pull-right" data-action="open/edit/contract(' + g.id + ')">Edit</button>                    '),
+			b += '                </td>            </tr>        </thead>        <tbody>            <tr>                <td data-weave="shared/helper/translation" data-i18n="Invoice Title"></td>                <td>' + g.invoiceTitle + '</td>            </tr>            <tr>                <td data-weave="shared/helper/translation" data-i18n="Fee Structure"></td>                <td><pre>' + g.feeStructure + '</pre></td>            </tr>            <tr>                <td data-weave="shared/helper/translation" data-i18n="Probation"></td>                <td>' + g.probation + '</td>            </tr>            <tr>                <td data-weave="shared/helper/translation" data-i18n="Start Date"></td>                <td>' + g.startDate + '</td>            </tr>            <tr>                <td data-weave="shared/helper/translation" data-i18n="End Date"></td>                <td>' + g.expireDate + "</td>            </tr>        </tbody>    </table></div>"
+		}
+		return b += "",
+		this.islimited || d || (b += '<div class="span6 add-new" data-action="add/contract">    <span data-weave="shared/helper/translation" data-i18n="Add new contract"></span></div>'),
+		b
+	}
+})

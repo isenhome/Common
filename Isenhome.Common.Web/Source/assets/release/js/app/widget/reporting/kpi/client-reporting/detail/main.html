@@ -1,0 +1,18 @@
+define("troopjs-requirejs/template!app/widget/reporting/kpi/client-reporting/detail/main.html", [], function () {
+	return function (a) {
+		for (var b = '<colgroup>    <col>    <col>    <col>    <col>    <col>    <col></colgroup><thead>    <tr>        <th data-weave="shared/helper/translation" data-i18n="Company Name"></th>        <th data-weave="shared/helper/translation" data-i18n="City"></th>        <th data-weave="shared/helper/translation" data-i18n="Industry"></th>        <th data-weave="shared/helper/translation" data-i18n="Company Type"></th>        <th data-weave="shared/helper/translation" data-i18n="Creator"></th>        <th data-weave="shared/helper/translation" data-i18n="BD"></th>    </tr></thead><tbody>    ', c = 0, d = a.length; d > c; c++) {
+			b += "    ";
+			var e = a[c];
+			b += '    <tr>        <td>            <a href="/company#detail!id=' + e.id + '" target="_blank">' + e.name + "</a>        </td>        <td>            ",
+			e.city && (b += "            " + e.city.name + "            "),
+			b += "        </td>        <td>            ",
+			e.industry && (b += "            " + e.industry.name + "            "),
+			b += "        </td>        <td>            ",
+			e.type && (b += '            <span data-weave="shared/helper/translation" data-i18n="' + e.type + ' company"></span>            '),
+			b += '        </td>        <td>            <a href="/user/preview#' + e.addedBy.id + '" data-action="user/open">' + e.addedBy.englishName + "</a>        </td>        <td>            ",
+			e.bd && (b += '            <a href="/user/preview#' + e.bd.id + '" data-action="user/open">' + e.bd.englishName + "</a>            "),
+			b += "        </td>    </tr>    "
+		}
+		return b += "</tbody>"
+	}
+})

@@ -1,0 +1,11 @@
+define("troopjs-requirejs/template!app/widget/common/custom-fields/multiline.html", [], function () {
+	return function (a) {
+		var b = '<div class="control-group" data-action="component">    <label for="' + a.mapping + '" class="control-label">        ' + a.label + "        ";
+		return a.required && (b += '<span class="f_req">*</span>'),
+		b += '    </label>    <div class="controls">        <textarea name="' + a.mapping + '" id="' + a.mapping + '" cols="30" rows="10" class="',
+		a.required && (b += "required"),
+		b += '"></textarea>        <p class="hint ',
+		a.help.length || (b += "hide"),
+		b += '">' + a.help + "</p>    </div></div>"
+	}
+})

@@ -1,0 +1,20 @@
+define("troopjs-requirejs/template!app/widget/candidate/work-experience/main.html", [], function () {
+		return function (a) {
+			for (var b = '<div class="table-scrollable">    <table class="table table-bordered">        <colgroup>            <col width="25%">            <col width="">            <col width="">            <col width="">            <col width="">        </colgroup>        <thead>            <tr>                <th data-weave="shared/helper/translation" data-i18n="Time"></th>                <th data-weave="shared/helper/translation" data-i18n="Company"></th>                <th data-weave="shared/helper/translation" data-i18n="City"></th>                <th data-weave="shared/helper/translation" data-i18n="Title"></th>                <th data-weave="shared/helper/translation" data-i18n="Function"></th>            </tr>        </thead>        <tbody>            ', c = 0, d = a.length; d > c; c++) {
+				b += "            ";
+				var e = a[c],
+				f = e.client.type;
+				b += "            <tr>                <td>                    ",
+				e.start && (b += "                    " + e.start + "                    "),
+				b += "                    ",
+				e.is_current ? b += '                    -                     <span data-weave="shared/helper/translation" data-i18n="Present"></span>                    ' : (b += "                        ", e.end && (b += "                        -                         " + e.end + "                        "), b += "                    "),
+				b += '                </td>                <td>                    <a href="/company#detail!id=' + e.client.id + '" target="_blank">' + e.client.name + "</a>                    ",
+				f && "normal" !== f && "generated" !== f && (b += '                    <span class="red">(<span data-weave="shared/helper/translation" data-i18n="' + f + ' company"></span>)</span>                    '),
+				b += "                    ",
+				e.client.bd && (b += '                    (BD: <a href="user/preview#' + e.client.bd.id + '" data-action="profile/open">' + e.client.bd.englishName + "</a>)                    "),
+				b += "                </td>                <td>" + (e.client.city ? e.client.city.name : "") + "</td>                <td>" + e.title + "</td>                <td>                    ",
+				e.function  && e.function .id && (b += '                    <span class="label function" title="' + e.function .name, e.function1 && (b += ", " + e.function1.name), e.function2 && (b += ", " + e.function2.name), b += '">' + e.function .name, (e.function1 || e.function2) && (b += "..."), b += "</span>                    "), b += "                </td>            </tr>            "
+}
+return b += "        </tbody>    </table></div>"
+}
+})

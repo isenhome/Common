@@ -1,0 +1,27 @@
+define("troopjs-requirejs/template!app/widget/candidate/detail/email-tab/row.html", [], function () {
+	return function (a) {
+		var b = "",
+		c = a.list,
+		d = 0,
+		e = c.length;
+		if (b += "", e) {
+			for (b += "", d; e > d; d++) {
+				b += "";
+				var f = c[d];
+				b += '<tr class="',
+				f.status || (b += "unread"),
+				b += '" data-action="view/detail" data-id="' + f.id + '">    <td>' + this.formatEmail(f._from) + "</td>    ";
+				var g = f.to.split(","),
+				h = g.length,
+				i = this.formatEmail(g[0]);
+				h > 1 && (i += " ..."),
+				b += "    <td>" + i + "</td>    <td>" + f.subject + "</td>    <td>" + (f.dateAdded ? f.dateAdded : "") + "</td>    <td>         ",
+				f.attachment && (b += '        <span class="icon-paper-clip"></span>        '),
+				b += "    </td></tr>"
+			}
+			b += ""
+		} else
+			b += '<tr>    <td colspan="5">        <p class="text-center" data-weave="shared/helper/translation" data-i18n="No data available in table">        </p>    </td></tr>';
+		return b
+	}
+})
